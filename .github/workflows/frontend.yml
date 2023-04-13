@@ -1,0 +1,17 @@
+name: "frontend-ci-cd"
+on:
+   push:
+     branches: ["main"]
+     paths:
+     - "frontend/**"
+jobs:
+  deployment:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Deploy frontend to render
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with: 
+         service-id: ${{ secrets.SERVICE_ID_FRONT_END }} # Can be found as part of the Deploy Hook
+         api-key: ${{ secrets.RENDER_API_KEY_FRONT_END }}
