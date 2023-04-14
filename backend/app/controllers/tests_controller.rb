@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
     def index
-        render json: {workflow:"working"}
+        render json: {workflow:"ci working"}
     end
 end
