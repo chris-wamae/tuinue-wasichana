@@ -5,6 +5,29 @@ on:
      paths:
      - "frontend/**"
 jobs:
+  testing:
+    runs-on: ubuntu-latest
+
+    strategy: 
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v3 
+        with: 
+          fetch-depth: 0
+
+      - name: Use Node.JS ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node-version }}
+
+      - name: NPM install, build and test
+        run: |
+          npm install
+          npm run 
+          npm test
   deployment:
     
     runs-on: ubuntu-latest
