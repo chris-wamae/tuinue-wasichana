@@ -37,7 +37,7 @@ jobs:
         working-directory: "./backend"
       # Add or replace test runners here
       - name: Run tests
-        run: rails test:all
+        run:  bin/rake
         working-directory: "./backend"
   deployment:
   
