@@ -38,6 +38,7 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: rails test:all
+        working-directory: "./backend"
   deployment:
   
    runs-on: ubuntu-latest
