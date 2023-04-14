@@ -30,6 +30,7 @@ jobs:
         with:
           ruby-version: 2.7.4 
           bundler-cache: true
+          working-directory: "./backend"
       # Add or replace database setup steps here
       - name: Set up database schema
         run: bin/rails db:schema:load
