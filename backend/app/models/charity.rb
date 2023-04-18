@@ -1,0 +1,2 @@
+class Charity < User
+end
