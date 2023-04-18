@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  item: MyString
+  quantity: 1
+  beneficiary_id: 1
+  charity_id: 1
+
+two:
+  name: MyString
+  item: MyString
+  quantity: 1
+  beneficiary_id: 1
+  charity_id: 1

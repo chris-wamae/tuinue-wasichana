@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 9.99
+  is_monthly: false
+  charity_id: 1
+  donor_id: 1
+
+two:
+  amount: 9.99
+  is_monthly: false
+  charity_id: 1
+  donor_id: 1

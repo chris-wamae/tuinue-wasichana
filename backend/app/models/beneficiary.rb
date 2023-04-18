@@ -1,0 +1,2 @@
+class Beneficiary < ApplicationRecord
+end
