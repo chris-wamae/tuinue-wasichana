@@ -1,0 +1,25 @@
+.donor-main-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.charities-list {
+    text-align: center;
+}
+
+.charity-details {
+    text-align: center;
+}
+
+button {
+    background-color: #f8c1bb;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e3a8a3;
+}
