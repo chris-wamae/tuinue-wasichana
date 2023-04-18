@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Roboto:wght@300;400;700&display=swap');
+.nav{
+    display:flex;
+    align-items: center;
+    height:80px;
+    background-color:var(--blue);
+    justify-content: space-around;
+    
+}
+
+.gender-svg{
+    height:40px;
+    background-color:var(--pink);
+    padding:10px 18px 10px 18px;
+    border-radius:50%;
+    margin-left:3%;
+    
+}
+
+.nav-header{
+    color:var(--pink);
+    margin-left:1%;
+    font-family: 'Italianno', cursive;
+    font-size:48px;
+    font-weight:100;
+}
+
+.nav-elements{
+    color:var(--pink);
+}
+
+.icon-header{
+    width:50%;
+    height:80px;
+    display:flex;
+    align-items: center;
+}
