@@ -1,5 +1,6 @@
 require 'test_helper'
 
+
 class DonationTest < ActiveSupport::TestCase
   test "should be valid" do
     assert build(:donation).valid?
