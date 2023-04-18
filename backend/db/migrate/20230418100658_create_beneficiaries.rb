@@ -3,11 +3,12 @@ class CreateBeneficiaries < ActiveRecord::Migration[7.0]
     create_table :beneficiaries do |t|
       t.string :name
       t.integer :age
-      t.string :gender
       t.text :story
       t.string :image
       t.integer :charity_id
       t.integer :donor_id
+      t.datetime :created_at
+      t.datetime :updated_at
 
       t.timestamps
     end

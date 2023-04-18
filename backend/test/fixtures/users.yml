@@ -4,10 +4,30 @@ one:
   username: MyString
   email: MyString
   password_digest: MyString
-  role: MyString
+  charity_name: MyString
+  charity_website: MyString
+  charity_image: MyString
+  about_charity: MyText
+  mission: MyText
+  contacts: 1
+  location: MyString
+  status: 1
+  role: 1
+  created_at: 2023-04-18 12:59:42
+  updated_at: 2023-04-18 12:59:42
 
 two:
   username: MyString
   email: MyString
   password_digest: MyString
-  role: MyString
+  charity_name: MyString
+  charity_website: MyString
+  charity_image: MyString
+  about_charity: MyText
+  mission: MyText
+  contacts: 1
+  location: MyString
+  status: 1
+  role: 1
+  created_at: 2023-04-18 12:59:42
+  updated_at: 2023-04-18 12:59:42
