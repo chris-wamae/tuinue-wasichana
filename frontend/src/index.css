@@ -1,3 +1,11 @@
+:root{
+  --pink:#FFC0CB;
+  --blue:#05667B;
+  --grey:#808080;
+  --green:#008000;
+  --paypal:#0000FF;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
