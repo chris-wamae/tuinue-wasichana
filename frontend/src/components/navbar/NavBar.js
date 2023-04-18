@@ -1,5 +1,5 @@
-import "./navbar.css"
-import GenderIcon from "./GenderIcon.js"
+import "./nav-bar.css"
+import GenderIcon from "../gender-icon/GenderIcon";
 function NavBar({elements}){
     return(
         <div className="nav">
