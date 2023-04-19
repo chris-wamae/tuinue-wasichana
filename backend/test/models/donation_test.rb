@@ -1,20 +1,18 @@
-require 'test_helper'
+require 'rails_helper'
 
-
-class DonationTest < ActiveSupport::TestCase
-  test "should be valid" do
-    assert build(:donation).valid?
+RSpec.describe Donation, type: :model do
+  it "has a valid factory" do
+    expect(build(:donation)).to be_valid
   end
 
-  test "should validate presence of donor_id, charity_id, and amount" do
-    donation = Donation.new
-    assert_not donation.valid?
-    assert_equal [:donor_id, :charity_id, :amount], donation.errors.keys
+  context "validations" do
+    it { should validate_presence_of(:donor_id) }
+    it { should validate_presence_of(:charity_id) }
+    it { should validate_presence_of(:amount) }
   end
 
-  test "should belong to donor and charity" do
-    assert_equal users(:donor), donations(:one).donor
-    assert_equal users(:charity), donations(:one).charity
+  context "associations" do
+    it { should belong_to(:donor).class_name('User') }
+    it { should belong_to(:charity).class_name('User') }
   end
 end
-
