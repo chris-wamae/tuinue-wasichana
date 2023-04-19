@@ -14,4 +14,6 @@ class Charity < User
     validates :mission, presence: true, length: { maximum: 100 }
     validates :location, presence: true
     validates :status, presence: true
+    validates :contacts, presence: true, numericality: { only_integer: true, equal_to: 10_000_000_000}
+
 end
