@@ -33,7 +33,7 @@ development:
   username: student
 
   # The password associated with the postgres role (username).
-  password:  
+  password: student
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -59,6 +59,12 @@ development:
 test:
   <<: *default
   database: backend_test
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: student
+  password: student
+  host: localhost
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,5 +89,5 @@ test:
 production:
   <<: *default
   database: backend_production
-  username: backend
+  username: student
   password: <%= ENV["BACKEND_DATABASE_PASSWORD"] %>
