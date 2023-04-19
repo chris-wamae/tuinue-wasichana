@@ -16,24 +16,24 @@ const DonorMainPage = () => {
     };
 
     return (
-        <div className="donor-main-page">
-        <header className="header">
-            <h1>Choose a Charity</h1>
-        </header>
-        <section className="charities-list">
-            {charities.map((charity) => (
-                <button key={charity.id} className="charity-card" onClick={() => handleClick(charity.id)}>
-                    <h2>{charity.name}</h2>
-                    <p>{charity.description}</p>
-                    <img
-                        src="https://via.placeholder.com/150" // Replace with the actual image URL
-                        alt={charity.name}
-                        className="charity-image"
-                    />
-                </button>
-            ))}
-        </section>
-    </div>
+       <div className="donor-main-page">
+            <header className="header">
+                <h1>Choose a Charity</h1>
+            </header>
+            <section className="charities-list">
+                {charities.map((charity) => (
+                    <button key={charity.id} className="charity-card" onClick={() => handleClick(charity.id)}>
+                        <h2>{charity.name}</h2>
+                        <p>{charity.description}</p>
+                        <img
+                            src="https://via.placeholder.com/150" // Replace with the actual image URL
+                            alt={charity.name}
+                            className="charity-image"
+                        />
+                    </button>
+                ))}
+            </section>
+        </div>
     );
 };
 

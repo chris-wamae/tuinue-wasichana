@@ -58,12 +58,12 @@ body {
     border-radius: 0 0 5px 5px; /* Add this line */
 }
 .navbar {
-    background-color: #f8c1bb;
-    padding: 20px 40px; /* Update this value */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  background-color: #f8c1bb;
+  padding: 20px 40px; /* Update this value */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 button {
     background-color: #e3a8a3;
     border: none;
