@@ -1,0 +1,163 @@
+.donation-page{
+    text-align:center;
+    display:flex;
+}
+
+
+.form-image{
+    height:830px;
+    width:500px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+
+
+.mpesa-logo{
+    width:100px;
+    height:60px;
+    margin-right:80px;
+    margin-left:80px;
+}
+
+.paypal-logo{
+    width:120px;
+    height:30px;
+    margin-top:15px;
+    align-items:center;
+    
+}
+
+.card-svg{
+width:50px;
+margin:0px;
+height:40px;
+}
+
+.card-pay-div{
+    display: flex;
+    align-items:center;
+    color:var(--blue);
+    font-size:24px;
+    font-weight:bold;
+  
+
+}
+
+.main-header{
+color:var(--blue);
+font-size:32px;
+text-align:center;
+
+
+}
+
+.sub-header{
+font-size:24px;
+color:var(--blue)
+}
+
+
+
+.pay-methods{
+    display:flex;
+    justify-content:center;
+    margin:0px;
+}
+
+.pay-form{
+    border:5px solid var(--pink);
+    color:var(--blue);
+    border-radius:20px;
+    height:820px;
+    /* background-color:orange; */
+}
+
+.pay-form input{
+    text-align:center;
+    border:1px solid var(--grey);
+    border-radius:5px;
+}
+
+.pay-form input[type="text"] {
+width:350px;
+height:30px;
+}
+
+.donate-button{
+    background-color:var(--pink);
+    color:var(--blue);
+    width:180px;
+    height:50px;
+    font-size:24px;
+    border-radius:10px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.contacts{
+display: flex;
+justify-content:space-around;
+width:800px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.payer-details{
+display: flex;
+flex-wrap:wrap;
+justify-content:space-around;
+width:800px;
+/* background-color:red; */
+margin-left: auto;
+margin-right: auto;}
+
+
+.payer-details input{
+margin-top:20px;
+    }
+
+.additional-options{
+display: flex;
+height:20px;
+justify-content:space-around;
+width:800px;
+margin-left: auto;
+margin-right: auto;
+/* background-color: brown; */
+font-size:14px;
+
+}
+.additional-options input{
+margin:0px; 
+    }
+
+.mission-desc{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+#charity-mission{
+    width:750px;
+    height:50px;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#charity-description{
+    margin-top:10px;
+    width:750px;
+    height:200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contacts input[type="text"]{
+    width:220px;
+}
+
+h4{
+    font-size:24px;
+}
