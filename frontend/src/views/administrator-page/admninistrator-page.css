@@ -1,0 +1,85 @@
+.single-charity{
+    background-color:var(--pink);
+    color:var(--blue);
+    width:85%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5vh;
+    border-radius:15px;
+    border:3px solid var(--blue);
+
+}
+
+.content-div{
+    display: flex;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.content-div h3{
+    font-size:32px;
+    margin:15px;
+}
+
+.content-div h4{
+    margin:10px;
+}
+
+.content-div p{
+    font-size:16px;
+    border:2px solid var(--blue);
+    padding:10px;
+    border-radius:10px;
+    line-height:25px;
+}
+
+
+
+.content-div img{
+    height:300px;
+    border-radius:15px;
+    margin-top:10px;
+    margin-left:10px;
+
+}
+
+.button-div{
+    width:50%;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:40px;
+    padding-bottom:20px;
+}
+
+.button-div button{
+    margin-left:20px;
+    margin-right:20px;
+    border-radius:10px;
+    border:0px;
+    font-size:24px;
+    
+}
+
+#accept-button{
+background-color:green;
+color:white;
+width:200px;
+height:50px;
+
+}
+
+#reject-button{
+background-color:red;
+color:white;
+width:200px;
+height:50px;
+}
+
+#delete-button{
+background-color:red;
+color:white;
+margin-left:120px;
+width:200px;
+height:50px;
+}
