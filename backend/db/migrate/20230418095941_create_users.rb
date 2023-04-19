@@ -13,8 +13,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :location
       t.integer :status
       t.integer :role
-      t.datetime :created_at
-      t.datetime :updated_at
+     
 
       t.timestamps
     end
