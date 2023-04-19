@@ -4,7 +4,6 @@ class CreateReminders < ActiveRecord::Migration[7.0]
       t.integer :donor_id
       t.integer :charity_id
       t.date :reminder_date
-    
 
       t.timestamps
     end

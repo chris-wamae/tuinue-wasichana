@@ -5,7 +5,7 @@ class CreateInventories < ActiveRecord::Migration[7.0]
       t.integer :quantity
       t.integer :beneficiary_id
       t.integer :charity_id
-      
+
 
       t.timestamps
     end

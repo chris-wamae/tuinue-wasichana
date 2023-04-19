@@ -6,7 +6,6 @@ class CreateDonations < ActiveRecord::Migration[7.0]
       t.decimal :amount
       t.boolean :anonymous
       t.boolean :is_monthly
-      
 
       t.timestamps
     end

@@ -7,7 +7,7 @@ class CreateBeneficiaries < ActiveRecord::Migration[7.0]
       t.string :image
       t.integer :charity_id
       t.integer :donor_id
-      
+
 
       t.timestamps
     end
