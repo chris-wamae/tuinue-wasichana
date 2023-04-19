@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "tests#index"
+  resources :beneficiaries
+  resources :donations
 end
