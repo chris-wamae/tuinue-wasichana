@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   root "tests#index"
   resources :beneficiaries
   resources :donations
+  resources :inventory, only: [:create, :update]
+  resources :reminders, only: [:create, :update, :destroy]
 end
