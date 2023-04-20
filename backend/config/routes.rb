@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root "tests#index"
   resources :beneficiaries
   resources :donations
+  get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
 end
