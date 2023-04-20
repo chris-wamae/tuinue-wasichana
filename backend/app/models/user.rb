@@ -17,5 +17,5 @@ class User < ApplicationRecord
   def set_default_charity_status
     self.status = "pending" if charity?
   end
-end
+
 end

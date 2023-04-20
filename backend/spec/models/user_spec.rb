@@ -33,4 +33,32 @@ RSpec.describe User, type: :model do
       expect(User.statuses).to eq({"pending"=>0, "approved"=>1, "rejected"=>2})
     end
   end
+
+  describe 'set_default_charity_status' do
+    context 'when user is a charity' do
+      it 'sets the default status to pending' do
+        charity_user = User.create!(
+          username: 'charity_user',
+          email: 'charity@example.com',
+          password: 'password123',
+          role: 'charity'
+        )
+
+        expect(charity_user.status).to eq('pending')
+      end
+    end
+
+    context 'when user is not a charity' do
+      it 'does not set the default status' do
+        donor_user = User.create!(
+          username: 'donor_user',
+          email: 'donor@example.com',
+          password: 'password123',
+          role: 'donor'
+        )
+
+        expect(donor_user.status).to be_nil
+      end
+    end
+  end
 end
