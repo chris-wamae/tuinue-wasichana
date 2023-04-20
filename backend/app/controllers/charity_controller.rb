@@ -1,7 +1,10 @@
-class CharityController < ApplicationController
-  def total_donations
+class CharitiesController < ApplicationController
+  def index
+    @charities = Charity.all
+  end
+
+  def show
     @charity = Charity.find(params[:id])
     @total_donations = Donation.where(charity_id: @charity.id).sum(:amount)
-    render json: { total_donations: @total_donations }
   end
 end
