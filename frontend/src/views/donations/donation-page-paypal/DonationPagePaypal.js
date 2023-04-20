@@ -4,9 +4,11 @@ import "./donation-page-paypal.css"
 function DonationPagePayPal(){
 return(
         <>
-          <NavBar elements={[]} />    
+          <NavBar elements={[]} /> 
+          <span style={{color:"white"}}>paypal</span>   
           <h2 className="main-header">
               You are just a few steps away from transforming a girl's life
+              
             </h2>
           <div className="donation-page">
         
@@ -50,10 +52,10 @@ return(
                 <div>
                   <h4>Shipping address</h4>
                   <div className="payer-details">
+
                     <input type="text" placeholder="First name"></input>
                     <input type="text" placeholder="Last name"></input>
                     <input type="text" placeholder="Address"></input>
-                    <input type="text" placeholder="Aprtment/Building"></input>
                     <input type="text" placeholder="City"></input>
                     <input type="text" placeholder="Country"></input>
                     <input type="text" placeholder="Postal code"></input>

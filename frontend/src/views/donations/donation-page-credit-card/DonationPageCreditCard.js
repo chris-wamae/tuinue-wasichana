@@ -53,7 +53,7 @@ function DonationPageCreditCard() {
                 <input type="text" placeholder="First name"></input>
                 <input type="text" placeholder="Last name"></input>
                 <input type="text" placeholder="Address"></input>
-                <input type="text" placeholder="Aprtment/Building"></input>
+                <input type="text" placeholder="Apartment/Building"></input>
                 <input type="text" placeholder="City"></input>
                 <input type="text" placeholder="Country"></input>
                 <input type="text" placeholder="Postal code"></input>
