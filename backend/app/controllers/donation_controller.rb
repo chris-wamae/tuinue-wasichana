@@ -46,4 +46,10 @@ class DonationsController < ApplicationController
   def donation_params
     params.require(:donation).permit(:donor_id, :charity_id, :amount, :anonymous, :is_monthly)
   end
+
+  def anonymous_donors_amount
+    charity_id = params[:charity_id]
+    amount = Donation.where(charity_id: charity_id, anonymous: true).sum(:amount)
+    render json: { anonymous_donors_amount: amount }
+  end
 end
