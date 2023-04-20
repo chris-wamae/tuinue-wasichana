@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar"
+import NavBar from "../../../components/navbar/NavBar"
 import "./donation-page-paypal.css"
 
 function DonationPagePayPal(){

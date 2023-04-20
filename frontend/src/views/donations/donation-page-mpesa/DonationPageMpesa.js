@@ -1,6 +1,6 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../../../components/navbar/NavBar";
 import { useState } from "react";
-import "./stylesheets/donation-page-mpesa.css";
+import "./donation-page-mpesa.css";
 function DonationPageMpesa() {
   return (
     <>
