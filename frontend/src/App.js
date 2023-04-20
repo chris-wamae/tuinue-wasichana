@@ -13,11 +13,12 @@ import { useEffect } from 'react';
 import { selectCharities } from './features/charity/charitiesSlice';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { fetchSingleCharity } from './features/charity/charitiesSlice';
 
 function App() {
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(fetchCharities())
+    dispatch(fetchSingleCharity(1))
   },[])
   let char = useSelector(selectCharities)
   console.log(char)

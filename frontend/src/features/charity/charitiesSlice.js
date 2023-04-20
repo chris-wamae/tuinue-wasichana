@@ -6,7 +6,7 @@ import axios from "axios";
 const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
 
 const initialState = {
-    charities: [],
+    charitiesList: [],
     status: "idle",
     error: null,
 };
@@ -19,6 +19,13 @@ export const fetchCharities = createAsyncThunk(
     }
 );
 
+export const fetchSingleCharity = createAsyncThunk("charities/fetchSingleCharity", async (id) =>{
+    const response = await axios.get(`${BASE_URL}/${id}`)
+    return [response.data]
+})
+
+
+
 const charitiesSlice = createSlice({
     name: "charities",
     initialState,
@@ -26,12 +33,15 @@ const charitiesSlice = createSlice({
     extraReducers(builder) {
         builder
             .addCase(fetchCharities.fulfilled, (state, action) => {
-                state.charities = action.payload
+                state.charitiesList = action.payload
+            })
+            .addCase(fetchSingleCharity.fulfilled,(state,action)=>{
+                state.charitiesList = action.payload
             })
     },
 });
 
-export const selectCharities = (state) => state.charities
+export const selectCharities = (state) => state.charities.charitiesList
 
 export default charitiesSlice.reducer;
 
