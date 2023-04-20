@@ -1,0 +1,61 @@
+.charity-beneficiary-stories {
+    background-color: #FFC0CB; /* The pink background color */
+    border: 3px solid #05667B; /* The blue border */
+    border-radius: 10px; /* Add curved edges to the border */
+    padding: 20px; /* Add some space between the border and the content */
+    box-sizing: border-box; /* Include the border and padding in the width and height of the element */
+    max-width: 100%; /* Limit the width to 100% of the parent container */
+  }
+  .story-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .edit-button,
+  .delete-button {
+    margin-left: auto;
+  }
+  
+  
+  
+  .charity-beneficiary-stories form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .charity-beneficiary-stories input {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .charity-beneficiary-stories button {
+    background-color: #05667B;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .charity-beneficiary-stories button:hover {
+    background-color: #045266;
+  }
+  
+  .charity-beneficiary-stories ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .charity-beneficiary-stories li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .charity-beneficiary-stories li span {
+    color: #05667B;
+  }
+  
