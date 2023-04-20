@@ -24,7 +24,10 @@ export const fetchSingleCharity = createAsyncThunk("charities/fetchSingleCharity
     return [response.data]
 })
 
-
+export const createCharity = createAsyncThunk("charities/createCharity", async (data) =>{
+    const response = await axios.post(BASE_URL,data)
+    return [response.data]
+})
 
 const charitiesSlice = createSlice({
     name: "charities",
@@ -36,6 +39,9 @@ const charitiesSlice = createSlice({
                 state.charitiesList = action.payload
             })
             .addCase(fetchSingleCharity.fulfilled,(state,action)=>{
+                state.charitiesList = action.payload
+            })
+            .addCase(createCharity.fulfilled,(state,action)=>{
                 state.charitiesList = action.payload
             })
     },
