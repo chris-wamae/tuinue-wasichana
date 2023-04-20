@@ -10,4 +10,12 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 12 }
   validates :email, presence: true, uniqueness: true
 
+  before_create :set_default_charity_status
+
+  private
+
+  def set_default_charity_status
+    self.status = "pending" if charity?
+  end
+end
 end
