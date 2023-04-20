@@ -1,5 +1,5 @@
-import NavBar from "../components/NavBar";
-import "./stylesheets/charity-application.css"
+import NavBar from "../../components/navbar/NavBar";
+import "./charity-application.css"
 
 function CharityApplication() {
 

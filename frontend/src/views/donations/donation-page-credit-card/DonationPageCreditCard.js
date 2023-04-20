@@ -1,6 +1,6 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../../../components/navbar/NavBar";
 import { useState } from "react";
-import "./stylesheets/donation-page-credit-card.css";
+import "./donation-page-credit-card.css";
 function DonationPageCreditCard() {
   return (
     <>
@@ -53,7 +53,7 @@ function DonationPageCreditCard() {
                 <input type="text" placeholder="First name"></input>
                 <input type="text" placeholder="Last name"></input>
                 <input type="text" placeholder="Address"></input>
-                <input type="text" placeholder="Aprtment/Building"></input>
+                <input type="text" placeholder="Apartment/Building"></input>
                 <input type="text" placeholder="City"></input>
                 <input type="text" placeholder="Country"></input>
                 <input type="text" placeholder="Postal code"></input>

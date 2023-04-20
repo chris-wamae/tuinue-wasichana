@@ -1,8 +1,8 @@
-import "./stylesheets/administrator-page.css"
+import "./admninistrator-page.css"
 import { useState } from "react";
-import NavBar from "../components/NavBar";
-import DeleteCharity from "../components/DeleteCharity";
-import ReviewCharity from "../components/ReviewCharity";
+import NavBar from "../../components/navbar/NavBar";
+import DeleteCharity from "../../components/DeleteCharity";
+import ReviewCharity from "../../components/ReviewCharity";
 
 function AdministratorPage() {
    const sample = [1,2,3]
