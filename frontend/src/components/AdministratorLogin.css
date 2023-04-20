@@ -1,0 +1,48 @@
+.administrator-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #FFC0CB;
+    border: 5px solid #05667B;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  label {
+    font-family: 'Italianno', cursive;
+    font-weight: bold;
+    color: #05667B;
+  }
+  
+  
+  input {
+    padding: 0.5rem;
+    border: 1px solid #05667B;
+    border-radius: 5px;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #05667B;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #034b59;
+  }
+  
