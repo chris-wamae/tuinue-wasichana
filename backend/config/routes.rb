@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "tests#index"
+  
+  devise_for :users
+
   #charities
   get '/charities', to: 'charities#index'
   get '/charity/:id', to: 'charities#show'
