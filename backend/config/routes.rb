@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   root "tests#index"
   resources :beneficiaries
   resources :donations
+  resources :charities do
+    get 'total_donations', on: :member
+  end
 end
