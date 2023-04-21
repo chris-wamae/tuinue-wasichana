@@ -23,6 +23,7 @@ import { updateDonor } from "./features/donor/donorsSlice";
 import { fetchBeneficiaries } from "./features/beneficiaries/beneficiariesSlice";
 import { deleteDonor } from "./features/donor/donorsSlice";
 import { selectBeneficiaries } from "./features/beneficiaries/beneficiariesSlice";
+import { deleteBeneficiary } from "./features/beneficiaries/beneficiariesSlice";
 
 function App() {
   const dispatch = useDispatch()
@@ -39,9 +40,10 @@ function App() {
     // }))
     // dispatch(updateDonor({id:1,data:{address:true}}))
     // dispatch(deleteDonor(1))
-    dispatch(fetchBeneficiaries())
+    // dispatch(fetchBeneficiaries())
+    dispatch(deleteCharity(1))
   }, [])
-  
+
   let char = useSelector(selectCharities)
   let don = useSelector(selectDonors)
   let ben = useSelector(selectBeneficiaries)
