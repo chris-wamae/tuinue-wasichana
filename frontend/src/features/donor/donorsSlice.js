@@ -3,36 +3,36 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-    state:"idle",
-    error:null,
-    donorsList:[]
+    state: "idle",
+    error: null,
+    donorsList: []
 }
 
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 
-export const fetchDonors = createAsyncThunk("donors/fetchDonors",async () =>{
-   const response = await axios.get(USERS_URL)
-   return [...response.data]
+export const fetchDonors = createAsyncThunk("donors/fetchDonors", async () => {
+    const response = await axios.get(USERS_URL)
+    return [...response.data]
 })
 
-export const createDonor = createAsyncThunk("donors/createDonor", async (data) =>{
-    const response = await axios.post(`${USERS_URL}`,data)
+export const createDonor = createAsyncThunk("donors/createDonor", async (data) => {
+    const response = await axios.post(`${USERS_URL}`, data)
     return [response.data]
 })
 
 const donorsSlice = createSlice({
-    name:"donors",
+    name: "donors",
     initialState,
-    reducers:{
+    reducers: {
 
-    },extraReducers(builder){
+    }, extraReducers(builder) {
         builder
-        .addCase(fetchDonors.fulfilled,(state,action)=>{
-         state.donorsList = action.payload;
-        })
-        .addCase(createUser.fulfilled,(state,action)=>{
-          state.donorsList = action.payload;
-        })
+            .addCase(fetchDonors.fulfilled, (state, action) => {
+                state.donorsList = action.payload;
+            })
+            .addCase(createDonor.fulfilled, (state, action) => {
+                state.donorsList = action.payload;
+            })
     }
 })
 

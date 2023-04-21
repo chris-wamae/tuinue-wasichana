@@ -18,6 +18,7 @@ import { fetchSingleCharity } from './features/charity/charitiesSlice.js';
 import { createCharity } from './features/charity/charitiesSlice.js';
 import { deleteCharity } from "./features/charity/charitiesSlice.js";
 import { fetchDonors, selectDonors } from "./features/donor/donorsSlice";
+import { createDonor } from "./features/donor/donorsSlice";
 
 function App() {
   const dispatch = useDispatch()
@@ -28,7 +29,10 @@ function App() {
     //   title:"jdejjdeea"
     // }))
     dispatch(deleteCharity({ id: 1 }))
-    dispatch(fetchDonors())
+    // dispatch(fetchDonors())
+    dispatch(createDonor({
+      name:"JohnDoe"
+    }))
   }, [])
   let char = useSelector(selectCharities)
   let don = useSelector(selectDonors)
