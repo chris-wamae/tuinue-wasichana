@@ -7,7 +7,7 @@ class User < ApplicationRecord
   enum status: { pending: 0, approved: 1, rejected: 2 }, _prefix: :charity
 
   validates :role, presence: true
-  validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 16 }
+  validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 32 }
   validates :email, presence: true, uniqueness: true
 
   before_create :set_default_charity_status

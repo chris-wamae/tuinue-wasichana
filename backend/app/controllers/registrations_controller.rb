@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
     before_action :role_based_permitted_parameters, if: :devise_controller?
-    skip_before_action :require_no_authentication, only: [:create]
+    #skip_before_action :require_no_authentication, only: [:create]
 
   
     protected

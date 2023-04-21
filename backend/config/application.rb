@@ -24,6 +24,8 @@ module Backend
     config.load_defaults 7.0
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, key: '_my_tuiniue_wasichana_app_session'
+    config.middleware.use ActionDispatch::Flash
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
