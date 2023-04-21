@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+    before_action :find_pending_charity, only: [:approve, :reject]
+
     def pending_charities
         render json: User.charity.charity_pending, status: :ok
     end
@@ -8,25 +10,27 @@ class AdminsController < ApplicationController
     end
 
     def approve
-        charity = find_pending_charity
-        charity.charity_approved!
-        render json: { status: 'success', message: 'Charity approved', charity: charity }
+        @charity.charity_approved!
+        response_template (message: 'Charity Accepted', data: @charity, status: 202)
     end
 
     def reject
-        charity = find_pending_charity
-        charity.charity_rejected!
-        render json: { status: 'success', message: 'Charity rejected', charity: charity }
+        @charity.charity_rejected!
+        response_template (message: 'Charity Rejected', data: @charity, status: 202)
     end
 
     def destroy
         charity = User.charity.charity_approved.find(params[:id])
         charity.destroy
-        render json: { status: :no_content, message: 'Charity deleted', charity: charity }
+        response_template(message: 'success', data: { info: 'Charity successfully deleted!' }, status: 204)
     end
 
     private
     def find_pending_charity
-        User.charity.charity_pending.find(params[:id])
+        @charity = User.charity.charity_pending.find(params[:id])
+    end
+
+    def response_template(message: 'success', status: 200, data: nil)
+        render json: { message: message, data: data, status: status}
     end
 end
