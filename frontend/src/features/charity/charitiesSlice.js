@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// const BASE_URL = "https://tuinue-waichana-backend.onrender.com/";
-const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
+// const POSTS_URL = "https://tuinue-waichana-backend.onrender.com/";
+const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
 
 const initialState = {
     charitiesList: [],
@@ -14,29 +14,29 @@ const initialState = {
 export const fetchCharities = createAsyncThunk(
     "charities/fetchCharities",
     async () => {
-        const response = await axios.get(BASE_URL)
+        const response = await axios.get(POSTS_URL)
         return [...response.data]
     }
 );
 
 export const fetchSingleCharity = createAsyncThunk("charities/fetchSingleCharity", async (id) =>{
-    const response = await axios.get(`${BASE_URL}/${id}`)
+    const response = await axios.get(`${POSTS_URL}/${id}`)
     return [response.data]
 })
 
 export const createCharity = createAsyncThunk("charities/createCharity", async (data) =>{
-    const response = await axios.post(BASE_URL,data)
+    const response = await axios.post(POSTS_URL,data)
     return [response.data]
 })
 
 export const updateCharity = createAsyncThunk("charities/updateCharity", async ({id,data}) =>{
-    const response = await axios.patch(`${BASE_URL}/${id}`,data)
+    const response = await axios.patch(`${POSTS_URL}/${id}`,data)
     return [response.data]
 } )
 
 
 export const deleteCharity = createAsyncThunk("charities/deleteCharity", async ({id}) => {
-   const deleteRequest = await axios.delete(`${BASE_URL}/${id}`)
+   const deleteRequest = await axios.delete(`${POSTS_URL}/${id}`)
    return deleteRequest.status
 })
 

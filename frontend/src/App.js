@@ -17,6 +17,7 @@ import { useState } from 'react';
 import { fetchSingleCharity } from './features/charity/charitiesSlice.js';
 import { createCharity } from './features/charity/charitiesSlice.js';
 import { deleteCharity } from "./features/charity/charitiesSlice.js";
+import { fetchDonors, selectDonors } from "./features/donor/donorsSlice";
 
 function App() {
   const dispatch = useDispatch()
@@ -26,10 +27,14 @@ function App() {
     //   body:"ajfefaaf",
     //   title:"jdejjdeea"
     // }))
-    dispatch(deleteCharity({id:1}))
+    dispatch(deleteCharity({ id: 1 }))
+    dispatch(fetchDonors())
   }, [])
   let char = useSelector(selectCharities)
+  let don = useSelector(selectDonors)
   console.log(char)
+  console.log(don)
+
 
   return (
     <Router>
