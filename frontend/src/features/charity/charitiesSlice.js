@@ -68,7 +68,9 @@ const charitiesSlice = createSlice({
             .addCase(deleteCharity.fulfilled,(state,action) =>{
              console.log(action.payload)
             })
-            
+            .addCase(fetchBeneficiaries.fulfilled,(state,action) =>{
+                state.beneficiaries = action.payload
+            })
     },
 });
 

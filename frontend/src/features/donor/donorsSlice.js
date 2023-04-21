@@ -25,6 +25,11 @@ export const updateDonor = createAsyncThunk("donors/updateDonor", async({id,data
     return [response.data]
 })
 
+export const deleteDonor = createAsyncThunk("donors/deleteDonor", async (id) => {
+    const deleteRequest = await axios.delete(`${USERS_URL}/${id}`)
+    return [deleteRequest.status]
+})
+
 
 const donorsSlice = createSlice({
     name: "donors",
@@ -41,6 +46,9 @@ const donorsSlice = createSlice({
             })
             .addCase(updateDonor.fulfilled,(state,action) =>{
                 state.donorsList = action.payload;
+            })
+            .addCase(deleteDonor.fulfilled,(state,action) =>{
+                console.log(action.payload)
             })
     }
 })
