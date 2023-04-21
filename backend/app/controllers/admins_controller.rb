@@ -11,12 +11,12 @@ class AdminsController < ApplicationController
 
     def approve
         @charity.charity_approved!
-        response_template (message: 'Charity Accepted', data: @charity, status: 202)
+        response_template(message: 'Charity Accepted', data: @charity, status: 202)
     end
 
     def reject
         @charity.charity_rejected!
-        response_template (message: 'Charity Rejected', data: @charity, status: 202)
+        response_template(message: 'Charity Rejected', data: @charity, status: 202)
     end
 
     def destroy
