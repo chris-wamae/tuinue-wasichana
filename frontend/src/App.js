@@ -25,6 +25,8 @@ import { deleteDonor } from "./features/donor/donorsSlice";
 import { selectBeneficiaries } from "./features/beneficiaries/beneficiariesSlice";
 import { deleteBeneficiary } from "./features/beneficiaries/beneficiariesSlice";
 import { updateBeneficiary } from "./features/beneficiaries/beneficiariesSlice";
+import { selectUser } from "./features/authentication/authenticationSlice";
+import { loginUser } from "./features/authentication/authenticationSlice";
 
 function App() {
   const dispatch = useDispatch()
@@ -44,15 +46,20 @@ function App() {
     // dispatch(fetchBeneficiaries())
     // dispatch(deleteCharity(1))
 
-    dispatch(updateBeneficiary({id:1,data:{usu:"jius"}}))
+    // dispatch(updateBeneficiary({id:1,data:{usu:"jius"}}))
+    dispatch(loginUser({
+      user: "yue"
+    }))
   }, [])
 
   let char = useSelector(selectCharities)
   let don = useSelector(selectDonors)
   let ben = useSelector(selectBeneficiaries)
+  let us = useSelector(selectUser)
   console.log(char)
   console.log(don)
   console.log(ben)
+  console.log(us)
 
   return (
     <Router>
