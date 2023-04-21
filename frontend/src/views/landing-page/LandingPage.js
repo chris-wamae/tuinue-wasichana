@@ -1,5 +1,6 @@
 import "./landing-page.css"
 import NavBar from "../../components/navbar/NavBar"
+import {Link} from "react-router-dom"
 
 function LandingPage() {
     const AdminLogin = () =>{
@@ -23,11 +24,15 @@ function LandingPage() {
             <div className="landing-nav">
             <div className="donations-div">
             Donations go to the various charities we work with all over Africa, enabling them to help girls all over the continent.
+            <Link exact to="credit-card">
              <button className="donations-button">Help us through donations</button>
+             </Link>
             </div>
             <div className="charity-div">
             As a charity, you’ll recieve financial as well as infastructural  support like labour  from well-wishers and volunteers.
+            <Link exact to="charity-application">
              <button className="charity-button">Join us as a charity</button>
+             </Link>
             </div>
             </div>
         </div>
