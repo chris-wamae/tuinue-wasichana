@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import LoginForm from './components/Login';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-    <h2>Hello World, our name is</h2>
-        <h1>Tuinue wasichana</h1>
+        {/* <hello World, our name is</h2>
+        <h1>Tuinue wasichana</h1> */}
+        <LoginForm />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
