@@ -1,37 +1,63 @@
-import {useState} from "react";import { PageItem } from "react-bootstrap";
-function SignupForm({ onSignup }) {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');    const handleSubmit = async (e) => {
-      e.preventDefault();      const response = await fetch('/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, password }),
-      });      if (response.ok) {
-        const user = await response.json();
-        onSignup(user);
-      } else {
-        const error = await response.json();
-        console.error(error);
-      }
-    };    return (
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <label className="signup-form__label">
-          Name:
-          <input className="signup-form__input" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
-        <label className="signup-form__label">
-          Email:
-          <input className="signup-form__input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label className="signup-form__label">
-          Password:
-          <input className="signup-form__input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <button className="signup-form__button" type="submit">Sign up</button>
-      </form>
-    );
-  }export default SignupForm;
- 
+import React, { useState } from 'react';
+// import './signform.css';
+
+function SignForm() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleSignupForm = () => {
+    setShowSignup(!showSignup);
+  };
+
+  return (
+    <div className="App">
+      <div className={`forms ${showSignup ? 'show-signup' : ''}`}>
+        <form>
+          <input type="email" placeholder="Email" />
+          <input
+            type={showPassword ? 'text' : 'password'}
+            className="password"
+            placeholder="Password"
+          />
+          <i
+            className={`eye-icon bx ${
+              showPassword ? 'bx-hide' : 'bx-show'
+            }`}
+            onClick={togglePasswordVisibility}
+          ></i>
+          <button type="submit">Login</button>
+        </form>
+        <form>
+          <input type="text" placeholder="Username" />
+          <input type="email" placeholder="Email" />
+          <input
+            type={showPassword ? 'text' : 'password'}
+            className="password"
+            placeholder="Password"
+          />
+          <i
+            className={`eye-icon bx ${
+              showPassword ? 'bx-hide' : 'bx-show'
+            }`}
+            onClick={togglePasswordVisibility}
+          ></i>
+          <button type="submit">Sign Up</button>
+        </form>
+        <div className="links">
+          <a href="#" className="link" onClick={toggleSignupForm}>
+            Sign Up
+          </a>
+          <a href="#" className="link">
+            Forgot Password?
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default SignForm;
