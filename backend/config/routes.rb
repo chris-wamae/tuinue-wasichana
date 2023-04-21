@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get '/charity/:id', to: 'charities#show'
 
   #admin
-  get "/admin/charities", to: "admins#pending_charities"
-  put "/admin/approve/:id", to: "admins#approve"
-  put "/admin/reject/:id", to: "admins#reject"
+  get "/admin/pending_charities", to: "admins#pending_charities"
+  put "/admin/charities/:id/approve", to: "admins#approve"
+  put "/admin/charities/:id/reject", to: "admins#reject"
+  delete "admin/charities/:id/destroy", to: "admins#destroy"
+  get "/admin/approved_charities", to: "admins#approved_charities"
+
+end
