@@ -20,6 +20,12 @@ export const createDonor = createAsyncThunk("donors/createDonor", async (data) =
     return [response.data]
 })
 
+export const updateDonor = createAsyncThunk("donors/updateDonor", async({id,data}) =>{
+    const response = await axios.patch(`${USERS_URL}/${id}`,data)
+    return [response.data]
+})
+
+
 const donorsSlice = createSlice({
     name: "donors",
     initialState,
@@ -31,6 +37,9 @@ const donorsSlice = createSlice({
                 state.donorsList = action.payload;
             })
             .addCase(createDonor.fulfilled, (state, action) => {
+                state.donorsList = action.payload;
+            })
+            .addCase(updateDonor.fulfilled,(state,action) =>{
                 state.donorsList = action.payload;
             })
     }

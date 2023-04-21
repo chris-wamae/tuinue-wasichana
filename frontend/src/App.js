@@ -19,6 +19,7 @@ import { createCharity } from './features/charity/charitiesSlice.js';
 import { deleteCharity } from "./features/charity/charitiesSlice.js";
 import { fetchDonors, selectDonors } from "./features/donor/donorsSlice";
 import { createDonor } from "./features/donor/donorsSlice";
+import { updateDonor } from "./features/donor/donorsSlice";
 
 function App() {
   const dispatch = useDispatch()
@@ -28,12 +29,14 @@ function App() {
     //   body:"ajfefaaf",
     //   title:"jdejjdeea"
     // }))
-    dispatch(deleteCharity({ id: 1 }))
-    // dispatch(fetchDonors())
-    dispatch(createDonor({
-      name:"JohnDoe"
-    }))
+    // dispatch(deleteCharity({ id: 1 }))
+    // // dispatch(fetchDonors())
+    // dispatch(createDonor({
+    //   name:"JohnDoe"
+    // }))
+    dispatch(updateDonor({id:1,data:{address:true}}))
   }, [])
+  
   let char = useSelector(selectCharities)
   let don = useSelector(selectDonors)
   console.log(char)
