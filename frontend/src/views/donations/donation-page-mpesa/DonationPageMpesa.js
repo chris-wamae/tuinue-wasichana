@@ -4,13 +4,12 @@ import "./donation-page-mpesa.css";
 function DonationPageMpesa() {
   return (
     <>
-      <NavBar elements={[]} />    
+      <NavBar elements={[]} />
       <h2 className="main-header">
-          You are just a few steps away from transforming a girl's life
-        </h2>
+        You are just a few steps away from transforming a girl's life
+      </h2>
       <div className="donation-page">
-    
-        <div className="form-container">
+        <div className="form-container-mpesa">
           <h3 className="sub-header">Start by picking a payment method:</h3>
           <div className="pay-methods">
             <div className="card-pay-div">
@@ -39,7 +38,7 @@ function DonationPageMpesa() {
               className="paypal-logo"
             ></img>
           </div>
-          <form className="pay-form">
+          <form className="pay-form-mpesa">
             <div>
               <h4>Contact information</h4>
               <div className="contacts">
@@ -50,12 +49,50 @@ function DonationPageMpesa() {
             <div>
               <h4>Donation amount</h4>
               <div>
-                <input type="text" required placeholder="Enter amount here"></input>
+                <input
+                  type="text"
+                  required
+                  placeholder="Enter amount here"
+                ></input>
+              </div>
+            </div>
+            <h4 style={{ margin: "0px" }} id="options-header">
+              Payment Options:
+            </h4>
+            <div className="pay-options">
+              <div className="paybill-div">
+                <h3 style={{ margin: "0px" }}>Paybill</h3>
+                <div className="paybill-details">
+                  <div>Paybill: <br></br>12345</div>
+                  <div>Account Number: 12345678</div>
                 </div>
+              </div>
+              <div className="send-money">
+                <h3 style={{ margin: "0px" }}>Send Money:</h3>
+                <div className="send-money-details">
+                  <h4 id="mpesa-number" style={{ margin: "0px" }}>
+                    Our Mpesa number
+                  </h4>
+                  
+                  <div id="send-number">0712345678</div>
                 </div>
-                <div>
-                <h4>Additional options:</h4>
-                <div className="additional-options">
+              </div>
+              <div className="prompt">
+                <h3 style={{ margin: "0px" }}>Mpesa prompt</h3>
+                <div className="prompt-details">
+                  <input
+                    type="text"
+                    placeholder="Enter your Mpesa number"
+                  ></input>
+                </div>
+                <button id="prompt-button" disabled>
+                    Get prompt
+                  </button>
+              </div>
+            </div>
+            <div>
+              <h4>Additional options:</h4>
+              <div className="additional-options">
                 <input type="checkbox"></input>
                 <div>Remind me to donate each month</div>
                 <input type="checkbox"></input>
@@ -64,31 +101,9 @@ function DonationPageMpesa() {
                 <div>I want to donate anonymously</div>
               </div>
             </div>
-            <div className="paybill-div">
-              <h4 style={{margin:"0px"}}>Paybill</h4>
-              <div className="paybill-details">
-                <div>Paybill: 12345</div>
-                <div>Account Number: 12345678</div>
-              </div>
-            </div>
-           
-              <div className="send-money">
-              <h4 style={{margin:"0px"}}>Send Money:</h4>
-               <div className="send-money-details">
-                <div>0712345678</div>
-                </div>
-              </div>
-              <div className="prompt">
-              <h4 style={{margin:"0px"}}>Mpesa prompt</h4>
-              <div className="prompt-details">
-                <input type="text" placeholder="Enter your Mpesa mobile number"></input>
-              <button className="prompt-button" disabled>Get prompt</button>
-              </div>
-            </div>
-           
-
           </form>
         </div>
+
         <img
           src="/donation-page/pexels-askar-abayev-6189929.jpg"
           alt=""

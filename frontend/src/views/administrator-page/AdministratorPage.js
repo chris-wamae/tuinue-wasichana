@@ -15,6 +15,7 @@ function AdministratorPage() {
   return (
     <>
     <NavBar elements={[NavElements]}/>
+    {!currentFunctionality ?  <h3 className="admin-header">Pending Reviews</h3> : <h3 className="admin-header">All charities</h3> }
     {sample.map(()=>{
     return(
         <div className="single-charity">
