@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   get '/charity/:id', to: 'charities#show'
 
   #admin
-  get "/admin/charities", to: "admins#pending_charities", as: "admin"
-
-end
+  get "/admin/charities", to: "admins#pending_charities"
+  put "/admin/approve/:id", to: "admins#approve"
+  put "/admin/reject/:id", to: "admins#reject"
