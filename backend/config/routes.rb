@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   #charities
   get '/charities', to: 'charities#index'
   get '/charity/:id', to: 'charities#show'
+
+  #admin
+  get "/admin/charities", to: "admins#pending_charities", as: "admin"
+
 end
