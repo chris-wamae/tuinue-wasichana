@@ -21,6 +21,11 @@ export const deleteBeneficiary = createAsyncThunk("beneficiaries/deleteBeneficia
    return [deleteRequest.status]
 })
 
+export const updateBeneficiary =  createAsyncThunk("beneficiaries/updateBeneficiary", async ({id,data}) =>{
+  const response = await axios.patch(`${USERS_URL}/${id}`,data)
+  return [response.data]
+})
+
 
 
 const beneficiariesSlice = createSlice({
@@ -35,6 +40,9 @@ const beneficiariesSlice = createSlice({
         })
         .addCase(deleteBeneficiary.fulfilled, (state,action) =>{
            console.log(action.payload)
+        })
+        .addCase(updateBeneficiary.fulfilled,(state,action) =>{
+            state.beneficiariesList = action.payload
         })
     }
 
