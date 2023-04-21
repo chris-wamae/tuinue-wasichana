@@ -27,6 +27,7 @@ import { deleteBeneficiary } from "./features/beneficiaries/beneficiariesSlice";
 import { updateBeneficiary } from "./features/beneficiaries/beneficiariesSlice";
 import { selectUser } from "./features/authentication/authenticationSlice";
 import { loginUser } from "./features/authentication/authenticationSlice";
+import { logoutUser } from "./features/authentication/authenticationSlice";
 
 function App() {
   const dispatch = useDispatch()
@@ -47,9 +48,10 @@ function App() {
     // dispatch(deleteCharity(1))
 
     // dispatch(updateBeneficiary({id:1,data:{usu:"jius"}}))
-    dispatch(loginUser({
-      user: "yue"
-    }))
+    // dispatch(loginUser({
+    //   user: "yue"
+    // }))
+    // dispatch(logoutUser())
   }, [])
 
   let char = useSelector(selectCharities)

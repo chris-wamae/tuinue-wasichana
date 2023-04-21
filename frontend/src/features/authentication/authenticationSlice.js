@@ -4,6 +4,8 @@ import axios from "axios";
 
 const LOGIN_URL = "https://jsonplaceholder.typicode.com/users"
 
+const LOGOUT_URL  = "https://jsonplaceholder.typicode.com/users/1"
+
 const initialState = {
     state:"idle",
     error:null,
@@ -15,7 +17,10 @@ export const loginUser = createAsyncThunk("authentication/loginUser", async (dat
  return [response.data]
 })
 
-export const logoutUser = 
+export const logoutUser = createAsyncThunk("authentication/logoutUser", async () =>{
+ const logoutRequest = await axios.delete(LOGOUT_URL)
+ return [logoutRequest.status]
+})
 
 const authenticationSlice = createSlice(
     {
@@ -24,7 +29,11 @@ const authenticationSlice = createSlice(
       reducers:{
 
       },extraReducers(builder){
-        builder.addCase(loginUser.fulfilled,(state,action) =>{
+        builder
+        .addCase(loginUser.fulfilled,(state,action) =>{
+            state.loggedUser = action.payload
+        })
+        .addCase(logoutUser.fulfilled,(state,action) =>{
             state.loggedUser = action.payload
         })
       }
