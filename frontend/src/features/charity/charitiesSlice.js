@@ -41,12 +41,6 @@ export const deleteCharity = createAsyncThunk("charities/deleteCharity", async (
    return deleteRequest.status
 })
 
-
-export const fetchBeneficiaries = createAsyncThunk("charities/fetchBeneficiaries", async (id) =>{
-const response = await axios.get(`${POSTS_URL}/${id}/beneficiaries`)
-return [...response.data]
-})
-
 const charitiesSlice = createSlice({
     name: "charities",
     initialState,
@@ -67,9 +61,6 @@ const charitiesSlice = createSlice({
             })
             .addCase(deleteCharity.fulfilled,(state,action) =>{
              console.log(action.payload)
-            })
-            .addCase(fetchBeneficiaries.fulfilled,(state,action) =>{
-                state.beneficiaries = action.payload
             })
     },
 });
