@@ -1,2 +1,63 @@
-
+.form-container {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(230, 230, 230, 0.8);
+    border-radius: 10px;
+    margin: auto; /* Add this to center horizontally */
+    margin-top: 100px; /* Add this to center vertically */
+    padding: 20px;
+  }
+  
+  .hi {
+    color: blue;
+  }
+  
+  label {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+  }
+  
+  input[type="submit"] {
+    background-color: #1e3679;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .forgot-password,
+  .create-account {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add margin bottom to create some space */
+    font-size: 16px;
+  }
+  
+  .forgot-password a,
+  .create-account a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  .forgot-password a:hover,
+  .create-account a:hover {
+    text-decoration: underline;
+  }
+  
   
