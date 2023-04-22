@@ -1,63 +1,43 @@
-import React, { useState } from 'react';
-// import './signform.css';
+import React, { useState } from "react";
+import './signform.css';
+function SignInForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-function SignForm() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const toggleSignupForm = () => {
-    setShowSignup(!showSignup);
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(`Email: ${email}, Password: ${password}`);
   };
 
   return (
-    <div className="App">
-      <div className={`forms ${showSignup ? 'show-signup' : ''}`}>
-        <form>
-          <input type="email" placeholder="Email" />
-          <input
-            type={showPassword ? 'text' : 'password'}
-            className="password"
-            placeholder="Password"
-          />
-          <i
-            className={`eye-icon bx ${
-              showPassword ? 'bx-hide' : 'bx-show'
-            }`}
-            onClick={togglePasswordVisibility}
-          ></i>
-          <button type="submit">Login</button>
-        </form>
-        <form>
-          <input type="text" placeholder="Username" />
-          <input type="email" placeholder="Email" />
-          <input
-            type={showPassword ? 'text' : 'password'}
-            className="password"
-            placeholder="Password"
-          />
-          <i
-            className={`eye-icon bx ${
-              showPassword ? 'bx-hide' : 'bx-show'
-            }`}
-            onClick={togglePasswordVisibility}
-          ></i>
-          <button type="submit">Sign Up</button>
-        </form>
-        <div className="links">
-          <a href="#" className="link" onClick={toggleSignupForm}>
-            Sign Up
-          </a>
-          <a href="#" className="link">
-            Forgot Password?
-          </a>
-        </div>
-      </div>
+    <div className="form-container">
+      <h1>Sign In</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={handleEmailChange}
+          required
+        />
+
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={handlePasswordChange}
+          required
+        />
+
+        <input type="submit" value="Sign In" />
+      </form>
     </div>
   );
 }
 
-export default SignForm;
+export default SignInForm;
+

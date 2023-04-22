@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
-import LoginForm from './components/Login';
-//import SignForm from './components/SignForm';
+//import LoginForm from './components/Login';
+import SignForm from './components/SignForm';
 
 function App() {
   return (
@@ -9,7 +9,9 @@ function App() {
       {/* <CardComponent /> */}
       {/* <CharityPage /> */}
       {/* <CharityBeneficiariesManagement /> */}
-      <LoginForm />
+      {/* <LoginForm /> */}
+      <SignForm />
+
     </div>
   );
 }
