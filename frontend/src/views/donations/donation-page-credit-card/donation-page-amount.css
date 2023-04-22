@@ -1,0 +1,39 @@
+.amount-form input{
+    height:50px;
+    width:200px;
+    text-align:center;
+    font-size:16px;
+    margin:0px;
+    margin-top:10px;
+}
+
+.amount-form button{
+    width:220px;
+    font-size:18px;
+    height:50px;
+    font-weight:bold;
+    border:0px;
+}
+
+.amount-form h4{
+color:var(--blue);
+
+}
+
+
+.amount-form{
+   border:3px solid var(--pink);
+   width:400px;
+   display:flex;
+   flex-direction: column;
+   justify-content:center;
+   align-items: center;
+   margin-left:auto;
+   margin-right:auto;
+   margin-top:15vh;
+   border-radius:10px;
+   height:250px;
+}
+
+
+
