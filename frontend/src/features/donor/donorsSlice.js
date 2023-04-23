@@ -5,7 +5,8 @@ import axios from "axios";
 const initialState = {
     state: "idle",
     error: null,
-    donorsList: []
+    donorsList: [],
+    donationAmount:0
 }
 
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
@@ -30,11 +31,11 @@ export const deleteDonor = createAsyncThunk("donors/deleteDonor", async (id) => 
     return [deleteRequest.status]
 })
 
-
 const donorsSlice = createSlice({
     name: "donors",
     initialState,
     reducers: {
+    changeDonateAmount:(state,action) => void(state.donationAmount = action.payload)
 
     }, extraReducers(builder) {
         builder
@@ -54,5 +55,9 @@ const donorsSlice = createSlice({
 })
 
 export const selectDonors = (state) => (state.donors.donorsList)
+
+export const selectDonationAmount = (state) => (state.donors.donationAmount)
+
+export const {changeDonateAmount} = donorsSlice.actions;
 
 export default donorsSlice.reducer;
