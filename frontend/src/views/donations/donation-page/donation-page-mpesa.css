@@ -1,23 +1,22 @@
 .donation-page{
     text-align:center;
     display:flex;
+    margin-top:20px;
+    justify-content:center;
 }
 
 
-/* .form-image{
-    height:1000px;
-    width:500px;
-    object-fit:cover;
-    border-radius:20px;
-} */
+#form-image{
+ height:560px;
+ border-radius:20px;
+}
 
 
 
-.mpesa-logo{
-    width:100px;
-    height:60px;
-    margin-right:80px;
-    margin-left:80px;
+#mpesa-logo{
+width:130px;
+height:80px;
+margin:0px;
 }
 
 .paypal-logo{
@@ -58,10 +57,10 @@ color:var(--blue)
 }
 
 .form-container-mpesa{
-    border:5px solid var(--green);
+    border:3px solid var(--green);
     width:900px;
-    border-radius:15px;
-    height:850px;
+    border-radius:20px;
+    height:550px;
     margin-left:0px;
 }
 
@@ -72,11 +71,11 @@ color:var(--blue)
 }
 
 .pay-form-mpesa{
-    border:5px solid var(--green);
-    margin:20px;
+    border:3px solid var(--green);
+    margin:0px 20px 0px 20px;
     color:var(--green);
     border-radius:20px;
-    height:650px;
+    height:400px;
     /* background-color:orange; */
 }
 
@@ -169,7 +168,8 @@ margin-right: auto;} */
     margin-left:auto;
     margin-right:auto;
     height:40px;
-    color:green;
+    color:black;
+    font-weight:bold;
     border-radius:5px;
     /* border-radius:; */
 
@@ -199,7 +199,8 @@ font-size:20px;
     width:180px;
     margin-left:auto;
     margin-right:auto;
-    color:green;
+    color:black;
+    font-weight:bold;
     border-radius:5px;
     /* border-radius:; */
  
@@ -279,9 +280,9 @@ margin:0px;
  padding-top:20px;
 }
 
-h3{
+form h3{
     padding-top:10px;
-    color:var(--green);
+    color:black
 }
 
 

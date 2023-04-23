@@ -1,12 +1,17 @@
+
+//import LoginForm from './components/Login';
+import SignForm from './components/SignForm';
 import logo from "./logo.svg";
 import "./App.css";
+// import CardComponent
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./views/landing-page/LandingPage";
-import DonationPageMpesa from "./views/donations/donation-page-mpesa/DonationPageMpesa";
-import DonationPageCreditCard from "./views/donations/donation-page-credit-card/DonationPageCreditCard";
+import DonationPageMpesa from "./views/donations/donation-page/DonationPageMpesa";
+import DonationAmountPage from "./views/donations/donation-page-credit-card/DonationAmountPage";
 import DonationPagePayPal from "./views/donations/donation-page-paypal/DonationPagePaypal";
 import AdministratorPage from "./views/administrator-page/AdministratorPage";
 import CharityApplication from "./views/charity-application/CharityApplication";
+import DonationPage from "./views/donations/donation-page/DonationPage";
 import { useDispatch } from 'react-redux';
 import { fetchCharities } from './features/charity/charitiesSlice.js';
 import store from './app/store';
@@ -28,6 +33,8 @@ import { updateBeneficiary } from "./features/beneficiaries/beneficiariesSlice";
 import { selectUser } from "./features/authentication/authenticationSlice";
 import { loginUser } from "./features/authentication/authenticationSlice";
 import { logoutUser } from "./features/authentication/authenticationSlice";
+import CharityBeneficiariesManagement from './components/CharityBeneficiariesManagement';
+import LoginForm from './components/Login';
 
 function App() {
   const dispatch = useDispatch()
@@ -64,14 +71,28 @@ function App() {
   console.log(us)
 
   return (
+    // <div>
+    //   {/* <CardComponent /> */}
+    //   {/* <CharityPage /> */}
+    //   {/* <CharityBeneficiariesManagement /> */}
+    //   {/* <LoginForm /> */}
+    //   <SignForm />
+
+    // </div>
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />}></Route>
-        <Route exact path="/credit-card" element={<DonationPageCreditCard />}></Route>
+        <Route exact path="/amount-page" element={<DonationAmountPage/>}></Route>
         <Route exact path="/mpesa" element={<DonationPageMpesa />}></Route>
+        <Route exact path="/donate" element={<DonationPage/>}></Route>
         <Route exact path="/paypal" element={<DonationPagePayPal />}></Route>
         <Route exact path="/admin" element={<AdministratorPage />}></Route>
         <Route exact path="/charity-application" element={<CharityApplication />}></Route>
+        {/* <Route exact path="/card" element={<CardComponent/>}></Route> */}
+        {/* <Route exact path="/charity-page" element={<CharityPage/>}></Route> */}
+        <Route exact path="/beneficiary-management" element={<CharityBeneficiariesManagement />}></Route>
+        <Route exact path="/login" element={<LoginForm />}></Route>
+        <Route exact path="/sign-up" element={<SignForm />}></Route>
       </Routes>
     </Router>
   );
