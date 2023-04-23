@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import './signform.css';
 import { useNavigate } from "react-router-dom";
+import NavBar from "./navbar/NavBar";
+
 function SignInForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +17,8 @@ function SignInForm() {
   };
 
   return (
+    <>
+    <NavBar elements={[]}/>
     <div className="form-container">
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
@@ -48,10 +52,11 @@ function SignInForm() {
         <input type="submit" value="Sign Up" />
 
         <div>
-          <button onClick={() => {navigate("/login-form")}}>Already registered? Go to login.</button>
+          <button onClick={() => {navigate("/login")}}>Already registered? Go to login.</button>
         </div>
       </form>
     </div>
+    </>
   );
 }
 

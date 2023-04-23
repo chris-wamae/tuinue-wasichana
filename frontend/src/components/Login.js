@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
+import NavBar from "./navbar/NavBar";
 
 function LoginForm() {
   const navigate = useNavigate() 
@@ -25,6 +26,8 @@ function LoginForm() {
   };
 
   return (
+    <>
+    <NavBar  elements={[]}/>
     <div className="form-container">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
@@ -45,6 +48,7 @@ function LoginForm() {
         </div>
       </form>
     </div>
+    </>
   );
 }
 

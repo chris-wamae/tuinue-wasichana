@@ -91,7 +91,7 @@ function App() {
         {/* <Route exact path="/card" element={<CardComponent/>}></Route> */}
         {/* <Route exact path="/charity-page" element={<CharityPage/>}></Route> */}
         <Route exact path="/beneficiary-management" element={<CharityBeneficiariesManagement />}></Route>
-        <Route exact path="/login-form" element={<LoginForm />}></Route>
+        <Route exact path="/login" element={<LoginForm />}></Route>
         <Route exact path="/sign-up" element={<SignForm />}></Route>
       </Routes>
     </Router>
