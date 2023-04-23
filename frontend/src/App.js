@@ -1,3 +1,6 @@
+
+//import LoginForm from './components/Login';
+import SignForm from './components/SignForm';
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -65,6 +68,14 @@ function App() {
   console.log(us)
 
   return (
+    <div>
+      {/* <CardComponent /> */}
+      {/* <CharityPage /> */}
+      {/* <CharityBeneficiariesManagement /> */}
+      {/* <LoginForm /> */}
+      <SignForm />
+
+    </div>
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />}></Route>
