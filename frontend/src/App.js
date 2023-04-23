@@ -3,6 +3,7 @@
 import SignForm from './components/SignForm';
 import logo from "./logo.svg";
 import "./App.css";
+// import CardComponent
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./views/landing-page/LandingPage";
 import DonationPageMpesa from "./views/donations/donation-page/DonationPageMpesa";
@@ -32,6 +33,8 @@ import { updateBeneficiary } from "./features/beneficiaries/beneficiariesSlice";
 import { selectUser } from "./features/authentication/authenticationSlice";
 import { loginUser } from "./features/authentication/authenticationSlice";
 import { logoutUser } from "./features/authentication/authenticationSlice";
+import CharityBeneficiariesManagement from './components/CharityBeneficiariesManagement';
+import LoginForm from './components/Login';
 
 function App() {
   const dispatch = useDispatch()
@@ -68,14 +71,14 @@ function App() {
   console.log(us)
 
   return (
-    <div>
-      {/* <CardComponent /> */}
-      {/* <CharityPage /> */}
-      {/* <CharityBeneficiariesManagement /> */}
-      {/* <LoginForm /> */}
-      <SignForm />
+    // <div>
+    //   {/* <CardComponent /> */}
+    //   {/* <CharityPage /> */}
+    //   {/* <CharityBeneficiariesManagement /> */}
+    //   {/* <LoginForm /> */}
+    //   <SignForm />
 
-    </div>
+    // </div>
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />}></Route>
@@ -85,6 +88,11 @@ function App() {
         <Route exact path="/paypal" element={<DonationPagePayPal />}></Route>
         <Route exact path="/admin" element={<AdministratorPage />}></Route>
         <Route exact path="/charity-application" element={<CharityApplication />}></Route>
+        {/* <Route exact path="/card" element={<CardComponent/>}></Route> */}
+        {/* <Route exact path="/charity-page" element={<CharityPage/>}></Route> */}
+        <Route exact path="/beneficiary-management" element={<CharityBeneficiariesManagement />}></Route>
+        <Route exact path="/login-form" element={<LoginForm />}></Route>
+        <Route exact path="/sign-up" element={<SignForm />}></Route>
       </Routes>
     </Router>
   );

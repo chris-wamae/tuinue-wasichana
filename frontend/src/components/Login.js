@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './login.css';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
+  const navigate = useNavigate() 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,7 +18,9 @@ function LoginForm() {
   };
 
   const handleCreateAccount = (event) => {
-    event.preventDefault();
+    event.preventDefault()
+    navigate("/sign-up")
+    console.log(10)
     // TODO: Handle "create new account" button click
   };
 
