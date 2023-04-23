@@ -9,7 +9,7 @@ function AdministratorPage() {
    const  [currentFunctionality,setCurrentFunctionality] = useState(false)
    const NavElements = () =>{
     return(
-        "All Charities"
+      !currentFunctionality ? <span onClick={() => setCurrentFunctionality(true)}>All Charities</span>  :  <span onClick={() => setCurrentFunctionality(false)}>Review Charities</span>
     )
 }
   return (
@@ -28,7 +28,7 @@ function AdministratorPage() {
           <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"></img>
         </div>
         <div></div>
-        <div>{currentFunctionality ? <DeleteCharity/>:<ReviewCharity/>}</div>
+        <div>{currentFunctionality ? <DeleteCharity charity={"charity"}/>:<ReviewCharity charity={"charity"}/>}</div>
       </div>
     )
     })}
