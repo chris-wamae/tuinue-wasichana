@@ -23,7 +23,7 @@ color:var(--blue);
 
 .amount-form{
    border:3px solid var(--pink);
-   width:400px;
+   width:1100px;
    display:flex;
    flex-direction: column;
    justify-content:center;
@@ -32,8 +32,31 @@ color:var(--blue);
    margin-right:auto;
    margin-top:15vh;
    border-radius:10px;
-   height:250px;
+   height:300px;
 }
+
+
+#additional-options{
+    width:1000px;
+    display:flex;
+    justify-content: space-around;
+
+}
+
+#additional-options input{
+  width:20px;
+  margin:0px;
+}
+#additional-options div{
+   margin-top:15px;
+   margin-left:10px;
+  }
+
+.options h4{
+    text-align:center;
+    margin:10px;
+}
+  
 
 
 

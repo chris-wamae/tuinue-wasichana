@@ -55,17 +55,6 @@ function DonationPageMpesa() {
                 </button>
               </div>
             </div>
-            <div>
-              <h4>Additional options:</h4>
-              <div className="additional-options">
-                <input type="checkbox"></input>
-                <div>Remind me to donate each month</div>
-                <input type="checkbox"></input>
-                <div>Set up automatic monthly donations for me</div>
-                <input type="checkbox"></input>
-                <div>I want to donate anonymously</div>
-              </div>
-            </div>
           </form>
         </div>
 
