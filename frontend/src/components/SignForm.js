@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import './signform.css';
 import { useNavigate } from "react-router-dom";
 import NavBar from "./navbar/NavBar";
+import { useDispatch } from 'react-redux';
+import { createDonor } from '../features/donor/donorsSlice';
 
 function SignInForm() {
+
+   const dispatch = useDispatch()
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation,setPasswordConfirmation] = useState("");

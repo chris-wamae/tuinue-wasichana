@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
 import NavBar from "./navbar/NavBar";
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../features/authentication/authenticationSlice';
+
 
 function LoginForm() {
   const navigate = useNavigate() 
