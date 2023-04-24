@@ -3,8 +3,16 @@ body {
 }
 
 .donor-main-page {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
+}
+
+.donor-main-page h3 {
+ text-align:center;
+ color:var(--blue);
+ font-size:32px;
+ margin:0px;
+ margin-top:20px;
 }
 
 .header {
@@ -27,24 +35,32 @@ body {
 }
 
 .charity-card {
-    background-color: #f8c1bb;
+    background-color:var(--blue);
     padding: 10px;
     text-align: center;
     border-radius: 5px;
-    height: 320px; /* Update this value */
-    width: 80%; /* Add this line */
+    height: 420px; /* Update this value */
+    width:600px; /* Add this line */
     border: none; /* Add this line */
     cursor: pointer; /* Add this line */
     outline: none; /* Add this line */
     margin: 0 auto; /* Add this line */
+
 }
 .charity-card h2 {
-    margin: 0; /* Update this line */
+    margin:5px; /* Update this line */
     padding-bottom: 10px;
+    border:1px solid var(--pink);
+    border-radius:20px;
+    color:var(--blue);
+    background-color:var(--pink);
+    width:100%;
 }
 .charity-card p {
     margin: 0; /* Update this line */
     padding-bottom: 20px;
+    color:var(--pink);
+    font-weight:bold;
 }
 .charity-card:hover {
     background-color: #e3a8a3; /* Add this line */
@@ -56,6 +72,8 @@ body {
     display: block; /* Add this line */
     margin-top: auto; /* Add this line */
     border-radius: 0 0 5px 5px; /* Add this line */
+    margin-left:auto;
+    margin-right:auto;
 }
 .navbar {
   background-color: #f8c1bb;
@@ -75,4 +93,11 @@ button {
 
 button:hover {
     background-color: #d0948f;
+}
+
+.charities-list h5{
+    margin:5px;
+    text-decoration: underline;
+    font-size:20px;
+    color:var(--pink);
 }

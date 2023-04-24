@@ -27,16 +27,19 @@ function DonorMainPage(){
         <>
         <NavBar elements={[]}/>
        <div className="donor-main-page">
+           <h3>Charities helping us make a difference</h3> 
             <section className="charities-list">
                 {charities.map((charity) => (
                     <div key={charity.id} className="charity-card" onClick={() => handleClick(charity.id)}>
                         <h2>{charity.name}</h2>
-                        <p>{charity.description}</p>
+                    
                         <img
                             src="https://via.placeholder.com/150" // Replace with the actual image URL
                             alt={charity.name}
                             className="charity-image"
                         />
+                        <h5>Mission</h5>
+                            <p>{charity.description}</p>
                     </div>
                 ))}
             </section>
