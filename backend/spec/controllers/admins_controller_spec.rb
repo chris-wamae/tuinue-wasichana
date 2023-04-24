@@ -8,9 +8,9 @@ RSpec.describe AdminsController, type: :controller do
   let(:pending_charity) { User.create!(username: 'pending_charity', email: 'pending_charity@example.com', password: 'password', role: 'charity', status: 'pending') }
   let(:approved_charity) { User.create!(username: 'approved_charity', email: 'approved_charity@example.com', password: 'password', role: 'charity', status: 'approved') }
 
-  # before do
-  #   sign_in admin
-  # end
+  before do
+    sign_in admin
+  end
 
   describe 'GET #pending_charities' do
     it 'returns http success' do
