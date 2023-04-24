@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  donor_id: 1
+  charity_id: 1
+  reminder_date: 2023-04-18
+  created_at: 2023-04-18 13:10:55
+  updated_at: 2023-04-18 13:10:55
+
+two:
+  donor_id: 1
+  charity_id: 1
+  reminder_date: 2023-04-18
+  created_at: 2023-04-18 13:10:55
+  updated_at: 2023-04-18 13:10:55

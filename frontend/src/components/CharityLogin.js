@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './CharityLogin.css';
+import NavBar from './navbar/NavBar';
 
-const CharityLogin = () => {
+function CharityLogin(){
   const [charityName, setCharityName] = useState('');
   const [password, setPassword] = useState('');
 
@@ -13,6 +14,8 @@ const CharityLogin = () => {
   };
 
   return (
+    <>
+    <NavBar elements={[]}/>
     <div className="charity-login">
       <h1>Charity Login</h1>
       <form onSubmit={handleSubmit}>
@@ -35,6 +38,7 @@ const CharityLogin = () => {
         <button type="submit">Login</button>
       </form>
     </div>
+    </>
   );
 };
 

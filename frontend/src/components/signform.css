@@ -1,0 +1,122 @@
+
+.form-container {
+    background-color: #fff;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 350px;
+    max-width: 100%;
+    margin: auto;
+    height: 100%;
+    max-height: calc(100vh - 48px);
+  }
+  
+  
+  .form-container h1 {
+    color: #1877f2;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .form-container label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  .form-container input[type="email"],
+  .form-container input[type="password"] {
+    background-color: #f0f2f5;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 12px 16px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .form-container input[type="email"]:focus,
+  .form-container input[type="password"]:focus {
+    outline: none;
+  }
+  
+  .form-container input[type="submit"] {
+    background-color: #1877f2;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 16px;
+    padding: 12px 16px;
+    transition: background-color 0.2s ease;
+    width: 100%;
+  }
+  
+  .form-container input[type="submit"]:hover {
+    background-color: #166fe5;
+  }
+  
+  .form-container button {
+    background-color: transparent;
+    border: none;
+    color: #1877f2;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: left;
+  }
+  
+  .form-container button:hover {
+    text-decoration: underline;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    background-color: #fff;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 350px;
+    max-width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  
+  /* additional styles for centering the form and making it full length
+   body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   */
