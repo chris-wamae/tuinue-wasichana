@@ -1,14 +1,16 @@
-require 'test_helper'
+require 'rails_helper'
 
-class BeneficiaryTest < ActiveSupport::TestCase
-  test "should be valid" do
-    assert build(:beneficiary).valid?
+RSpec.describe Beneficiary, type: :model do
+  it "has a valid factory" do
+    expect(build(:beneficiary)).to be_valid
   end
 
-  test "should validate presence of name, age, story, charity_id, and donor_id" do
-    beneficiary = Beneficiary.new
-    assert_not beneficiary.valid?
-    assert_equal [:name, :age, :story, :charity_id, :donor_id], beneficiary.errors.keys
+  context "validations" do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:age) }
+    it { should validate_presence_of(:story) }
+    it { should validate_presence_of(:charity_id) }
+    it { should validate_presence_of(:donor_id) }
   end
 end
 

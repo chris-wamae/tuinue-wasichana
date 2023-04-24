@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&family=Roboto:wght@300;400;700&display=swap");
+.status-card {
+  width: 60%;
+  background-color: var(--pink);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+  border: 5px solid var(--blue);
+  border-radius: 15px;
+}
+
+.status-title {
+  font-size: 56px;
+  margin-bottom: 4vh;
+  margin-top: 8vh;
+  text-align: center;
+
+  color: var(--blue);
+  font-family: "Italianno", cursive;
+  font-weight: bold;
+}
+
+.status-message {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 5vh;
+  color: var(--blue);
+  width:400px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.button {
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  width: 250px;
+  margin-right:auto;
+  margin-left:auto;
+
+}
+button {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--pink);
+  border-radius:10px;
+  background-color:var(--blue);
+  border:0px;
+  margin-right:auto;
+  margin-left:auto;
+
+}
