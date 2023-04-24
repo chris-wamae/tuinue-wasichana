@@ -20,6 +20,8 @@ const CharityBeneficiaryStories = () => {
     <>
       <NavBar elements={[]} />
       <div className="charity-beneficiary-stories">
+        <div className="add-story">
+        <h5 id="title">Create a new story</h5>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -30,7 +32,8 @@ const CharityBeneficiaryStories = () => {
             console.log(stories);
             setStoryInput("");
           }}
-        >
+        > 
+          
           <input
             type="text"
             placeholder="Add a beneficiary name"
@@ -46,9 +49,12 @@ const CharityBeneficiaryStories = () => {
 
           <button type="submit">Add</button>
         </form>
-        <ul>
+        </div>
+        <h4 className="stories-title">All Stories</h4>
+        <div className="stories">
+         
           {stories.map((story) => (
-            <li key={story.id}>
+            <div key={story.id} className="story">
               {editingStory === story.id ? (
                 <>
                   <input
@@ -85,6 +91,7 @@ const CharityBeneficiaryStories = () => {
                 <>
                   <h5>{story.name}</h5>
                   <span>{story.story}</span>
+                  <div className="buttons">
                   <button onClick={() => setEditingStory(story.id)}>
                     Edit
                   </button>
@@ -95,11 +102,12 @@ const CharityBeneficiaryStories = () => {
                   >
                     Delete
                   </button>
+                  </div>
                 </>
               )}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </>
   );
