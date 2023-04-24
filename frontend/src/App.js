@@ -4,6 +4,7 @@ import DonorMainPage from './components/DonorMainPage';
 import CharityLogin from './components/CharityLogin';
 import CharityBeneficiaryStories from './components/CharityBeneficiaryStories';
 import AdministratorLogin from './components/AdministratorLogin';
+import SingleCharityPage from './components/SingleCharityPage';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
        {/* <DonorMainPage /> */}
        {/* <CharityLogin />  */}
       {/* <CharityBeneficiaryStories /> */}
-      <AdministratorLogin />
+      {/* <AdministratorLogin /> */}
+      <SingleCharityPage/>
     </div>
   );
 }
