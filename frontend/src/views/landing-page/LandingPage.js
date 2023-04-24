@@ -7,7 +7,7 @@ function LandingPage() {
     const navigate = useNavigate()
     const AdminLogin = () =>{
         return(
-            <span onClick={() => navigate("/admin")}>Admin login</span>
+            <span onClick={() => navigate("/admin-login")}>Admin login</span>
         )
     }
     return (
@@ -17,7 +17,7 @@ function LandingPage() {
             <div>
                     <h2 className="hero-header">Enabling school girls to take charge of their lives</h2>
                     <div className="hero-text">
-                    African girls from poor families miss 20 % of school days in a year due to lack of sanitary towels. Our mission is to solve this problem by not just providing sanitary towels but also providing clean water and sanitation facilities such as toilets to ensure they are able to meet the guidelines for proper menstrual hygiene as defined by UNICEF. 
+                    African girls from poor families miss 20 % of school days in a year due to lack of sanitary towels. Our mission is to solve this problem by not just providing sanitary towels but also providing clean water and sanitation facilities such as toilets to ensure they are able to meet the guidelines for proper menstrual hygiene as defined by UNICEF.
                     </div>
             </div>
                 <img className="landing-image" src="/annie-spratt-0cgpyigyIkM-unsplash.jpg"></img>

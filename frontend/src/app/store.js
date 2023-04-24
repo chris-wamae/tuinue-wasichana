@@ -4,7 +4,7 @@ import donorsSlice from "../features/donor/donorsSlice";
 import beneficiariesSlice from "../features/beneficiaries/beneficiariesSlice";
 import authenticationSlice from "../features/authentication/authenticationSlice";
 
-const store = configureStore({
+export const store = configureStore({
     name:"tuinue-wasichana",
     reducer:{
     charities: charitiesSlice,
@@ -14,4 +14,3 @@ const store = configureStore({
     }
 })
 
-export default store;
