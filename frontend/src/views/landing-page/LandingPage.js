@@ -1,11 +1,13 @@
 import "./landing-page.css"
 import NavBar from "../../components/navbar/NavBar"
 import {Link} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function LandingPage() {
+    const navigate = useNavigate()
     const AdminLogin = () =>{
         return(
-            "Admin login"
+            <span onClick={() => navigate("/admin")}>Admin login</span>
         )
     }
     return (
