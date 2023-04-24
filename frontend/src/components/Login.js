@@ -8,12 +8,30 @@ import { loginUser } from '../features/authentication/authenticationSlice';
 
 function LoginForm() {
   const navigate = useNavigate() 
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role,setRole] = useState(undefined)
+  
+  const loginRedirect = (role) => {
+   switch(role){
+   case 0:
+    navigate("/admin")
+   break;
+   case 1:
+    navigate("/status")
+    break;
+   case 2:
+      navigate("/charities")
+    break;
+  default:
+    alert("Please log in")
+   }
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-     navigate("/amount-page")
+   
+      loginRedirect(role)
     // TODO: Handle form submission
   };
 
@@ -33,11 +51,12 @@ function LoginForm() {
     <>
     <NavBar  elements={[]}/>
     <div className="form-container">
-      <h1>Login to view charities</h1>
+      <h1>Login to continue</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Username:
-          <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} required />
+          Email:
+          <input type="text" value={email} onChange={(event) => {setEmail(event.target.value)   
+            setRole(1)}} required />
         </label>
         <label>
           Password:
@@ -48,7 +67,7 @@ function LoginForm() {
           <button onClick={handleForgotPassword}>Forgot password?</button>
         </div>
         <div>
-          <button onClick={handleCreateAccount}>Register new account</button>
+          {/* <button onClick={handleCreateAccount}>Register new account</button> */}
         </div>
       </form>
     </div>

@@ -90,7 +90,7 @@ function App() {
         <Route exact path="/beneficiary-management" element={<CharityBeneficiariesManagement />}></Route>
         <Route exact path="/login" element={<LoginForm />}></Route>
         <Route exact path="/sign-up" element={<SignForm />}></Route>
-        <Route exact path="/application-status" element={<ApplicationStatus />}></Route>
+        <Route exact path="/status" element={<ApplicationStatus />}></Route>
         <Route exact path="/charity-login" element={<CharityLogin />}></Route>
         <Route exact path="/stories" element={<CharityBeneficiaryStories />}></Route>
         <Route exact path="/admin-login" element={<AdministratorLogin />}></Route>
