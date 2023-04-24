@@ -25,7 +25,7 @@ function SignInForm() {
     <>
     <NavBar elements={[]}/>
     <div className="form-container">
-      <h1>Sign Up</h1>
+      <h1>Sign up to view charities</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input

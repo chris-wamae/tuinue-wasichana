@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { updateCharity } from "../features/charity/charitiesSlice";
+
 function ReviewCharity(){
 
     return(

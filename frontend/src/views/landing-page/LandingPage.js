@@ -24,7 +24,7 @@ function LandingPage() {
             <div className="landing-nav">
             <div className="donations-div">
             Donations go to the various charities we work with all over Africa, enabling them to help girls all over the continent.
-            <Link exact to="amount-page">
+            <Link exact to="login">
              <button className="donations-button">Help us through donations</button>
              </Link>
             </div>
