@@ -11,7 +11,7 @@ class Charity < User
     validates :charity_website, presence: true
     validates :charity_image, presence: true
     validates :about_charity, presence: true, length: { maximum: 2000 }
-    validates :mission, presence: true, length: { maximum: 100 }
+    validates :mission, presence: true, length: { maximum: 200 }
     validates :location, presence: true
     validates :contacts,  presence: true, length: { is: 10 }
 end
