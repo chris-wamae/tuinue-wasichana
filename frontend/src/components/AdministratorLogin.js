@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import './AdministratorLogin.css';
+import NavBar from './navbar/NavBar';
+import { useNavigate } from 'react-router-dom';
 
-const AdministratorLogin = () => {
+function AdministratorLogin(){
+  const navigate = useNavigate()
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    navigate("/admin")
     console.log('Username:', username, 'Password:', password);
     // Perform login logic here, e.g., call API to authenticate user
   };
 
   return (
+    <>
+    <NavBar elements={[]}/>
     <div className="administrator-login">
-      <h1>Administrator Login</h1>
+      <h3>Administrator Login</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">USERNAME:</label>
         <input
@@ -34,6 +40,7 @@ const AdministratorLogin = () => {
         <button type="submit">Login</button>
       </form>
     </div>
+    </>
   );
 };
 

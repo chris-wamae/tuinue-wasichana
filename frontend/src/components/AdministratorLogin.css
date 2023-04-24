@@ -12,7 +12,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
-  form {
+  .administrator-login form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -20,20 +20,19 @@
     max-width: 300px;
   }
   
-  label {
-    font-family: 'Italianno', cursive;
+  .administrator-login label {
     font-weight: bold;
     color: #05667B;
   }
   
   
-  input {
+  .administrator-login input {
     padding: 0.5rem;
     border: 1px solid #05667B;
     border-radius: 5px;
   }
   
-  button {
+.administrator-login button {
     cursor: pointer;
     background-color: #05667B;
     color: white;
@@ -42,7 +41,12 @@
     border: none;
   }
   
-  button:hover {
+  .administrator-login button:hover {
     background-color: #034b59;
+  }
+
+  .administrator-login h3{
+    color:var(--blue);
+    font-size:30px;
   }
   

@@ -2,11 +2,15 @@ import "./application-status.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import NavBar from "../../components/navbar/NavBar";
 
 function ApplicationStatus (){
     const [applicationPending,setApplicationPending] = useState(true)
     const navigate = useNavigate()
 return(
+    <>
+    <NavBar elements={[]}/>
+    {
     applicationPending ? 
     <div className="status-card">
         <h3 className="status-title">Application Status</h3>
@@ -28,8 +32,8 @@ return(
     <button className="button">Back to homepage</button>
     </Link>
     </div>
-
-</div> 
+</div>}
+</>
 )
 }
 export default ApplicationStatus;

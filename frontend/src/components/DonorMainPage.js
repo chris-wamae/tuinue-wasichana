@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DonorMainPage.css';
 
-const DonorMainPage = () => {
+function DonorMainPage(){
     const [charities, setCharities] = useState([
         { id: 1, name: ' Brighter Horizons Foundation ', description: ' Empower disadvantaged youth with education and skills for brighter futures.' },
         { id: 2, name: 'Paws & Hearts United', description: 'Aid abandoned animals, encourage responsible pet care and welfare education.' },

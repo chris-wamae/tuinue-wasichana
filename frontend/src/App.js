@@ -1,9 +1,9 @@
-
+// import './App.css';
+ import CharityLogin from './components/CharityLogin';
+ import CharityBeneficiaryStories from './components/CharityBeneficiaryStories';
+ import AdministratorLogin from './components/AdministratorLogin';
 //import LoginForm from './components/Login';
 import SignForm from './components/SignForm';
-import logo from "./logo.svg";
-import "./App.css";
-// import CardComponent
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./views/landing-page/LandingPage";
 import DonationPageMpesa from "./views/donations/donation-page/DonationPageMpesa";
@@ -14,7 +14,6 @@ import CharityApplication from "./views/charity-application/CharityApplication";
 import DonationPage from "./views/donations/donation-page/DonationPage";
 import { useDispatch } from 'react-redux';
 import { fetchCharities } from './features/charity/charitiesSlice.js';
-import store from './app/store';
 import { useEffect } from 'react';
 import { selectCharities } from './features/charity/charitiesSlice.js';
 import { useSelector } from 'react-redux';
@@ -72,6 +71,12 @@ function App() {
   console.log(us)
 
   return (
+    // <div className="App">
+    //    {/* <DonorMainPage /> */}
+    //    {/* <CharityLogin />  */}
+    //   {/* <CharityBeneficiaryStories /> */}
+    //   <AdministratorLogin />
+    // </div>
     // <div>
     //   {/* <CardComponent /> */}
     //   {/* <CharityPage /> */}
@@ -95,6 +100,9 @@ function App() {
         <Route exact path="/login" element={<LoginForm />}></Route>
         <Route exact path="/sign-up" element={<SignForm />}></Route>
         <Route exact path="/application-status" element={<ApplicationStatus />}></Route>
+        <Route exact path="/charity-login" element={<CharityLogin />}></Route>
+        <Route exact path="/stories" element={<CharityBeneficiaryStories />}></Route>
+        <Route exact path="/admin-login" element={<AdministratorLogin />}></Route>
       </Routes>
     </Router>
   );
