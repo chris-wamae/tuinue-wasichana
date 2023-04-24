@@ -1,0 +1,43 @@
+name: "frontend-ci-cd"
+on:
+   push:
+     branches: ["main"]
+     paths:
+     - "frontend/**"
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+
+    strategy: 
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v3 
+        with: 
+          fetch-depth: 0
+
+      - name: Use Node.JS ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node-version }}
+
+      - name: NPM install, build and test
+        
+        run: |
+          npm install
+          npm run 
+          npm test
+        working-directory: "./frontend"
+        
+  deployment:
+    needs: [testing]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Deploy frontend to render
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with: 
+         service-id: ${{ secrets.SERVICE_ID_FRONT_END }} # Can be found as part of the Deploy Hook
+         api-key: ${{ secrets.RENDER_API_KEY_FRONT_END }}
