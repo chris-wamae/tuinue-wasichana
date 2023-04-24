@@ -10,4 +10,4 @@ class CharityController < ApplicationController
   end
 
 
-en
+end
