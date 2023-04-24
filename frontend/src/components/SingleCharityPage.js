@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './SingleCharityPage.css';
+import { useSelector } from 'react-redux';
+import { selectSingleCharityId } from '../features/charity/charitiesSlice';
 
 const SingleCharityPage = (props) => {
+  const charityId = useSelector(selectSingleCharityId)
+  console.log(charityId)
   const { charity } = props;
 
   if (!charity) {

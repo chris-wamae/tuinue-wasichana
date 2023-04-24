@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import './DonorMainPage.css';
+import NavBar from './navbar/NavBar';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { changeSingleCharityId } from '../features/charity/charitiesSlice';
 
 function DonorMainPage(){
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [charities, setCharities] = useState([
         { id: 1, name: ' Brighter Horizons Foundation ', description: ' Empower disadvantaged youth with education and skills for brighter futures.' },
         { id: 2, name: 'Paws & Hearts United', description: 'Aid abandoned animals, encourage responsible pet care and welfare education.' },
@@ -12,17 +18,18 @@ function DonorMainPage(){
     ]);
     const handleClick = (charityId) => {
         console.log(`Clicked on charity with id: ${charityId}`);
+        dispatch(changeSingleCharityId(charityId))
+        navigate(`/single-charity`)
         // Add your logic to navigate to the charity details page
     };
 
     return (
+        <>
+        <NavBar elements={[]}/>
        <div className="donor-main-page">
-            <header className="header">
-                <h1>Choose a Charity</h1>
-            </header>
             <section className="charities-list">
                 {charities.map((charity) => (
-                    <button key={charity.id} className="charity-card" onClick={() => handleClick(charity.id)}>
+                    <div key={charity.id} className="charity-card" onClick={() => handleClick(charity.id)}>
                         <h2>{charity.name}</h2>
                         <p>{charity.description}</p>
                         <img
@@ -30,10 +37,11 @@ function DonorMainPage(){
                             alt={charity.name}
                             className="charity-image"
                         />
-                    </button>
+                    </div>
                 ))}
             </section>
         </div>
+        </>
     );
 };
 

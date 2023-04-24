@@ -2,9 +2,6 @@
 import React from 'react';
 import './App.css';
 import DonorMainPage from './components/DonorMainPage';
-import CharityLogin from './components/CharityLogin';
-import CharityBeneficiaryStories from './components/CharityBeneficiaryStories';
-import AdministratorLogin from './components/AdministratorLogin';
 import SingleCharityPage from './components/SingleCharityPage';
 // import './App.css';
  import CharityLogin from './components/CharityLogin';
@@ -97,6 +94,8 @@ function App() {
         <Route exact path="/charity-login" element={<CharityLogin />}></Route>
         <Route exact path="/stories" element={<CharityBeneficiaryStories />}></Route>
         <Route exact path="/admin-login" element={<AdministratorLogin />}></Route>
+        <Route exact path="/charities" element={<DonorMainPage />}></Route>
+        <Route exact path="/single-charity" element={<SingleCharityPage />}></Route>
       </Routes>
     </Router>
   );

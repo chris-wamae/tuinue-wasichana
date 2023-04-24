@@ -9,7 +9,8 @@ const initialState = {
     charitiesList: [],
     status: "idle",
     error: null,
-    beneficiaries:[]
+    beneficiaries:[],
+    singleCharityId:undefined
 };
 
 export const fetchCharities = createAsyncThunk(
@@ -44,7 +45,11 @@ export const deleteCharity = createAsyncThunk("charities/deleteCharity", async (
 const charitiesSlice = createSlice({
     name: "charities",
     initialState,
-    reducers: {},
+    reducers: {
+        changeSingleCharityId: (state,action) => {
+         state.singleCharityId = action.payload
+        }
+    },
     extraReducers(builder) {
         builder
             .addCase(fetchCharities.fulfilled, (state, action) => {
@@ -66,6 +71,8 @@ const charitiesSlice = createSlice({
 });
 
 export const selectCharities = (state) => state.charities.charitiesList
+export const selectSingleCharityId  = (state) => state.charities.singleCharityId
+export const  {changeSingleCharityId} = charitiesSlice.actions;
 
 export default charitiesSlice.reducer;
 
