@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { deleteCharity } from "../features/charity/charitiesSlice";
+
 function DeleteCharity(){
 
     return(

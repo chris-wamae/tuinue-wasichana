@@ -1,0 +1,65 @@
+.payment-methods{
+    width:450px;
+    margin-top:2vh;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    flex-direction:column;
+    height:270px;
+    justify-content:space-around;
+    border:3px solid var(--pink);
+    padding:20px;
+    border-radius:10px;
+}
+
+#mpesa-button{
+ height:50px;
+ background-color:rgb(39, 185, 39);
+ border-radius:5px;
+ border:0px;
+ font-size:24px;
+ color:white;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ width:100%;
+}
+
+ h3#choose-pay{ 
+    color:var(--blue);
+    text-align:center;
+    font-size:22px;
+    margin:20px;
+    
+}
+
+#button-image{
+    height:40px;
+    object-fit:contain;
+}
+
+.main-header{
+font-size:27px;
+text-align:center;
+}
+
+.page-container{
+    display:flex;
+    width:95%;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content:center;
+
+}
+
+#form-image{
+    height:500px;
+}
+
+.pay-methods-container{
+    border:3px solid var(--pink);
+    border-radius:15px;
+    margin-right:20px;
+    padding-right:20px;
+    padding-left:20px;
+}

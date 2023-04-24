@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.donor-main-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    background-color: #f8c1bb;
+    padding: 20px;
+    margin-left: -50px; /* Add this line */
+    margin-right: -50px; /* Add this line */
+    width: calc(100% + 100px); /* Add this line */
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.charities-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 50px;
+    row-gap: 60px; /* Add this line */
+}
+
+.charity-card {
+    background-color: #f8c1bb;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    height: 320px; /* Update this value */
+    width: 80%; /* Add this line */
+    border: none; /* Add this line */
+    cursor: pointer; /* Add this line */
+    outline: none; /* Add this line */
+    margin: 0 auto; /* Add this line */
+}
+.charity-card h2 {
+    margin: 0; /* Update this line */
+    padding-bottom: 10px;
+}
+.charity-card p {
+    margin: 0; /* Update this line */
+    padding-bottom: 20px;
+}
+.charity-card:hover {
+    background-color: #e3a8a3; /* Add this line */
+    transition: background-color 0.3s; /* Add this line */
+}
+.charity-card img {
+    width: 100%; /* Add this line */
+    height: 70%; /* Add this line */
+    display: block; /* Add this line */
+    margin-top: auto; /* Add this line */
+    border-radius: 0 0 5px 5px; /* Add this line */
+}
+.navbar {
+  background-color: #f8c1bb;
+  padding: 20px 40px; /* Update this value */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button {
+    background-color: #e3a8a3;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #d0948f;
+}

@@ -1,23 +1,22 @@
 .donation-page{
     text-align:center;
     display:flex;
+    margin-top:20px;
+    justify-content:center;
 }
 
 
-.form-image{
-    height:1000px;
-    width:500px;
-    object-fit:cover;
-    border-radius:20px;
+#form-image{
+ height:560px;
+ border-radius:20px;
 }
 
 
 
-.mpesa-logo{
-    width:100px;
-    height:60px;
-    margin-right:80px;
-    margin-left:80px;
+#mpesa-logo{
+width:130px;
+height:80px;
+margin:0px;
 }
 
 .paypal-logo{
@@ -57,11 +56,11 @@ font-size:24px;
 color:var(--blue)
 }
 
-.form-container{
-    border:5px solid var(--green);
+.form-container-mpesa{
+    border:3px solid var(--green);
     width:900px;
-    border-radius:15px;
-    height:1000px;
+    border-radius:20px;
+    height:550px;
     margin-left:0px;
 }
 
@@ -71,19 +70,20 @@ color:var(--blue)
     margin:0px;
 }
 
-.pay-form{
-    border:5px solid var(--green);
-    margin:20px;
-    color:var(--blue);
+.pay-form-mpesa{
+    border:3px solid var(--green);
+    margin:0px 20px 0px 20px;
+    color:var(--green);
     border-radius:20px;
-    height:800px;
+    height:400px;
     /* background-color:orange; */
 }
 
-.pay-form input{
+.pay-form-mpesa input{
     text-align:center;
     border:1px solid var(--grey);
     border-radius:5px;
+    height:30px;
 }
 
 .pay-form input[type="text"] {
@@ -91,15 +91,18 @@ width:350px;
 height:30px;
 }
 
-.prompt-button{
-    background-color:white;
-    color:var(--green);
+#prompt-button{
+    background-color:green;
+    color:white;
+    border:0px;
     width:120px;
-    height:30px;
+    height:40px;
     font-size:16px;
-    border-radius:10px;
+    border-radius:20px;
     font-weight:bold;
-    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 
@@ -126,11 +129,10 @@ margin-right: auto;} */
     flex-direction:column;
     border:1px solid black;
     border-radius:10px;
-    width:400px;
-    margin-left:auto;
-    margin-right:auto;
+    width:240px;
     margin-top:20px;
     color:black
+    
 }
 
 .send-money{
@@ -138,9 +140,7 @@ margin-right: auto;} */
     flex-direction:column;
     border:1px solid black;
     border-radius:10px;
-    width:400px;
-    margin-left:auto;
-    margin-right:auto;
+    width:240px;
     margin-top:20px;
     color:black
 
@@ -153,27 +153,30 @@ margin-right: auto;} */
     justify-content:space-around;
     align-items:space-around;
     color:white;
-    margin-left:auto;
-    margin-right:auto;
     margin:10px;
     border-radius:5px;
+    height:80%;
 
 }
 
 .send-money-details div{
-    margin-top:20px;
+    margin-top:30px;
     margin-bottom:5px;
     border:1px solid black;
     background-color:white;
-    width:250px;
+    width:200px;
     margin-left:auto;
     margin-right:auto;
+    height:40px;
     color:black;
+    font-weight:bold;
     border-radius:5px;
     /* border-radius:; */
 
 }
-
+#mpesa-number{
+font-size:20px;
+}
 .paybill-details{
     background-color:var(--green);
     padding-top:10px;
@@ -185,20 +188,26 @@ margin-right: auto;} */
     margin-right:auto;
     margin:10px;
     border-radius:5px;
+    width:220px;
 }
 
 .paybill-details div{
-    margin-top:20px;
+    margin-top:10px;
     margin-bottom:5px;
     border:1px solid black;
     background-color:white;
-    width:250px;
+    width:180px;
     margin-left:auto;
     margin-right:auto;
     color:black;
+    font-weight:bold;
     border-radius:5px;
     /* border-radius:; */
  
+}
+
+.paybill-details  div{
+ height:40px;
 }
 
 .payer-details input{
@@ -226,9 +235,7 @@ margin:0px;
     flex-direction:column;
     border:1px solid black;
     border-radius:10px;
-    width:400px;
-    margin-left:auto;
-    margin-right:auto;
+    width:220px;
     margin-top:20px;
     color:black
 
@@ -237,26 +244,54 @@ margin:0px;
 .prompt-details{
     background-color:var(--green);
     padding-top:10px;
-    padding-bottom:10px;
     justify-content:space-around;
     align-items:space-around;
     color:white;
-    margin-left:auto;
-    margin-right:auto;
     margin:10px;
     border-radius:5px;
+    height:50%;
 
 }
 
 .prompt-details input{
     border:1px solid black;
     background-color:white;
-    width:200px;
+    width:170px;
     margin-left:auto;
     margin-right:auto;
     color:black;
     border-radius:5px;
-    margin-bottom:0px;
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+.pay-options{
+    display:flex;
+    justify-content:space-around;
+    color:var(--green);
+}
+
+.bill-mpesa{
+    display:flex;
 }
 
 
+#options-header{
+ padding-top:20px;
+}
+
+form h3{
+    padding-top:10px;
+    color:black
+}
+
+
+#send-number{
+    padding-top:10px;
+    margin-top:10px;
+}
+
+
+.additional-options div{
+    margin-top:5px;
+}
