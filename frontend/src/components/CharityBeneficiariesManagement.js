@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+ import './CharityBeneficiariesManagement.css';
+ import './CharityBeneficiariesManagement.css';
+//import './components/CharityBeneficiariesManagement.css';
 // import './CharityBeneficiariesManagement.css';
 
 // import './components/CharityBeneficiariesManagement.css';

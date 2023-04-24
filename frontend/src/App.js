@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import './App.css';
 import DonorMainPage from './components/DonorMainPage';
@@ -42,39 +43,6 @@ import LoginForm from './components/Login';
 import ApplicationStatus from './views/application status/ApplicationStatus';
 
 function App() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    // dispatch(createCharity({
-    //   userId:1,
-    //   body:"ajfefaaf",
-    //   title:"jdejjdeea"
-    // }))
-    // dispatch(deleteCharity({ id: 1 }))
-    // // dispatch(fetchDonors())
-    // dispatch(createDonor({
-    //   name:"JohnDoe"
-    // }))
-    // dispatch(updateDonor({id:1,data:{address:true}}))
-    // dispatch(deleteDonor(1))
-    // dispatch(fetchBeneficiaries())
-    // dispatch(deleteCharity(1))
-
-    // dispatch(updateBeneficiary({id:1,data:{usu:"jius"}}))
-    // dispatch(loginUser({
-    //   user: "yue"
-    // }))
-    // dispatch(logoutUser())
-  }, [])
-
-  let char = useSelector(selectCharities)
-  let don = useSelector(selectDonors)
-  let ben = useSelector(selectBeneficiaries)
-  let us = useSelector(selectUser)
-  console.log(char)
-  console.log(don)
-  console.log(ben)
-  console.log(us)
-
   return (
     <Router>
       <Routes>
@@ -99,7 +67,8 @@ function App() {
       </Routes>
     </Router>
   );
-}
+} 
+
 
 export default App;
 
