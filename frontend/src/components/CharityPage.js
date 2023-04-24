@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import charity.css from
+import '../components/css/CharityPage.css'
 const donations = [
   { name: 'John', amount: 500, anonymous: false },
   { name: 'Mary', amount: 100, anonymous: false },
@@ -41,7 +41,7 @@ const CharityPage = () => {
   return (
     <div>
       <h2>Uzima Orphanage</h2>
-      <p>The Uzima Orphanage was founded with a mission to provide a safe and nurturing home for children who had lost their parents or were abandoned. The orphanage was located in a small village in Kenya and was run by a dedicated team of staff and volunteers.
+      <img id='img' src={'https://lirp.cdn-website.com/md/unsplash/dms3rep/multi/opt/photo-1469571486292-0ba58a3f068b-1920w.jpg'} alt="charity" />      <p>The Uzima Orphanage was founded with a mission to provide a safe and nurturing home for children who had lost their parents or were abandoned. The orphanage was located in a small village in Kenya and was run by a dedicated team of staff and volunteers.
 
 The mission of the Uzima Orphanage was to not only provide basic necessities like food, clothing, and shelter but also to provide the children with education and life skills. The staff believed that education was the key to breaking the cycle of poverty, and so they provided the children with access to quality education and tutoring services.
 

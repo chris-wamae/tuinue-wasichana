@@ -1,0 +1,44 @@
+/* CharityPage.css */
+#img {
+  max-width: 100%;
+  height:fit-content;
+  margin: 20px 0;
+}
+
+button {
+  display: block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #f236d3;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+div {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+p {
+  margin:15px 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+body{
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
