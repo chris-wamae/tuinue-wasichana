@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     sessions: 'sessions'
   }
 
-  #charities
-  get '/charities', to: 'charities#index'
-  get '/charity/:id', to: 'charities#show'
+  #donor-charity actions
+  get '/charities', to: 'donors#index'
+  get '/charities/:id', to: 'donors#show'
 
   #admin
   get "/admin/pending_charities", to: "admins#pending_charities"

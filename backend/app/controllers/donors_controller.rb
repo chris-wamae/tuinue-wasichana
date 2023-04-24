@@ -1,4 +1,4 @@
-class CharitiesController < ApplicationController
+class DonorsController < ApplicationController
     before_action :authenticate_user!
     before_action :check_donor
 

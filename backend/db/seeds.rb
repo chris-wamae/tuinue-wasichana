@@ -8,7 +8,7 @@
 puts "Planting the seeds of menstrual equity..."
 
 #charities
-charity1 = User.create!(
+charity1 = Charity.create!(
   username: "girlshelpinggirlsperiod",
   email: "girlshelpinggirlsperiod@gmail.com",
   charity_name: "Girls Helping Girls. Period.",
@@ -24,7 +24,7 @@ charity1 = User.create!(
   password_confirmation: "password"
 )
 
-charity2 = User.create!(
+charity2 = Charity.create!(
   username: "couldyougirlshealthinitiative",
   email: "couldyougirlshealthinitiative@gmail.com",
   charity_name: "Could You? Girls' Health Initiative",
@@ -40,7 +40,7 @@ charity2 = User.create!(
   password_confirmation: "password"
 )
 
-charity3 = User.create!(
+charity3 = Charity.create!(
   username: "freedomforgirls",
   email: "freedomforgirls@gmail.com",
   charity_name: "Freedom 4 Girls",
@@ -56,7 +56,7 @@ charity3 = User.create!(
   password_confirmation: "password"
 )
 
-charity4 = User.create!(
+charity4 = Charity.create!(
   username: "bloodygoodperiod",
   email: "bloodygoodperiod@gmail.com",
   charity_name: "Bloody Good Period",
@@ -72,7 +72,7 @@ charity4 = User.create!(
   password_confirmation: "password"
 )
 
-charity5 = User.create!(
+charity5 = Charity.create!(
   username: "girltalkfoundation",
   email: "girltalkfoundation@gmail.com",
   charity_name: "Girl Talk Foundation",
@@ -88,7 +88,7 @@ charity5 = User.create!(
   password_confirmation: "password"
 )
 
-charity6 = User.create!(
+charity6 = Charity.create!(
   username: "daysforgirls",
   email: "daysforgirls@gmail.com",
   charity_name: "Days for Girls",
@@ -104,7 +104,7 @@ charity6 = User.create!(
   password_confirmation: "password"
 )
 
-charity7 = User.create!(
+charity7 = Charity.create!(
   username: "shesthefirst",
   email: "shesthefirst@gmail.com",
   charity_name: "She's the First",
@@ -121,7 +121,7 @@ charity7 = User.create!(
 )
 
 # The Pad Project
-charity8 = User.create!(
+charity8 = Charity.create!(
   username: "thepadproject",
   email: "thepadproject@gmail.com",
   charity_name: "The Pad Project",
@@ -138,7 +138,7 @@ charity8 = User.create!(
 )
 
 #donors
-donor1 = User.create!(
+donor1 = Donor.create!(
   username: "benard",
   email: "benard@gmail.com",
   role: :donor,
@@ -146,7 +146,7 @@ donor1 = User.create!(
   password_confirmation: "benard"
 )
 
-donor2 = User.create!(
+donor2 = Donor.create!(
   username: "sandra",
   email: "sandra@gmail.com",
   role: :donor,
