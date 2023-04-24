@@ -1,11 +1,13 @@
 import NavBar from "../../components/navbar/NavBar";
 import "./charity-application.css"
 import {useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CharityApplication() {
 
 const handleSubmit = (e) => {
   e.preventDefault()
+  navigate("/application-status")
 }
 
 const [email,setEmail] = useState("")
@@ -17,7 +19,7 @@ const [location,setLocation] = useState("")
 const [image,setImage] = useState("")
 const [description,setDescription] = useState("")
 const [mission,setMission] = useState("")
-
+const navigate = useNavigate()
     return(
      <>
         <NavBar elements={[]} />    
@@ -48,7 +50,7 @@ const [mission,setMission] = useState("")
             <input id="charity-mission" type="text-area" placeholder="Charity Mission" onChange={(e)=>setMission(e.target.value)}></input>
             <input id="charity-description" type="text-area" placeholder="Charity Description" onChange={(e) => setDescription(e.target.value) }></input>
             </div>
-            <button className="donate-button" type="submit">Apply</button>
+            <button className="donate-button" type="submit" >Apply</button>
           </form>
         <img
           src="/donation-page/pexels-askar-abayev-6189929.jpg"

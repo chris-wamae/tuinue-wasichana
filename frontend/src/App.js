@@ -94,7 +94,7 @@ function App() {
         <Route exact path="/beneficiary-management" element={<CharityBeneficiariesManagement />}></Route>
         <Route exact path="/login" element={<LoginForm />}></Route>
         <Route exact path="/sign-up" element={<SignForm />}></Route>
-        <Route exact path="/status" element={<ApplicationStatus />}></Route>
+        <Route exact path="/application-status" element={<ApplicationStatus />}></Route>
       </Routes>
     </Router>
   );
