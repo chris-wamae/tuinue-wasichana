@@ -35,6 +35,7 @@ import { loginUser } from "./features/authentication/authenticationSlice";
 import { logoutUser } from "./features/authentication/authenticationSlice";
 import CharityBeneficiariesManagement from './components/CharityBeneficiariesManagement';
 import LoginForm from './components/Login';
+import ApplicationStatus from './views/application status/ApplicationStatus';
 
 function App() {
   const dispatch = useDispatch()
@@ -93,6 +94,7 @@ function App() {
         <Route exact path="/beneficiary-management" element={<CharityBeneficiariesManagement />}></Route>
         <Route exact path="/login" element={<LoginForm />}></Route>
         <Route exact path="/sign-up" element={<SignForm />}></Route>
+        <Route exact path="/application-status" element={<ApplicationStatus />}></Route>
       </Routes>
     </Router>
   );

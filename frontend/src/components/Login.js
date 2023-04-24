@@ -13,6 +13,7 @@ function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+     navigate("/amount-page")
     // TODO: Handle form submission
   };
 
@@ -32,7 +33,7 @@ function LoginForm() {
     <>
     <NavBar  elements={[]}/>
     <div className="form-container">
-      <h1>Login</h1>
+      <h1>Login to view charities</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Username:

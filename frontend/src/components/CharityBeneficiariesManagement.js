@@ -10,8 +10,7 @@ const CharityBeneficiariesManagement = () => {
   const [beneficiaries, setBeneficiaries] = useState([]);
   const [newBeneficiary, setNewBeneficiary] = useState({
     name: '',
-    address: '',
-    phoneNumber: '',
+    story:""
   });
 
   useEffect(() => {
@@ -66,27 +65,17 @@ const CharityBeneficiariesManagement = () => {
           />
         </div>
         <div>
-          <label htmlFor="address">Address:</label>
+          <label htmlFor="story">Story:</label>
           <input
             type="text"
-            id="address"
-            name="address"
-            value={newBeneficiary.address}
+            id="story"
+            name="story"
+            value={newBeneficiary.name}
             onChange={handleInputChange}
             required
           />
         </div>
-        <div>
-          <label htmlFor="phoneNumber">Phone Number:</label>
-          <input
-            type="text"
-            id="phoneNumber"
-            name="phoneNumber"
-            value={newBeneficiary.phoneNumber}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+        
         <button type="submit">Create Beneficiary</button>
       </form>
       <h3>List of Beneficiaries</h3>
@@ -135,3 +124,25 @@ export default CharityBeneficiariesManagement;
 
 
 
+{/* <div>
+          <label htmlFor="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={newBeneficiary.address}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="phoneNumber">Phone Number:</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={newBeneficiary.phoneNumber}
+            onChange={handleInputChange}
+            required
+          />
+        </div> */}
