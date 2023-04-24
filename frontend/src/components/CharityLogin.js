@@ -19,7 +19,7 @@ function CharityLogin(){
     <div className="charity-login">
       <h1>Charity Login</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="charityName">Charity Name:</label>
+        <label htmlFor="charityName">CHARITY NAME:</label>
         <input
           type="text"
           id="charityName"
@@ -27,7 +27,7 @@ function CharityLogin(){
           onChange={(event) => setCharityName(event.target.value)}
         />
 
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">PASSWORD:</label>
         <input
           type="password"
           id="password"

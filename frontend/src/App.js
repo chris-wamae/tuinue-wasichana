@@ -1,3 +1,11 @@
+
+import React from 'react';
+import './App.css';
+import DonorMainPage from './components/DonorMainPage';
+import CharityLogin from './components/CharityLogin';
+import CharityBeneficiaryStories from './components/CharityBeneficiaryStories';
+import AdministratorLogin from './components/AdministratorLogin';
+import SingleCharityPage from './components/SingleCharityPage';
 // import './App.css';
  import CharityLogin from './components/CharityLogin';
  import CharityBeneficiaryStories from './components/CharityBeneficiaryStories';
@@ -71,20 +79,6 @@ function App() {
   console.log(us)
 
   return (
-    // <div className="App">
-    //    {/* <DonorMainPage /> */}
-    //    {/* <CharityLogin />  */}
-    //   {/* <CharityBeneficiaryStories /> */}
-    //   <AdministratorLogin />
-    // </div>
-    // <div>
-    //   {/* <CardComponent /> */}
-    //   {/* <CharityPage /> */}
-    //   {/* <CharityBeneficiariesManagement /> */}
-    //   {/* <LoginForm /> */}
-    //   <SignForm />
-
-    // </div>
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />}></Route>
