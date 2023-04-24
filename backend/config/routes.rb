@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   #root "tests#index"
 
   devise_for :users, controllers: {
-    registrations: 'registrations'
+    registrations: 'registrations',
+    sessions: 'sessions'
   }
 
   #charities
