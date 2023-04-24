@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :donations
   resources :inventory, only: [:create, :update]
   resources :reminders, only: [:create, :update, :destroy]
+  get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
 end
