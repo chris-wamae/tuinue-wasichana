@@ -1,0 +1,120 @@
+
+  .story-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .edit-button,
+  .delete-button {
+    margin-left: auto;
+  }
+  
+  
+  
+  .charity-beneficiary-stories form {
+    display: flex;
+    justify-content: space-between;
+    background-color:var(--pink);
+    padding:20px;
+    border-radius:20px;
+    
+  }
+  
+  .charity-beneficiary-stories input {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .charity-beneficiary-stories button {
+    background-color: #05667B;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    width:100px;
+    height:30px;
+  }
+  
+  .charity-beneficiary-stories button:hover {
+    background-color: #045266;
+  }
+  
+  .charity-beneficiary-stories ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .story {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width:600px;
+    border:2px solid black;
+    margin:20px;
+    background-color:var(--pink);
+    color:var(--blue);
+    text-align:center;
+    border-radius:10px;
+  }
+  
+  .charity-beneficiary-stories li span {
+    color: #05667B;
+  }
+
+/* .add-form{
+  margin-bottom:20px;
+  margin-top:20px;
+}
+
+.story{
+ margin-top:20px;
+} */
+
+
+.add-story{
+  display:flex;
+  flex-direction:column;
+  background-color:var(--pink);
+  justify-content:space-around;
+  align-items:space-around;
+ padding-bottom:30px;
+  
+}
+
+.stories h5{
+text-align:center;
+margin:0px;
+font-size:30px;
+color:var(--blue)
+}
+  
+.stories{
+  display:flex;
+  flex-wrap:wrap;
+
+}
+
+.buttons{
+  display:flex;
+  justify-content:space-around;
+  width:300px;
+}
+
+#title{
+  text-align:center;
+  color:var(--blue);
+  font-size:30px;
+  margin:0px;
+}
+
+.stories-title{
+  text-align:center;
+  color:var(--blue);
+  font-size:32px;
+  margin:0px;
+  margin-top:10px;
+}
