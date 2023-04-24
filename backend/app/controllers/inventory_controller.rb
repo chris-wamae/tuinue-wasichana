@@ -16,10 +16,15 @@ class InventoryController < ApplicationController
       render json: { errors: @inventory_item.errors.full_messages }, status: :unprocessable_entity
     end
   end
+  def view_inventories
+    @inventories = Inventory.all
+    render json: @inventories
+  end
+  
 
   private
 
   def inventory_params
-    params.require(:inventory).permit(:name, :item, :quantity, :beneficiary_id, :charity_id)
+    params.require(:inventory).permit(:item_name,  :quantity, :beneficiary_id, :charity_id)
   end
 end
