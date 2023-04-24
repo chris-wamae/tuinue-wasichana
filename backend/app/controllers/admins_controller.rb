@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+    before_action :authenticate_user!
+    before_action :check_admin
     before_action :find_pending_charity, only: [:approve, :reject]
 
     def pending_charities
@@ -32,5 +34,11 @@ class AdminsController < ApplicationController
 
     def response_template(message: 'success', status: 200, data: nil)
         render json: { message: message, data: data, status: status}
+    end
+
+    def check_admin
+        unless current_user.admin?
+          render json: { error: 'Forbidden', status: 403 }, status: :forbidden
+        end
     end
 end
