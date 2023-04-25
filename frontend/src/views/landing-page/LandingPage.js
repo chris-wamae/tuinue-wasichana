@@ -7,7 +7,7 @@ function LandingPage() {
     const navigate = useNavigate()
     const AdminLogin = () =>{
         return(
-            <span onClick={() => navigate("/admin-login")}>Admin login</span>
+            <span className="login-link" onClick={() => navigate("/login")}>Login</span>
         )
     }
     return (
@@ -26,7 +26,7 @@ function LandingPage() {
             <div className="landing-nav">
             <div className="donations-div">
             Donations go to the various charities we work with all over Africa, enabling them to help girls all over the continent.
-            <Link exact to="login">
+            <Link exact to="sign-up">
              <button className="donations-button">Help us through donations</button>
              </Link>
             </div>

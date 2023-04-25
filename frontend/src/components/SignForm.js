@@ -18,14 +18,19 @@ function SignInForm() {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Email: ${email}, Password: ${password}`);
+    dispatch(createDonor({
+      email:email,
+      password:password,
+      password_confirmation:passwordConfirmation,
+      role:2
+    }));
   };
 
   return (
     <>
     <NavBar elements={[]}/>
     <div className="form-container">
-      <h1>Sign up to view charities</h1>
+      <h1>Sign up</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input

@@ -31,7 +31,7 @@ function LoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
    
-      loginRedirect(role)
+    loginRedirect(role)
     // TODO: Handle form submission
   };
 
