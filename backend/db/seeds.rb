@@ -8,7 +8,7 @@
 puts "Planting the seeds of menstrual equity..."
 
 #charities
-charity1 = User.create!(
+charity1 = Charity.create!(
   username: "girlshelpinggirlsperiod",
   email: "girlshelpinggirlsperiod@gmail.com",
   charity_name: "Girls Helping Girls. Period.",
@@ -18,13 +18,13 @@ charity1 = User.create!(
   mission: "Empowering individuals to manage their periods with dignity and equity by providing menstrual products, education, and advocacy.",
   contacts: "0734567890",
   location: "New York, NY",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
 )
 
-charity2 = User.create!(
+charity2 = Charity.create!(
   username: "couldyougirlshealthinitiative",
   email: "couldyougirlshealthinitiative@gmail.com",
   charity_name: "Could You? Girls' Health Initiative",
@@ -34,13 +34,13 @@ charity2 = User.create!(
   mission: "Our mission is to provide scaling solutions to period poverty",
   contacts: "0745689076",
   location: "California, USA",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
 )
 
-charity3 = User.create!(
+charity3 = Charity.create!(
   username: "freedomforgirls",
   email: "freedomforgirls@gmail.com",
   charity_name: "Freedom 4 Girls",
@@ -50,13 +50,13 @@ charity3 = User.create!(
   mission: "Our mission is to create a world that provides for menstrual equity and a reduction in socio-economic inequality",
   contacts: "0767890760",
   location: "London, UK",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
 )
 
-charity4 = User.create!(
+charity4 = Charity.create!(
   username: "bloodygoodperiod",
   email: "bloodygoodperiod@gmail.com",
   charity_name: "Bloody Good Period",
@@ -66,13 +66,13 @@ charity4 = User.create!(
   mission: "We fight for menstrual equity and the rights of all people who bleed.",
   contacts: "0118377890",
   location: "London, UK",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
 )
 
-charity5 = User.create!(
+charity5 = Charity.create!(
   username: "girltalkfoundation",
   email: "girltalkfoundation@gmail.com",
   charity_name: "Girl Talk Foundation",
@@ -82,13 +82,13 @@ charity5 = User.create!(
   mission: "Our mission is to empower girls to become confident, successful, and self-sufficient leaders through mentorship, education, and wellness programs.",
   contacts: "0776574838",
   location: "Atlanta, GA",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
 )
 
-charity6 = User.create!(
+charity6 = Charity.create!(
   username: "daysforgirls",
   email: "daysforgirls@gmail.com",
   charity_name: "Days for Girls",
@@ -98,13 +98,13 @@ charity6 = User.create!(
   mission: "Our mission is to create a world with dignity, health, and opportunity for all by providing access to menstrual care and education.",
   contacts: "0114647658",
   location: "Seattle, WA",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
 )
 
-charity7 = User.create!(
+charity7 = Charity.create!(
   username: "shesthefirst",
   email: "shesthefirst@gmail.com",
   charity_name: "She's the First",
@@ -114,14 +114,14 @@ charity7 = User.create!(
   mission: "Our mission is to support girls who will be the first in their families to graduate high school and to help them become leaders in their communities.",
   contacts: "0176490002",
   location: "New York, NY",
-  status: 1,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
 )
 
 # The Pad Project
-charity8 = User.create!(
+charity8 = Charity.create!(
   username: "thepadproject",
   email: "thepadproject@gmail.com",
   charity_name: "The Pad Project",
@@ -131,14 +131,14 @@ charity8 = User.create!(
   mission: "Our mission is to create and cultivate local and global partnerships to end period stigma and empower women worldwide.",
   contacts: "0712446368",
   location: "Los Angeles, CA",
-  status: 1,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
 )
 
 #donors
-donor1 = User.create!(
+donor1 = Donor.create!(
   username: "benard",
   email: "benard@gmail.com",
   role: :donor,
@@ -146,12 +146,20 @@ donor1 = User.create!(
   password_confirmation: "benard"
 )
 
-donor2 = User.create!(
+donor2 = Donor.create!(
   username: "sandra",
   email: "sandra@gmail.com",
   role: :donor,
   password: "sandra",
   password_confirmation: "sandra"
+)
+
+admin1 = Admin.create!(
+  username: "vanessa",
+  email: "vanessa@gmail.com",
+  role: :admin,
+  password: "vanessa",
+  password_confirmation: "vanessa"
 )
 
 

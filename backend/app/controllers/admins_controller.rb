@@ -22,7 +22,7 @@ class AdminsController < ApplicationController
     end
 
     def destroy
-        charity = User.charity.charity_approved.find(params[:id])
+        charity = User.charity.charity_approved.find_by(params[:id])
         charity.destroy
         response_template(message: 'success', data: { info: 'Charity successfully deleted!' }, status: 204)
     end
