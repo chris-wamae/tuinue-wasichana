@@ -20,7 +20,7 @@ You'll need to have the following installed on your system:
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
-- Ruby/rails
+
 
 ### Installing
 
@@ -31,6 +31,7 @@ You'll need to have the following installed on your system:
 2. Change into the project directory:
 
    cd tuinue-wasichana
+   cd frontend
    
 
 3. Install the project dependencies:
@@ -49,7 +50,7 @@ You'll need to have the following installed on your system:
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Cascading Style Sheets for styling
-- Ruby on Rails
+
 
 ## Contributing
 
