@@ -88,6 +88,8 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: backend_production
 
   password: <%= ENV["BACKEND_DATABASE_PASSWORD"] %>
