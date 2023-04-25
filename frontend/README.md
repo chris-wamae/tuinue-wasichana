@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Tuinue Wasichana
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tuinue Wasichana is a platform that connects charities with donors to support girls' education and welfare. Our mission is to make a positive impact on the lives of underprivileged girls by providing them with the resources and opportunities they need to succeed.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Donor Main Page**: Allows donors to browse and search for charities, view charity profiles, and make donations.
+- **Charity Login**: Enables charities to log in and manage their profiles, beneficiary stories, and inventory.
+- **Charity Beneficiary Stories**: Allows charities to share the stories of the girls they support to help donors understand the impact of their contributions.
+- **Administrator Login**: Provides administrators with the ability to manage and approve charities, view donations, and generate reports.
+- **Single Charity Page**: Displays the details of a specific charity, including their mission, programs, and success stories.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+You'll need to have the following installed on your system:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+- Ruby/rails
 
-### `npm run build`
+### Installing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   git clone https://github.com/your-username/tuinue-wasichana.git
+   
+2. Change into the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   cd tuinue-wasichana
+   
 
-### `npm run eject`
+3. Install the project dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   npm install
+   
+4. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   npm start
+   
+   
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Open your browser and visit `http://localhost:3000` to view the website.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Built With
 
-## Learn More
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Cascading Style Sheets for styling
+- Ruby on Rails
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Please read [CONTRIBUTING.md](link-to-contributing-file) for details on our code of conduct and the process for submitting pull requests.
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project is licensed under the MIT License - see the [LICENSE.md](link-to-license-file) file for details.
 
-### Analyzing the Bundle Size
+## Website developed by 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+CHRISTOPHER WAMAE (Front end)
+HUBERT JUNIOR (Front end)
+VANESSA RUKORIO (Back end)
+SANDRA CHEPKOECH (Back end)
+PHYLIS NJERI (Front end)
+BERNARD KOECH (Back end)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
