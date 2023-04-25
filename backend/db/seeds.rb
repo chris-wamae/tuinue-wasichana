@@ -18,7 +18,7 @@ charity1 = Charity.create!(
   mission: "Empowering individuals to manage their periods with dignity and equity by providing menstrual products, education, and advocacy.",
   contacts: "0734567890",
   location: "New York, NY",
-  status: :approved,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -34,7 +34,7 @@ charity2 = Charity.create!(
   mission: "Our mission is to provide scaling solutions to period poverty",
   contacts: "0745689076",
   location: "California, USA",
-  status: :approved,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -50,7 +50,7 @@ charity3 = Charity.create!(
   mission: "Our mission is to create a world that provides for menstrual equity and a reduction in socio-economic inequality",
   contacts: "0767890760",
   location: "London, UK",
-  status: :approved,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -66,7 +66,7 @@ charity4 = Charity.create!(
   mission: "We fight for menstrual equity and the rights of all people who bleed.",
   contacts: "0118377890",
   location: "London, UK",
-  status: :approved,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -82,7 +82,7 @@ charity5 = Charity.create!(
   mission: "Our mission is to empower girls to become confident, successful, and self-sufficient leaders through mentorship, education, and wellness programs.",
   contacts: "0776574838",
   location: "Atlanta, GA",
-  status: :approved,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -98,7 +98,7 @@ charity6 = Charity.create!(
   mission: "Our mission is to create a world with dignity, health, and opportunity for all by providing access to menstrual care and education.",
   contacts: "0114647658",
   location: "Seattle, WA",
-  status: :approved,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
