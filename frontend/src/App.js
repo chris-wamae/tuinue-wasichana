@@ -63,7 +63,7 @@ function App() {
         <Route exact path="/stories" element={<CharityBeneficiaryStories />}></Route>
         <Route exact path="/admin-login" element={<AdministratorLogin />}></Route>
         <Route exact path="/charities" element={<DonorMainPage />}></Route>
-        <Route exact path="/single-charity" element={<SingleCharityPage />}></Route>
+        <Route exact path="/charity" element={<SingleCharityPage />}></Route>
       </Routes>
     </Router>
   );

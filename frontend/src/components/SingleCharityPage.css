@@ -1,4 +1,4 @@
-.single-charity-page {
+/* .single-charity-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,12 +6,24 @@
     padding: 2rem;
     background-color: #FFC0CB;
     font-family: Arial, sans-serif;
-  }
+  } */
   
   .single-charity-page h1 {
     margin-bottom: 1rem;
     color: #05667B;
     font-size: 2rem;
+    border-top:3px solid var(--pink);
+    border-bottom:3px solid var(--pink);
+    text-align:center;
+  }
+
+  .single-charity-page h5 {
+    color: #05667B;
+    text-align:center;
+    font-size:18px;
+    margin:0px;
+    margin-top:10px;
+    margin-bottom:10px;
   }
   
   .single-charity-page p {
@@ -23,11 +35,12 @@
   }
   
   .single-charity-page img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin-bottom: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+    margin:20px;
   }
   
   .donate-button {
@@ -46,4 +59,24 @@
   .donate-button:hover {
     background-color: #045569;
   }
+
+  .main-content{
+    display:flex;
+    background-color:var(--pink);
+  }
   
+
+  .text-button{
+    display:flex;
+    flex-direction:column;
+    align-items:space-around;
+    justify-content:space-around;
+    font-weight:bold;
+    line-height:30px;
+    margin:20px;
+    border:1px solid var(--blue);
+  }
+
+  .text-button button{
+    width:300px;
+  }
