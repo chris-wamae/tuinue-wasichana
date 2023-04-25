@@ -44,17 +44,29 @@ RSpec.describe AdminsController, type: :controller do
     end
   end
 
-  # describe 'DELETE #destroy' do
-  # it 'deletes an approved charity' do
-  #   approved_charity  = User.create(
-  #     email: "approved_charity@example.com",
-  #     password: "password",
-  #     role: "charity",
-  #     status: "approved"
-  #   )
-  #   delete :destroy, params: { id: approved_charity.id }
-  #   expect(response).to have_http_status(204)
-  #   expect(User.exists?(approved_charity.id)).to be_falsey
-  # end
+# describe 'DELETE #destroy' do
+# let(:approved_charity) do
+#   User.create!(
+#   username: "girlshelpinggirlsperiod",
+#   email: "girlshelpinggirlsperiod@gmail.com",
+#   charity_name: "Girls Helping Girls. Period.",
+#   charity_website: "https://girlshelpinggirlsperiod.org",
+#   charity_image: "https://www.charityforgirls.org/images/logo.png",
+#   about_charity: "At Girls Helping Girls. Period., we believe menstrual health leads to overall health. And human dignity. We are dedicated to educating people about the need, collecting/distributing products, and advocating for systemic change.",
+#   mission: "Empowering individuals to manage their periods with dignity and equity by providing menstrual products, education, and advocacy.",
+#   contacts: "0734567890",
+#   location: "New York, NY",
+#   status: :approved,
+#   role: :charity,
+#   password: "password",
+#   password_confirmation: "password"
+#   )
+# end
+#   it 'deletes an approved charity' do
+#     delete :destroy, params: { id: approved_charity.id }
+#     puts "Response status: #{response.status}" # Add this line
+#     expect(response).to have_http_status(204)
+#     expect(User.exists?(approved_charity.id)).to be_falsey
+#   end
 # end
 end

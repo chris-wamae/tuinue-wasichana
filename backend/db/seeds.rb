@@ -18,7 +18,7 @@ charity1 = Charity.create!(
   mission: "Empowering individuals to manage their periods with dignity and equity by providing menstrual products, education, and advocacy.",
   contacts: "0734567890",
   location: "New York, NY",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -34,7 +34,7 @@ charity2 = Charity.create!(
   mission: "Our mission is to provide scaling solutions to period poverty",
   contacts: "0745689076",
   location: "California, USA",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -50,7 +50,7 @@ charity3 = Charity.create!(
   mission: "Our mission is to create a world that provides for menstrual equity and a reduction in socio-economic inequality",
   contacts: "0767890760",
   location: "London, UK",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -66,7 +66,7 @@ charity4 = Charity.create!(
   mission: "We fight for menstrual equity and the rights of all people who bleed.",
   contacts: "0118377890",
   location: "London, UK",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -82,7 +82,7 @@ charity5 = Charity.create!(
   mission: "Our mission is to empower girls to become confident, successful, and self-sufficient leaders through mentorship, education, and wellness programs.",
   contacts: "0776574838",
   location: "Atlanta, GA",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -98,7 +98,7 @@ charity6 = Charity.create!(
   mission: "Our mission is to create a world with dignity, health, and opportunity for all by providing access to menstrual care and education.",
   contacts: "0114647658",
   location: "Seattle, WA",
-  status: 1,
+  status: :approved,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -114,7 +114,7 @@ charity7 = Charity.create!(
   mission: "Our mission is to support girls who will be the first in their families to graduate high school and to help them become leaders in their communities.",
   contacts: "0176490002",
   location: "New York, NY",
-  status: 1,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -131,7 +131,7 @@ charity8 = Charity.create!(
   mission: "Our mission is to create and cultivate local and global partnerships to end period stigma and empower women worldwide.",
   contacts: "0712446368",
   location: "Los Angeles, CA",
-  status: 1,
+  status: 0,
   role: :charity,
   password: "password",
   password_confirmation: "password"
@@ -152,6 +152,14 @@ donor2 = Donor.create!(
   role: :donor,
   password: "sandra",
   password_confirmation: "sandra"
+)
+
+admin1 = Admin.create!(
+  username: "vanessa",
+  email: "vanessa@gmail.com",
+  role: :admin,
+  password: "vanessa",
+  password_confirmation: "vanessa"
 )
 
 
