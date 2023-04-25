@@ -25,4 +25,20 @@ Rails.application.routes.draw do
   resources :donations
   get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
 
+ 
+ 
+  # Reminder routes
+  post '/reminders', to: 'reminder#create'
+  put '/reminders/:id', to: 'reminder#update'
+  delete '/reminders/:id', to: 'reminder#destroy'
+
+  # Inventory routes
+  post '/inventories', to: 'inventory#create'
+  put '/inventories/:id', to: 'inventory#update'
+  delete '/inventories/:id', to: 'inventory#destroy'
+
+  # View inventories route
+  get '/inventories', to: 'inventory#view_inventories'
+  
+
 end
