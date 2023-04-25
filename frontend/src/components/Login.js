@@ -4,14 +4,20 @@ import { useNavigate } from 'react-router-dom';
 import NavBar from "./navbar/NavBar";
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../features/authentication/authenticationSlice';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/authentication/authenticationSlice';
 
 
 function LoginForm() {
   const navigate = useNavigate() 
+  const dispatch = useDispatch()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role,setRole] = useState(undefined)
+  let currentUser = useSelector(selectUser) 
   
+
+
   const loginRedirect = (role) => {
    switch(role){
    case 0:
@@ -30,8 +36,12 @@ function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-   
-    loginRedirect(role)
+    dispatch(loginUser({
+      email:email,
+      password:password
+    }))
+    // setRole(currentUser.role)
+    // loginRedirect(role)
     // TODO: Handle form submission
   };
 
