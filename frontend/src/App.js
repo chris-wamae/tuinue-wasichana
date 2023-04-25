@@ -42,6 +42,7 @@ import CharityBeneficiariesManagement from './components/CharityBeneficiariesMan
 import LoginForm from './components/Login';
 import ApplicationStatus from './views/application status/ApplicationStatus';
 
+
 function App() {
   return (
     <Router>
