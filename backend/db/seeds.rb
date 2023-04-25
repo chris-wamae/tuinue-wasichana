@@ -153,6 +153,20 @@ donor2 = Donor.create!(
   password: "sandra",
   password_confirmation: "sandra"
 )
+# Seed data for inventories
+Inventory.create([
+  { item_name: 'Pads', quantity: 100, beneficiary_id: 1, charity_id: 1 },
+  { item_name: 'Tampons', quantity: 50, beneficiary_id: 2, charity_id: 1 },
+  { item_name: 'Menstrual cups', quantity: 30, beneficiary_id: 3, charity_id: 2 }
+])
+
+# Seed data for reminders
+Reminder.create([
+  { donor_id: 1, charity_id: 1, reminder_date: Date.today + 30 },
+  { donor_id: 2, charity_id: 1, reminder_date: Date.today + 60 },
+  { donor_id: 3, charity_id: 2, reminder_date: Date.today + 90 }
+])
+
 
 admin1 = Admin.create!(
   username: "vanessa",
@@ -164,10 +178,3 @@ admin1 = Admin.create!(
 
 
 puts "Done!Let's cultivate change one cycle at a time!"
-
-
-# Seed data for inventories table
-Inventory.create(item_name: "Blankets", quantity: 10, beneficiary_id: 1, charity_id: 1)
-Inventory.create(item_name: "Food Packs", quantity: 20, beneficiary_id: 2, charity_id: 2)
-Inventory.create(item_name: "Medicine", quantity: 5, beneficiary_id: 3, charity_id: 3)
-
