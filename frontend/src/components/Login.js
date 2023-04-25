@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
 import NavBar from "./navbar/NavBar";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../features/authentication/authenticationSlice';
+<<<<<<< HEAD
 import { useSelector } from 'react-redux';
+=======
+>>>>>>> origin/Development
 import { selectUser } from '../features/authentication/authenticationSlice';
 
 
 function LoginForm() {
+  const dispatch = useDispatch()
   const navigate = useNavigate() 
   const dispatch = useDispatch()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+<<<<<<< HEAD
   const [role,setRole] = useState(undefined)
   let currentUser = useSelector(selectUser) 
+=======
+  const currentUser = useSelector(selectUser)
+  
+  useEffect(()=>{
+console.log(currentUser)
+  },[currentUser])
+>>>>>>> origin/Development
   
 
 
@@ -36,12 +48,19 @@ function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+<<<<<<< HEAD
     dispatch(loginUser({
       email:email,
       password:password
     }))
     // setRole(currentUser.role)
     // loginRedirect(role)
+=======
+    dispatch(loginUser( {user:{
+      email:email,
+      password:password
+    }}))
+>>>>>>> origin/Development
     // TODO: Handle form submission
   };
 
@@ -65,8 +84,7 @@ function LoginForm() {
       <form onSubmit={handleSubmit}>
         <label>
           Email:
-          <input type="text" value={email} onChange={(event) => {setEmail(event.target.value)   
-            setRole(1)}} required />
+          <input type="text" value={email} onChange={(event) => {setEmail(event.target.value)}} required />
         </label>
         <label>
           Password:
