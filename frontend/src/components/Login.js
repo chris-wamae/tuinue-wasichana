@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
 import NavBar from "./navbar/NavBar";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../features/authentication/authenticationSlice';
+import { selectUser } from '../features/authentication/authenticationSlice';
 
 
 function LoginForm() {
   const navigate = useNavigate() 
+  const dispatch = useDispatch()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role,setRole] = useState(undefined)
+  const currentUser = useSelector(selectUser)
   
+  useEffect(()=>{
+console.log(currentUser)
+  },[currentUser])
+  
+
+
   const loginRedirect = (role) => {
    switch(role){
    case 0:
@@ -30,8 +38,10 @@ function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-   
-    loginRedirect(role)
+    dispatch(loginUser( {user:{
+      email:email,
+      password:password
+    }}))
     // TODO: Handle form submission
   };
 
@@ -55,8 +65,7 @@ function LoginForm() {
       <form onSubmit={handleSubmit}>
         <label>
           Email:
-          <input type="text" value={email} onChange={(event) => {setEmail(event.target.value)   
-            setRole(2)}} required />
+          <input type="text" value={email} onChange={(event) => {setEmail(event.target.value)}} required />
         </label>
         <label>
           Password:

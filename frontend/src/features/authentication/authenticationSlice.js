@@ -2,7 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const LOGIN_URL = "https://jsonplaceholder.typicode.com/users"
+<<<<<<< HEAD
+const LOGIN_URL = "http://127.0.0.1:3000/users/sign-in"
+=======
+const LOGIN_URL = "http://127.0.0.1:3000/users/sign_in"
+>>>>>>> origin/Development
 
 const LOGOUT_URL  = "https://jsonplaceholder.typicode.com/users/1"
 
