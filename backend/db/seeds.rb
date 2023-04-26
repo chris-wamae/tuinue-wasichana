@@ -213,7 +213,7 @@ beneficiary4 = Beneficiary.create!(
 )
 
 donation1 = Donation.create(
-  donor_id: 1,
+  donor_id: 9,
   charity_id: 1,
   amount: 50000.00,
   anonymous: false,
@@ -221,7 +221,7 @@ donation1 = Donation.create(
 )
 
 donation2 = Donation.create(
-  donor_id: 2,
+  donor_id: 10,
   charity_id: 2,
   amount: 25.00,
   anonymous: true,
@@ -229,7 +229,7 @@ donation2 = Donation.create(
 )
 
 donation3 = Donation.create(
-  donor_id: 3,
+  donor_id: 9,
   charity_id: 3,
   amount: 100.00,
   anonymous: false,
@@ -237,7 +237,7 @@ donation3 = Donation.create(
 )
 
 donation4 = Donation.create(
-  donor_id: 4,
+  donor_id: 10,
   charity_id: 1,
   amount: 75.00,
   anonymous: true,
@@ -245,7 +245,7 @@ donation4 = Donation.create(
 )
 
 donation5 = Donation.create(
-  donor_id: 5,
+  donor_id: 9,
   charity_id: 2,
   amount: 10.00,
   anonymous: false,
