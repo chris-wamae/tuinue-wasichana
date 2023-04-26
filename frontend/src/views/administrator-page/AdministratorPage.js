@@ -48,7 +48,7 @@ function AdministratorPage() {
             <h4>{eachSample.mission}</h4>
             <p>{eachSample.description}</p>
           </div>
-          <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"></img>
+          <img src={charity.image}></img>
         </div>
         <div></div>
         <div>{currentFunctionality ? <DeleteCharity charity={"charity"}/>:<ReviewCharity charity={"charity"}/>}</div>
