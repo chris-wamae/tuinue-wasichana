@@ -14,7 +14,8 @@ const SingleCharityPage = (props) => {
     id: 1,
     name: " Brighter Horizons Foundation ",
     mission: " Empower disadvantaged youth with education and skills for brighter futures.",
-    description: "Brighter Horizons Foundation is a non-profit organization committed to breaking the cycle of poverty by providing underprivileged youth. Through education and skills training, we're providing young people with the tools they need to build brighter futures for themselves and their communities. Our vision is a world where every child has access to the resources and support they need to thrive. Join us in empowering the next generation and building a better tomorrow for us all."
+    description: "Brighter Horizons Foundation is a non-profit organization committed to breaking the cycle of poverty by providing underprivileged youth. Through education and skills training, we're providing young people with the tools they need to build brighter futures for themselves and their communities. Our vision is a world where every child has access to the resources and support they need to thrive. Join us in empowering the next generation and building a better tomorrow for us all.",
+    image:"https://www.build-africa.org/sites/default/files/build-africa-history.jpg"
   };
 
   return (
@@ -28,7 +29,7 @@ const SingleCharityPage = (props) => {
       <p>{charity.description}</p>
       <button onClick={() => (navigate("/amount-page"))}>Donate to this charity</button>
       </div>
-      <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg" alt={charity.name} />
+      <img src={charity.image} alt={charity.name} />
       </div>
       
     </div>

@@ -31,12 +31,12 @@ function LoginForm() {
   }
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(loginUser( {user:{
+    dispatch(loginUser({user:{
       email:email,
       password:password
     }})).then(
-     //  console.log(currentUser)
-     setRole(currentUser[0].user.role)
+       // console.log(currentUser)
+       setRole(currentUser[0].user.role)
     ).then(
       loginRedirect(role)
     )
