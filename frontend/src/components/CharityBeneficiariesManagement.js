@@ -12,6 +12,7 @@ const CharityBeneficiariesManagement = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (editing) {

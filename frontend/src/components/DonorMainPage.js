@@ -9,17 +9,17 @@ function DonorMainPage(){
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [charities, setCharities] = useState([
-        { id: 1, name: ' Brighter Horizons Foundation ', description: ' Empower disadvantaged youth with education and skills for brighter futures.' },
-        { id: 2, name: 'Paws & Hearts United', description: 'Aid abandoned animals, encourage responsible pet care and welfare education.' },
-        { id: 3, name: 'Green Earth Alliance', description: ' Promote eco-conservation, sustainability, and climate protection.' },
-        { id: 4, name: 'Art Revive Collective', description: 'Foster creativity via community art projects for social change.' }
+        { id: 1, name: ' Brighter Horizons Foundation ', description: ' Empower disadvantaged youth with education and skills for brighter futures.' ,image:"https://www.build-africa.org/sites/default/files/build-africa-history.jpg"},
+        { id: 2, name: 'Msichana Power', description: "A charity focused on improving girls lives", image:"https://www.build-africa.org/sites/default/files/build-africa-charity-fighting-poverty-through-education.jpg" },
+        { id: 3, name: 'Afro Ladies', description: 'Women  empowering women', image:"https://theworldpursuit.com/wp-content/uploads/2017/04/DSCF7091-1024x683.jpg" },
+        { id: 4, name: 'Kigali Womens Mission' , description: 'Caring for street girls in Kigali', image:"https://images.squarespace-cdn.com/content/v1/55cc900ae4b0989acda95cdb/1444138621313-C4FSFWLMVWZBZ2GZVEWH/ZanaAfrica+Foundation+-+Girls+in+Machakos+Reading+Nia+Comics.jpg?format=1500w" }
 
     
     ]);
     const handleClick = (charityId) => {
         console.log(`Clicked on charity with id: ${charityId}`);
         dispatch(changeSingleCharityId(charityId))
-        navigate(`/single-charity`)
+        navigate(`/charity`)
         // Add your logic to navigate to the charity details page
     };
 
@@ -34,7 +34,7 @@ function DonorMainPage(){
                         <h2>{charity.name}</h2>
                     
                         <img
-                            src="https://via.placeholder.com/150" // Replace with the actual image URL
+                            src={charity.image} // Replace with the actual image URL
                             alt={charity.name}
                             className="charity-image"
                         />

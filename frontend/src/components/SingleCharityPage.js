@@ -4,9 +4,11 @@ import "./SingleCharityPage.css";
 import { useSelector } from "react-redux";
 import { selectSingleCharityId } from "../features/charity/charitiesSlice";
 import NavBar from "./navbar/NavBar";
+import { useNavigate } from "react-router-dom";
 
 const SingleCharityPage = (props) => {
   const charityId = useSelector(selectSingleCharityId);
+  const navigate  = useNavigate()
   console.log(charityId);
   const charity = {
     id: 1,
@@ -24,7 +26,7 @@ const SingleCharityPage = (props) => {
       <div className="main-content">
       <div className="text-button">
       <p>{charity.description}</p>
-      <button>Donate to this charity</button>
+      <button onClick={() => (navigate("/amount-page"))}>Donate to this charity</button>
       </div>
       <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg" alt={charity.name} />
       </div>

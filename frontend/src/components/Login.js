@@ -56,7 +56,7 @@ function LoginForm() {
         <label>
           Email:
           <input type="text" value={email} onChange={(event) => {setEmail(event.target.value)   
-            setRole(1)}} required />
+            setRole(2)}} required />
         </label>
         <label>
           Password:
