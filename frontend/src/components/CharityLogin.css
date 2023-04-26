@@ -1,0 +1,71 @@
+.charity-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #FFC0CB;
+    font-family: Arial, sans-serif;
+  }
+  
+  .charity-login h1 {
+    margin-bottom: 1rem;
+    color: #05667B;
+  }
+  
+  .charity-login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Updated the border-radius value */
+  }
+  
+  .charity-login label {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #05667B;
+  }
+  
+  .charity-login input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .charity-login input:focus {
+    border-color: #05667B;
+  }
+  
+  .charity-login button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #05667B;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+  
+  .charity-login button:hover {
+    background-color: #045569;
+  }
+  
+  

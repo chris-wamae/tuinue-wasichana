@@ -1,0 +1,82 @@
+.charity-beneficiaries-management {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.charity-beneficiaries-management h1 {
+  color: #05667B;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.charity-beneficiaries-management h2 {
+  color: #05667B;
+  margin-bottom: 1rem;
+}
+
+.charity-beneficiaries-management form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f1faee;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.charity-beneficiaries-management label {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.charity-beneficiaries-management input,
+.charity-beneficiaries-management select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.charity-beneficiaries-management button {
+  background-color: #05667B;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.charity-beneficiaries-management button:hover {
+  background-color: #004d5a;
+}
+
+.charity-beneficiaries-management ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.charity-beneficiaries-management li {
+  background-color: #f1faee;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charity-beneficiaries-management li button {
+  background-color: #FFC0CB;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+.charity-beneficiaries-management li button:hover {
+  background-color: #f5a8b8;
+}

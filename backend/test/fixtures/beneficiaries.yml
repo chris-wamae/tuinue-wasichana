@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: 1
+  story: MyText
+  image: MyString
+  charity_id: 1
+  donor_id: 1
+  created_at: 2023-04-18 13:06:58
+  updated_at: 2023-04-18 13:06:58
+
+two:
+  name: MyString
+  age: 1
+  story: MyText
+  image: MyString
+  charity_id: 1
+  donor_id: 1
+  created_at: 2023-04-18 13:06:58
+  updated_at: 2023-04-18 13:06:58
