@@ -7,7 +7,7 @@ function CharityApplication() {
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  navigate("/application-status")
+  navigate("/status")
 }
 
 const [email,setEmail] = useState("")
