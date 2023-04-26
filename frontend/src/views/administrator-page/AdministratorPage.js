@@ -48,7 +48,7 @@ function AdministratorPage() {
             <h4>{eachSample.mission}</h4>
             <p>{eachSample.description}</p>
           </div>
-          <img src={charity.image}></img>
+          <img src={eachSample.image}></img>
         </div>
         <div></div>
         <div>{currentFunctionality ? <DeleteCharity charity={"charity"}/>:<ReviewCharity charity={"charity"}/>}</div>
