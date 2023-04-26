@@ -1,6 +1,6 @@
 # Tuinue Wasichana Rails API
 
-This is the Ruby on Rails backend for the Tuinue Wasichana project, which is a platform that enables donors to donate to various charities that support girls' education by providing sanitary towels and other supplies.
+This is the Ruby on Rails backend for the Tuinue Wasichana project, which is a platform that enables donors to donate to various charities focused on providing menstrual hygiene products and facilities for school-going girls
 
 The backend provides RESTful APIs that handle user authentication, charity management, donation processing, and beneficiary management. It is built using Ruby on Rails and uses PostgreSQL as the database management system.
 
@@ -65,77 +65,56 @@ You can setup this repository by following this manual
      http://localhost:3000
    ```   
    
-## Application
-This application is a simple web API that allows users to:
-- Sign up, Log in, Log out and Deactivate from the application
-- Perform all CRUD methods on reviews
-- Display all genres, display movies associated to genres
-- Display all movies, display reviews associated to movies
 
-### MODELS
-Database schema definitions.
+### DATABASE STRUCTURE
 
-## MOVIE
-The Movie model has the following attributes:
-
-- title (string): The title of the movie.
-- description (text): The description of the movie
-- year (integer): The year the movie was created
-- length (integer): The length of the movie.
-- image_url (string): The image of the movie.
-- rating (boolean): The ratings of the movie.
-
-The Movie model has a one-to-many association with the Review model.
-
-It also has a many-to-many association with the Genre model through the MovieGenre model
-
-## REVIEW
-A Review model has the following attributes:
-
-- comment (text): The content of the review.
-- user_id (integer): The ID of the user who wrote the review.
-- movie_id (integer): The ID of the movie that the review is for.
-
-## GENRE
-
-- name (string): The name of the genre.
-- description (string): The description of the genre.
-
-## MOVIEGENRE
-
-- movie_id (integer): The ID of the movie.
-- genre_id (integer): The ID of the genre.
+![Database Image](source_images/Tuinue-wasichana-db-structure (2).png)
 
 ### ENDPOINTS
-## Authentication
-The API provides endpoints for user authentication:
+### Users (Donors)
 
-- POST /users/signup: Creates a new user account.
-- POST /users/login: Logs in a user into the application and returns an authentication token.
-- DELETE /users/logout: Logs a user out of the application.
-- DELETE /users/deactivate: Deactivates a user account.
+- POST /users: Create a new donor, charity, admin account
+- POST /users/sign_in: Authenticate and login a donor, charity, admin
 
-## Movies
-The API provides endpoints for managing movies:
+### Charities
 
-- GET /movies: Returns a list of all movies in the database.
-- GET /movies/:id: Returns the details of a specific movie.
-- POST /movies/:id/like: Likes a specific movie.
-- POST /movies/:id/dislike: Dislikes a specific movie.
+- GET /charities: Get a list of all charities
+- GET /charities/:id: Get charity information
 
-## Genres
-The API provides endpoints for managing genres:
+### Donations
 
-- GET /genres: Returns a list of all genres in the database.
-- GET /genres/:id/movies: Returns a list of all movies that belong to a specific genre.
+- POST /donations: Create a new donation
+- PUT /donations/:id: Update a donation
+- DELETE /donations/:id: Delete a donation
+- GET /charities/:charity_id/anonymous_donations: Get anonymous donations for a specific charity
 
-## Reviews
-The API provides endpoints for managing reviews:
+### Beneficiaries
 
-- GET /movies/:movie_id/reviews': Returns a list of all reviews for a specific movie.
-- POST /movies/:movie_id/reviews: Creates a new review for a specific movie.
-- PATCH /users/:user_id/reviews/:id: Updates an existing review.
-- DELETE /users/:user_id/reviews/:id: Deletes an existing review.
+- GET /beneficiaries: Get a list of all beneficiaries
+- POST /beneficiaries: Create a new beneficiary
+- PUT /beneficiaries/:id: Update beneficiary information
+- DELETE /beneficiaries/:id: Delete a beneficiary
+
+### Reminders
+
+- POST /reminders: Create a new reminder
+- PUT /reminders/:id: Update reminder information
+- DELETE /reminders/:id: Delete a reminder
+
+### Inventory
+
+- POST /inventories: Add a new inventory item
+- PUT /inventories/:id: Update inventory item information
+- DELETE /inventories/:id: Delete an inventory item
+- GET /inventories: Get a list of all inventory items
+
+### Administrators
+
+- GET /admin/pending_charities: Get a list of pending charity applications
+- PUT /admin/charities/:id/approve: Approve a charity application
+- PUT /admin/charities/:id/reject: Reject a charity application
+- DELETE /admin/charities/:id: Delete a charity
+- GET /admin/approved_charities: Get a list of approved charities
 
 ## LICENSE
 This repository is distributed under the MIT License
@@ -144,9 +123,15 @@ This repository is distributed under the MIT License
 ## Author
 This repository is created by:
 
-- [Timothy Kagondu](https://github.com/Timothykagondu) 
+- [Chris Wamae](https://github.com/chris-wamae) 
 
  and maintained by:
  - [Vanessa Rukorio](https://github.com/Rukorio-Vanessa)
- - [Sumeya Haji](https://github.com/sumeyahajji)
+ - [Sandra Chepkoech](https://github.com/Chepkoech1)
+ - [Chris Wamae](https://github.com/chris-wamae)
+ - [Hubert Jr](https://github.com/junior12341)
+ - [Phylis Njeri](https://github.com/phylis13)
+ - [Bernard Koech](https://github.com/Bernardkoech)
+
+
 
