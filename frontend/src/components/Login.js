@@ -5,58 +5,53 @@ import NavBar from "./navbar/NavBar";
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../features/authentication/authenticationSlice';
 import { selectUser } from '../features/authentication/authenticationSlice';
-
-
 function LoginForm() {
-  const navigate = useNavigate() 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const currentUser = useSelector(selectUser)
-  
+  const  [role, setRole] = useState(undefined)
   useEffect(()=>{
-console.log(currentUser)
   },[currentUser])
-  
-
-
   const loginRedirect = (role) => {
    switch(role){
-   case 0:
+   case "admin":
     navigate("/admin")
    break;
-   case 1:
+   case "charity":
     navigate("/status")
     break;
-   case 2:
+   case "donor":
       navigate("/charities")
     break;
   default:
-    alert("Please log in")
+    console.log("Invalid role")
    }
   }
-
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(loginUser( {user:{
       email:email,
       password:password
-    }}))
+    }})).then(
+     //  console.log(currentUser)
+     setRole(currentUser[0].user.role)
+    ).then(
+      loginRedirect(role)
+    )
     // TODO: Handle form submission
   };
-
   const handleForgotPassword = (event) => {
     event.preventDefault();
     // TODO: Handle "forgot password" button click
   };
-
   const handleCreateAccount = (event) => {
     event.preventDefault()
     navigate("/sign-up")
     console.log(10)
     // TODO: Handle "create new account" button click
   };
-
   return (
     <>
     <NavBar  elements={[]}/>
@@ -83,8 +78,17 @@ console.log(currentUser)
     </>
   );
 }
-
 export default LoginForm;
+
+
+
+
+
+
+
+
+
+
 
 
 

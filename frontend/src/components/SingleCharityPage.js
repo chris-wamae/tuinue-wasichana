@@ -14,7 +14,7 @@ const SingleCharityPage = (props) => {
     id: 1,
     name: " Brighter Horizons Foundation ",
     mission: " Empower disadvantaged youth with education and skills for brighter futures.",
-    description: " Empower disadvantaged youth with education and skills for brighter futures. Empower disadvantaged youth with education and skills for brighter futures.  Empower disadvantaged youth with education and skills for brighter futures.  Empower disadvantaged youth with education and skills for brighter futures."
+    description: "Brighter Horizons Foundation is a non-profit organization committed to breaking the cycle of poverty by providing underprivileged youth. Through education and skills training, we're providing young people with the tools they need to build brighter futures for themselves and their communities. Our vision is a world where every child has access to the resources and support they need to thrive. Join us in empowering the next generation and building a better tomorrow for us all."
   };
 
   return (
