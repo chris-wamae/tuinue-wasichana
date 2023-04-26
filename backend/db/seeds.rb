@@ -178,28 +178,76 @@ beneficiary1 = Beneficiary.create!(
   name: "Jane Doe",
   age: 16,
   story: "Jane is a bright student who loves to read and learn new things. Her dream is to become a doctor and help people in need. Unfortunately, her family cannot afford to pay for her education, and she is at risk of dropping out of school. Your donation can help Jane stay in school and achieve his dreams.",
-  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.aurovilleradio.org%2Fnammal-mudiyam-tamil%2F&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAf"
+  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.aurovilleradio.org%2Fnammal-mudiyam-tamil%2F&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAf",
+  charityid: 1,
+  donorid:9
 )
 
 beneficiary2 = Beneficiary.create!(
   name: "Emma Johnson",
   age: 15,
   story: "Emma is a talented artist who loves to paint and draw. She has won several awards for her artwork, but she faces a big challenge. Her family cannot afford menstrual pads for Emma, and she often misses school and social events because of her period. This makes her feel ashamed and isolated from her peers. Your donation can help Emma get the pads she needs and pursue her passion for art without interruption.",
-  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fafrican-orphan-girls&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAn"
+  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fafrican-orphan-girls&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAn",
+  charityid: 8,
+  donorid:10
 )
 
 beneficiary3 = Beneficiary.create!(
   name: "Sophie Brown",
   age: 17,
   story: "Sophie is a happy and energetic girl who loves to dance and play with her friends. She lives with her single mother, who struggles to make ends meet. Sophie has started her periods recently, but her mother cannot afford to buy her menstrual pads. This makes Sophie feel embarrassed and uncomfortable, and she often misses school because of her period. Your donation can help Sophie get the pads she needs and continue her education.",
-  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fafrican-orphan-girls&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAv"
+  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fafrican-orphan-girls&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAv",
+  charityid: 2,
+  donorid:9
 )
 
 beneficiary4 = Beneficiary.create!(
   name: "Lily Anderson",
   age: 10,
   story: "Lily is a bright student who loves to read and learn new things. She dreams of becoming a doctor and helping people in need, but she faces a big challenge. Her family struggles to make ends meet, and they cannot afford menstrual pads for Lily. This puts her education and health at risk, and she often misses school because of her period. Your donation can help Lily get the pads she needs and stay in school.",
-  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fafrican-american-teen-girl-palm&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABA2"
+  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fafrican-american-teen-girl-palm&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABA2",
+  charityid: 7,
+  donorid:10
+)
+
+donation1 = Donation.create(
+  donor_id: 1,
+  charity_id: 1,
+  amount: 50000.00,
+  anonymous: false,
+  is_monthly: true
+)
+
+donation2 = Donation.create(
+  donor_id: 2,
+  charity_id: 2,
+  amount: 25.00,
+  anonymous: true,
+  is_monthly: false
+)
+
+donation3 = Donation.create(
+  donor_id: 3,
+  charity_id: 3,
+  amount: 100.00,
+  anonymous: false,
+  is_monthly: true
+)
+
+donation4 = Donation.create(
+  donor_id: 4,
+  charity_id: 1,
+  amount: 75.00,
+  anonymous: true,
+  is_monthly: false
+)
+
+donation5 = Donation.create(
+  donor_id: 5,
+  charity_id: 2,
+  amount: 10.00,
+  anonymous: false,
+  is_monthly: false
 )
 
 
