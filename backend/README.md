@@ -68,7 +68,7 @@ You can setup this repository by following this manual
 
 ### DATABASE STRUCTURE
 
-![Database Image](source_images/Tuinue-wasichana-db-structure (2).png)
+![Database Image](https://github.com/chris-wamae/tuinue-wasichana/blob/2cd53ca680a69c3bb26e7a3bea5230ebd31dd5e6/backend/source_images/Tuinue-wasichana-db-structure%20(2).png)
 
 ### ENDPOINTS
 ### Users (Donors)
