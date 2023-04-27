@@ -8,7 +8,7 @@
 puts "Planting the seeds of menstrual equity..."
 
 #charities
-charity1 = Charity.find_or_create_by(
+charity1 = Charity.create!(
   username: "girlshelpinggirlsperiod",
   email: "girlshelpinggirlsperiod@gmail.com",
   charity_name: "Girls Helping Girls. Period.",
@@ -24,7 +24,7 @@ charity1 = Charity.find_or_create_by(
   password_confirmation: "password"
 )
 
-charity2 = Charity.find_or_create_by(
+charity2 = Charity.create!(
   username: "couldyougirlshealthinitiative",
   email: "couldyougirlshealthinitiative@gmail.com",
   charity_name: "Could You? Girls' Health Initiative",
@@ -40,7 +40,7 @@ charity2 = Charity.find_or_create_by(
   password_confirmation: "password"
 )
 
-charity3 = Charity.find_or_create_by(
+charity3 = Charity.create!(
   username: "freedomforgirls",
   email: "freedomforgirls@gmail.com",
   charity_name: "Freedom 4 Girls",
@@ -56,7 +56,7 @@ charity3 = Charity.find_or_create_by(
   password_confirmation: "password"
 )
 
-charity4 = Charity.find_or_create_by(
+charity4 = Charity.create!(
   username: "bloodygoodperiod",
   email: "bloodygoodperiod@gmail.com",
   charity_name: "Bloody Good Period",
@@ -72,7 +72,7 @@ charity4 = Charity.find_or_create_by(
   password_confirmation: "password"
 )
 
-charity5 = Charity.find_or_create_by(
+charity5 = Charity.create!(
   username: "girltalkfoundation",
   email: "girltalkfoundation@gmail.com",
   charity_name: "Girl Talk Foundation",
@@ -88,7 +88,7 @@ charity5 = Charity.find_or_create_by(
   password_confirmation: "password"
 )
 
-charity6 = Charity.find_or_create_by(
+charity6 = Charity.create!(
   username: "daysforgirls",
   email: "daysforgirls@gmail.com",
   charity_name: "Days for Girls",
@@ -104,7 +104,7 @@ charity6 = Charity.find_or_create_by(
   password_confirmation: "password"
 )
 
-charity7 = Charity.find_or_create_by(
+charity7 = Charity.create!(
   username: "shesthefirst",
   email: "shesthefirst@gmail.com",
   charity_name: "She's the First",
@@ -121,7 +121,7 @@ charity7 = Charity.find_or_create_by(
 )
 
 # # The Pad Project
-charity8 = Charity.find_or_create_by(
+charity8 = Charity.create!(
   username: "thepadproject",
   email: "thepadproject@gmail.com",
   charity_name: "The Pad Project",
@@ -138,7 +138,7 @@ charity8 = Charity.find_or_create_by(
 )
 
 # #donors
-donor1 = Donor.find_or_create_by(
+donor1 = Donor.create!(
   username: "benard",
   email: "benard@gmail.com",
   role: :donor,
@@ -146,27 +146,16 @@ donor1 = Donor.find_or_create_by(
   password_confirmation: "benard"
 )
 
-donor2 = Donor.find_or_create_by(
+donor2 = Donor.create!(
   username: "sandra",
   email: "sandra@gmail.com",
   role: :donor,
   password: "sandra",
   password_confirmation: "sandra"
 )
-# # Seed data for inventories
-Inventory.create({ item_name: 'Pads', quantity: 100, beneficiary_id: 1, charity_id: 1 })
-Inventory.create({ item_name: 'Tampons', quantity: 50, beneficiary_id: 2, charity_id: 1 })
-Inventory.create({ item_name: 'Menstrual cups', quantity: 30, beneficiary_id: 3, charity_id: 2 })
 
-# # Seed data for reminders
-Reminder.create([
-  { donor_id: 9, charity_id: 1, reminder_date: Date.today + 30 },
-  { donor_id: 10, charity_id: 1, reminder_date: Date.today + 60 },
-  { donor_id: 9, charity_id: 2, reminder_date: Date.today + 90 }
-])
-
-
-admin1 = Admin.find_or_create_by(
+#admin
+admin1 = Admin.create!(
   username: "vanessa",
   email: "vanessa@gmail.com",
   role: :admin,
@@ -174,31 +163,44 @@ admin1 = Admin.find_or_create_by(
   password_confirmation: "vanessa"
 )
 
+#Seed data for inventories
+Inventory.create!({ item_name: 'Pads', quantity: 100, beneficiary_id: beneficiary1.id, charity_id: charity1.id })
+Inventory.create!({ item_name: 'Tampons', quantity: 50, beneficiary_id: beneficiary2.id, charity_id: charity1.id })
+Inventory.create!({ item_name: 'Menstrual cups', quantity: 30, beneficiary_id: beneficiary3.id, charity_id: charity2.id })
+
+#Seed data for reminders
+Reminder.create!([
+  { donor_id: donor1.id, charity_id: charity1.id, reminder_date: Date.today + 30 },
+  { donor_id: donor2.id, charity_id: charity1.id, reminder_date: Date.today + 30 },
+  { donor_id: donor1.id, charity_id: charity2.id, reminder_date: Date.today + 30 }
+])
+
+#beneficiaries
 beneficiary1 = Beneficiary.create!(
-  name: "Jane Doe",
+  name: "Kayla Macharia",
   age: 16,
-  story: "Jane is a bright student who loves to read and learn new things. Her dream is to become a doctor and help people in need. Unfortunately, her family cannot afford to pay for her education, and she is at risk of dropping out of school. Your donation can help Jane stay in school and achieve his dreams.",
+  story: "Kayla is a bright student who loves to read and learn new things. Her dream is to become a doctor and help people in need. Unfortunately, her family cannot afford to pay for her education, and she is at risk of dropping out of school. Your donation can help Jane stay in school and achieve his dreams.",
   image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.aurovilleradio.org%2Fnammal-mudiyam-tamil%2F&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAf",
-  charityid: 1,
-  donorid:9
+  charity_id: charity1.id,
+  donor_id: donor1.id
 )
 
 beneficiary2 = Beneficiary.create!(
-  name: "Emma Johnson",
+  name: "Emma Ouma",
   age: 15,
   story: "Emma is a talented artist who loves to paint and draw. She has won several awards for her artwork, but she faces a big challenge. Her family cannot afford menstrual pads for Emma, and she often misses school and social events because of her period. This makes her feel ashamed and isolated from her peers. Your donation can help Emma get the pads she needs and pursue her passion for art without interruption.",
   image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fafrican-orphan-girls&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAn",
-  charityid: 8,
-  donorid:10
+  charity_id: charity1.id,
+  donor_id: donor2.id
 )
 
 beneficiary3 = Beneficiary.create!(
-  name: "Sophie Brown",
+  name: "Sophie Ahmed",
   age: 17,
   story: "Sophie is a happy and energetic girl who loves to dance and play with her friends. She lives with her single mother, who struggles to make ends meet. Sophie has started her periods recently, but her mother cannot afford to buy her menstrual pads. This makes Sophie feel embarrassed and uncomfortable, and she often misses school because of her period. Your donation can help Sophie get the pads she needs and continue her education.",
   image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fafrican-orphan-girls&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABAv",
-  charityid: 2,
-  donorid:9
+  charity_id: charity2.id,
+  donor_id: donor1.id
 )
 
 beneficiary4 = Beneficiary.create!(
@@ -206,46 +208,47 @@ beneficiary4 = Beneficiary.create!(
   age: 10,
   story: "Lily is a bright student who loves to read and learn new things. She dreams of becoming a doctor and helping people in need, but she faces a big challenge. Her family struggles to make ends meet, and they cannot afford menstrual pads for Lily. This puts her education and health at risk, and she often misses school because of her period. Your donation can help Lily get the pads she needs and stay in school.",
   image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fafrican-american-teen-girl-palm&psig=AOvVaw3-PxHzpubiW8P3Bf1rFa5Z&ust=1682578780879000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOCKv8v8xv4CFQAAAAAdAAAAABA2",
-  charityid: 7,
-  donorid:10
+  charity_id: charity3.id,
+  donor_id: donor1.id
 )
 
+#donations
 donation1 = Donation.create(
-  donor_id: 9,
-  charity_id: 1,
-  amount: 50000.00,
+  donor_id: donor1.id,
+  charity_id: charity1.id,
+  amount: 5000.00,
   anonymous: false,
   is_monthly: true
 )
 
 donation2 = Donation.create(
-  donor_id: 10,
-  charity_id: 2,
-  amount: 25.00,
+  donor_id: donor1.id,
+  charity_id: charity3.id,
+  amount: 2500.00,
   anonymous: true,
   is_monthly: false
 )
 
 donation3 = Donation.create(
-  donor_id: 9,
-  charity_id: 3,
-  amount: 100.00,
+  donor_id: donor2,
+  charity_id: charity1.id,
+  amount: 1000.00,
   anonymous: false,
   is_monthly: true
 )
 
 donation4 = Donation.create(
-  donor_id: 10,
-  charity_id: 1,
-  amount: 75.00,
+  donor_id: donor2.id,
+  charity_id: charity4.id,
+  amount: 7500.00,
   anonymous: true,
   is_monthly: false
 )
 
 donation5 = Donation.create(
-  donor_id: 9,
-  charity_id: 2,
-  amount: 10.00,
+  donor_id: donor1.id,
+  charity_id: charity2.id,
+  amount: 3000.00,
   anonymous: false,
   is_monthly: false
 )
