@@ -45,5 +45,4 @@ Rails.application.routes.draw do
   get '/inventories', to: 'inventory#view_inventories'
 
 
-
 end
