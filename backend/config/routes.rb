@@ -44,5 +44,8 @@ Rails.application.routes.draw do
 
   get '/inventories', to: 'inventory#view_inventories'
 
+  #charity
+  get 'charities/:id/total_donations', to: 'charity#total_charity_donations'
+
 
 end
