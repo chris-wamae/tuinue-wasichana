@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :tests
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   get "/admin/pending_charities", to: "admins#pending_charities"
   put "/admin/charities/:id/approve", to: "admins#approve"
   put "/admin/charities/:id/reject", to: "admins#reject"
+
   delete "admin/charities/:id", to: "admins#destroy"
   get "/admin/approved_charities", to: "admins#approved_charities"
 
@@ -25,8 +28,8 @@ Rails.application.routes.draw do
   resources :donations
   get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
 
- 
- 
+
+
   # Reminder routes
   post '/reminders', to: 'reminder#create'
   put '/reminders/:id', to: 'reminder#update'
@@ -38,7 +41,11 @@ Rails.application.routes.draw do
   delete '/inventories/:id', to: 'inventory#destroy'
 
   # View inventories route
+
   get '/inventories', to: 'inventory#view_inventories'
-  
+
+  #charity
+  get 'charities/:id/total_donations', to: 'charity#total_charity_donations'
+
 
 end

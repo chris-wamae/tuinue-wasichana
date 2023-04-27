@@ -3,6 +3,7 @@ class DonationsController < ApplicationController
 
   def index
     @donations = Donation.all
+    render json: @donations, only: [:id, :amount]
   end
 
   def show
