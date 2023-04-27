@@ -170,9 +170,9 @@ Inventory.create!({ item_name: 'Menstrual cups', quantity: 30, beneficiary_id: b
 
 #Seed data for reminders
 Reminder.create!([
-  { donor_id: donor1.id, charity_id: charity1.id, reminder_date: Date.today + 30 },
-  { donor_id: donor2.id, charity_id: charity1.id, reminder_date: Date.today + 30 },
-  { donor_id: donor1.id, charity_id: charity2.id, reminder_date: Date.today + 30 }
+  { donor_id: donor1.id, charity_id: charity1.id, reminder_date: Date.today + 1.month },
+  { donor_id: donor2.id, charity_id: charity1.id, reminder_date: Date.today + 1.month },
+  { donor_id: donor1.id, charity_id: charity2.id, reminder_date: Date.today + 1.month }
 ])
 
 #beneficiaries

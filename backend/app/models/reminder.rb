@@ -4,7 +4,7 @@ class Reminder < ApplicationRecord
 
   validates :reminder_date, presence: true
   # validates :time, presence: true
-  validates :donor, presence: true
-  validates :charity, presence: true
+  validates :donor_id, presence: true
+  validates :charity_id, presence: true
 
 end
