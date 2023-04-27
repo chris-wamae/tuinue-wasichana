@@ -8,7 +8,7 @@
 puts "Planting the seeds of menstrual equity..."
 
 #charities
-charity1 = Charity.create!(
+charity1 = Charity.find_or_create_by(
   username: "girlshelpinggirlsperiod",
   email: "girlshelpinggirlsperiod@gmail.com",
   charity_name: "Girls Helping Girls. Period.",
@@ -24,7 +24,7 @@ charity1 = Charity.create!(
   password_confirmation: "password"
 )
 
-charity2 = Charity.create!(
+charity2 = Charity.find_or_create_by(
   username: "couldyougirlshealthinitiative",
   email: "couldyougirlshealthinitiative@gmail.com",
   charity_name: "Could You? Girls' Health Initiative",
@@ -40,7 +40,7 @@ charity2 = Charity.create!(
   password_confirmation: "password"
 )
 
-charity3 = Charity.create!(
+charity3 = Charity.find_or_create_by(
   username: "freedomforgirls",
   email: "freedomforgirls@gmail.com",
   charity_name: "Freedom 4 Girls",
@@ -56,7 +56,7 @@ charity3 = Charity.create!(
   password_confirmation: "password"
 )
 
-charity4 = Charity.create!(
+charity4 = Charity.find_or_create_by(
   username: "bloodygoodperiod",
   email: "bloodygoodperiod@gmail.com",
   charity_name: "Bloody Good Period",
@@ -72,7 +72,7 @@ charity4 = Charity.create!(
   password_confirmation: "password"
 )
 
-charity5 = Charity.create!(
+charity5 = Charity.find_or_create_by(
   username: "girltalkfoundation",
   email: "girltalkfoundation@gmail.com",
   charity_name: "Girl Talk Foundation",
@@ -88,7 +88,7 @@ charity5 = Charity.create!(
   password_confirmation: "password"
 )
 
-charity6 = Charity.create!(
+charity6 = Charity.find_or_create_by(
   username: "daysforgirls",
   email: "daysforgirls@gmail.com",
   charity_name: "Days for Girls",
@@ -104,7 +104,7 @@ charity6 = Charity.create!(
   password_confirmation: "password"
 )
 
-charity7 = Charity.create!(
+charity7 = Charity.find_or_create_by(
   username: "shesthefirst",
   email: "shesthefirst@gmail.com",
   charity_name: "She's the First",
@@ -121,7 +121,7 @@ charity7 = Charity.create!(
 )
 
 # # The Pad Project
-charity8 = Charity.create!(
+charity8 = Charity.find_or_create_by(
   username: "thepadproject",
   email: "thepadproject@gmail.com",
   charity_name: "The Pad Project",
@@ -138,7 +138,7 @@ charity8 = Charity.create!(
 )
 
 # #donors
-donor1 = Donor.create!(
+donor1 = Donor.find_or_create_by(
   username: "benard",
   email: "benard@gmail.com",
   role: :donor,
@@ -146,7 +146,7 @@ donor1 = Donor.create!(
   password_confirmation: "benard"
 )
 
-donor2 = Donor.create!(
+donor2 = Donor.find_or_create_by(
   username: "sandra",
   email: "sandra@gmail.com",
   role: :donor,
@@ -166,7 +166,7 @@ Reminder.create([
 ])
 
 
-admin1 = Admin.create!(
+admin1 = Admin.find_or_create_by(
   username: "vanessa",
   email: "vanessa@gmail.com",
   role: :admin,
