@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CharityBeneficiariesManagement.css";
+import NavBar from "../components/navbar/NavBar"
 
 const CharityBeneficiariesManagement = () => {
   const [beneficiaries, setBeneficiaries] = useState([]);
@@ -65,6 +66,8 @@ const CharityBeneficiariesManagement = () => {
   };
 
   return (
+    <>
+    <NavBar elements={[]}/>
     <div className="charity-beneficiaries-management">
       <h1>Charity Beneficiaries Management</h1>
       <form onSubmit={handleBeneficiarySubmit}>
@@ -173,6 +176,7 @@ const CharityBeneficiariesManagement = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 
