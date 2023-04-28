@@ -32,8 +32,8 @@ Rails.application.routes.draw do
 
   # Reminder routes
   post '/reminders', to: 'reminder#create'
-  put '/reminders/:id', to: 'reminder#update'
-  delete '/reminders/:id', to: 'reminder#destroy'
+  # put '/reminders/:id', to: 'reminder#update'
+  # delete '/reminders/:id', to: 'reminder#destroy'
 
   # Inventory routes
   post '/inventories', to: 'inventory#create'
