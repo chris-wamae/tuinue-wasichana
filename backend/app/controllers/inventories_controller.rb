@@ -1,4 +1,4 @@
-class InventoryController < ApplicationController
+class InventoriesController < ApplicationController
   def create
     @inventory_item = Inventory.new(inventory_params)
     if @inventory_item.save
