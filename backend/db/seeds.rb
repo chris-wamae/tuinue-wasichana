@@ -163,10 +163,6 @@ admin1 = Admin.create!(
   password_confirmation: "vanessa"
 )
 
-#Seed data for inventories
-Inventory.create!({ item_name: 'Pads', quantity: 100, beneficiary_id: beneficiary1.id, charity_id: charity1.id })
-Inventory.create!({ item_name: 'Tampons', quantity: 50, beneficiary_id: beneficiary2.id, charity_id: charity1.id })
-Inventory.create!({ item_name: 'Menstrual cups', quantity: 30, beneficiary_id: beneficiary3.id, charity_id: charity2.id })
 
 #Seed data for reminders
 Reminder.create!([
@@ -211,6 +207,11 @@ beneficiary4 = Beneficiary.create!(
   charity_id: charity3.id,
   donor_id: donor1.id
 )
+
+#Seed data for inventories
+Inventory.create!({ item_name: 'Pads', quantity: 100, beneficiary_id: beneficiary1.id, charity_id: charity1.id })
+Inventory.create!({ item_name: 'Tampons', quantity: 50, beneficiary_id: beneficiary2.id, charity_id: charity1.id })
+Inventory.create!({ item_name: 'Menstrual cups', quantity: 30, beneficiary_id: beneficiary3.id, charity_id: charity2.id })
 
 #donations
 donation1 = Donation.create(
