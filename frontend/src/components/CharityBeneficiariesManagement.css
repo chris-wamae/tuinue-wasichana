@@ -2,6 +2,7 @@
   width: 80%;
   margin: 0 auto;
   font-family: Arial, sans-serif;
+  text-align:center;
 }
 
 .charity-beneficiaries-management h1 {
@@ -43,10 +44,9 @@ justify-content:center;
 }
 
 .charity-beneficiaries-management li {
-  background-color: #f1faee;
+  border:5px solid var(--pink);
   padding: 1rem;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -58,6 +58,7 @@ justify-content:center;
   width:60px;
   font-size: 0.875rem;
   padding: 0.5rem 1rem;
+  margin:0px;
 }
 
 .charity-beneficiaries-management li button:hover {
@@ -87,4 +88,74 @@ font-weight: bolder;
 
 .buttons{
   display:flex;
+}
+
+.beneficiary-container{
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+
+}
+
+#inventory-form{
+  display:flex;
+  background-color:var(--pink);
+  align-items: center;
+  margin-top:40px;
+  justify-content:space-around;
+  height:50px;
+  width:400px;
+}
+
+#inventory-form h5{
+color:var(--blue);
+}
+
+#inventory-form input{
+width:100px;
+text-align:center;
+}
+
+
+.beneficiary-name{
+  color:var(--blue);
+  font-size:32px;
+  font-weight:bold;
+}
+
+.inventory{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items: space-around;
+  width:200px;
+  text-align:center;
+font-weight:bold;
+}
+
+.inventory-titles{
+display:flex;
+justify-content:space-around;
+align-items: space-around;
+width:100%;
+margin-bottom:10px;
+}
+.inventory-titles li{
+margin:0px;
+padding:0px;
+border:none;
+color:var(--pink);
+  }
+
+.inventory-data {
+  display:flex;
+  justify-content:space-around;
+  align-items: space-around;
+  width:100%;
+  color:var(--blue);
+  }
+.inventory-data li{
+  margin:0px;
+  padding:0px;
+  border:none;
 }
