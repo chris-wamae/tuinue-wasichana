@@ -18,4 +18,7 @@ class User < ApplicationRecord
     self.status = "pending" if charity?
   end
 
+  def self.find_for_database_authentication(warden_conditions)
+    where(email: warden_conditions[:email].downcase).first
+  end
 end

@@ -3,8 +3,7 @@ class DonorsController < ApplicationController
     before_action :check_donor
 
     def index
-
-        render json: User.charity, status: :ok
+        render json: User.charity.charity_approved, status: :ok
     end
 
     def show
@@ -14,7 +13,7 @@ class DonorsController < ApplicationController
 
     private
     def find_charity
-        User.charity.find(params[:id])
+        User.charity.charity_approved.find(params[:id])
     end
 
     def check_donor
