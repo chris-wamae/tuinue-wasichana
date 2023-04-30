@@ -44,10 +44,6 @@ Rails.application.routes.draw do
   #charity
   #get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
 
-  resources :charities, only: [] do
-    #resources :beneficiaries, only: [:index]
-    resources :inventories
-  end
-
+  get '/donors/:donor_id/my_beneficiaries', to: 'donors#my_beneficiaries'
 
 end

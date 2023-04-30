@@ -1,6 +1,7 @@
 class DonorsController < ApplicationController
-    before_action :authenticate_user!
-    before_action :check_donor
+    # before_action :authenticate_user!
+    # before_action :check_donor
+
 
     def index
         render json: User.charity.charity_approved, status: :ok
@@ -11,10 +12,13 @@ class DonorsController < ApplicationController
         render json: charity, status: :ok
     end
 
+    
     private
     def find_charity
         User.charity.charity_approved.find(params[:id])
     end
+
+   
 
     # def check_donor
     #     unless current_user.donor?
