@@ -43,17 +43,22 @@ Rails.application.routes.draw do
   # put '/reminders/:id', to: 'reminder#update'
   # delete '/reminders/:id', to: 'reminder#destroy'
 
-  # Inventory routes
-  post '/inventories', to: 'inventories#create'
-  put '/inventories/:id', to: 'inventories#update'
-  delete '/inventories/:id', to: 'inventories#destroy'
+  # # Inventory routes
+  # post '/inventories', to: 'inventories#create'
+  # put '/inventories/:id', to: 'inventories#update'
+  # delete '/inventories/:id', to: 'inventories#destroy'
 
-  # View inventories route
+  # # View inventories route
 
-  get '/inventories', to: 'inventories#view_inventories'
+  # get '/inventories', to: 'inventories#view_inventories'
 
   #charity
-  get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
+  #get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
+
+  resources :charities, only: [] do
+    #resources :beneficiaries, only: [:index]
+    resources :inventories
+  end
 
 
 end
