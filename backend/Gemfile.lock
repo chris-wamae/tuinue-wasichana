@@ -200,7 +200,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   debug
-  devise (~> 4.9.2)
+  devise (~> 4.9, >= 4.9.2)
   pg
   puma (~> 5.0)
   rack-cors

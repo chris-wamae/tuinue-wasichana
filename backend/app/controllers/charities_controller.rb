@@ -1,4 +1,4 @@
-class CharityController < ApplicationController
+class CharitiesController < ApplicationController
 
   def total_charity_donations
     charity = User.charity.find(params[:id])

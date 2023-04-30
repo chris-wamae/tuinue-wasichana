@@ -20,32 +20,40 @@ Rails.application.routes.draw do
   get "/admin/pending_charities", to: "admins#pending_charities"
   put "/admin/charities/:id/approve", to: "admins#approve"
   put "/admin/charities/:id/reject", to: "admins#reject"
-
   delete "admin/charities/:id", to: "admins#destroy"
   get "/admin/approved_charities", to: "admins#approved_charities"
 
+  #beneficiaries
   resources :beneficiaries
-  resources :donations
-  get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
+
+  #donations
+  post '/donors/:donor_id/donations', to: 'donations#create'
+  get 'donors/:donor_id/donations', to: 'donations#donor_donations'
+  get 'charities/:charity_id/donations', to: 'donations#charity_donations'
+  get '/charities/:charity_id/donations/non_anonymous_donations', to: 'donations#non_anonymous_donations'
+  get '/charities/:charity_id/donations/anonymous_donations', to: 'donations#anonymous_donations'
+  get '/charities/:charity_id/donations/total_donations', to: 'donations#total_donations'
+  # resources :donations
+  # get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
 
 
 
-  # Reminder routes
-  post '/reminders', to: 'reminder#create'
+  # Reminder route
+  post '/reminders', to: 'reminders#create'
   # put '/reminders/:id', to: 'reminder#update'
   # delete '/reminders/:id', to: 'reminder#destroy'
 
   # Inventory routes
-  post '/inventories', to: 'inventory#create'
-  put '/inventories/:id', to: 'inventory#update'
-  delete '/inventories/:id', to: 'inventory#destroy'
+  post '/inventories', to: 'inventories#create'
+  put '/inventories/:id', to: 'inventories#update'
+  delete '/inventories/:id', to: 'inventories#destroy'
 
   # View inventories route
 
-  get '/inventories', to: 'inventory#view_inventories'
+  get '/inventories', to: 'inventories#view_inventories'
 
   #charity
-  get 'charities/:id/total_donations', to: 'charity#total_charity_donations'
+  get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
 
 
 end
