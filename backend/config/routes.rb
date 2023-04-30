@@ -44,6 +44,6 @@ Rails.application.routes.draw do
   #charity
   #get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
 
-  get '/donors/:donor_id/my_beneficiaries', to: 'donors#my_beneficiaries'
+  get '/donors/:donor_id/my_beneficiaries', to: 'donors#display_my_beneficiaries'
 
 end
