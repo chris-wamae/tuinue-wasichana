@@ -20,13 +20,21 @@ Rails.application.routes.draw do
   get "/admin/pending_charities", to: "admins#pending_charities"
   put "/admin/charities/:id/approve", to: "admins#approve"
   put "/admin/charities/:id/reject", to: "admins#reject"
-
   delete "admin/charities/:id", to: "admins#destroy"
   get "/admin/approved_charities", to: "admins#approved_charities"
 
+  #beneficiaries
   resources :beneficiaries
-  resources :donations
-  get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
+
+  #donations
+  post '/donors/:donor_id/donations', to: 'donations#create'
+  get 'donors/:donor_id/donations', to: 'donations#donor_donations'
+  get 'charities/:charity_id/donations', to: 'donations#charity_donations'
+  get '/charities/:charity_id/donations/non_anonymous_donations', to: 'donations#non_anonymous_donations'
+  get '/charities/:charity_id/donations/anonymous_donations', to: 'donations#anonymous_donations'
+  get '/charities/:charity_id/donations/total_donations', to: 'donations#total_donations'
+  # resources :donations
+  # get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
 
 
 

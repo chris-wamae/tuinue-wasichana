@@ -16,9 +16,9 @@ class DonorsController < ApplicationController
         User.charity.charity_approved.find(params[:id])
     end
 
-    def check_donor
-        unless current_user.donor?
-          render json: { error: 'Forbidden', status: 403 }, status: :forbidden
-        end
-    end
+    # def check_donor
+    #     unless current_user.donor?
+    #       render json: { error: 'Forbidden', status: 403 }, status: :forbidden
+    #     end
+    # end
 end
