@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :tests
-
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -23,9 +21,6 @@ Rails.application.routes.draw do
   delete "admin/charities/:id", to: "admins#destroy"
   get "/admin/approved_charities", to: "admins#approved_charities"
 
-  #beneficiaries
-  resources :beneficiaries
-
   #donations
   post '/donors/:donor_id/donations', to: 'donations#create'
   get 'donors/:donor_id/donations', to: 'donations#donor_donations'
@@ -33,27 +28,22 @@ Rails.application.routes.draw do
   get '/charities/:charity_id/donations/non_anonymous_donations', to: 'donations#non_anonymous_donations'
   get '/charities/:charity_id/donations/anonymous_donations', to: 'donations#anonymous_donations'
   get '/charities/:charity_id/donations/total_donations', to: 'donations#total_donations'
-  # resources :donations
-  # get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
 
-
+  #beneficiaries & inventories
+  resources :charities, only: [] do
+    resources :beneficiaries
+    resources :inventories
+  end
+  get '/beneficiaries', to: 'beneficiaries#all_beneficiaries'
 
   # Reminder route
   post '/reminders', to: 'reminders#create'
   # put '/reminders/:id', to: 'reminder#update'
   # delete '/reminders/:id', to: 'reminder#destroy'
 
-  # Inventory routes
-  post '/inventories', to: 'inventories#create'
-  put '/inventories/:id', to: 'inventories#update'
-  delete '/inventories/:id', to: 'inventories#destroy'
-
-  # View inventories route
-
-  get '/inventories', to: 'inventories#view_inventories'
-
   #charity
-  get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
+  #get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
 
+  get '/donors/:donor_id/my_beneficiaries', to: 'donors#display_my_beneficiaries'
 
 end
