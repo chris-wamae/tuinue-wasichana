@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CharityBeneficiariesManagement.css";
+import NavBar from "../components/navbar/NavBar"
 
 const CharityBeneficiariesManagement = () => {
   const [beneficiaries, setBeneficiaries] = useState([]);
@@ -12,6 +13,8 @@ const CharityBeneficiariesManagement = () => {
   const [editingIndex, setEditingIndex] = useState(null);
   const [showCrud, setShowCrud] = useState(false);
   const [showInventory, setShowInventory] = useState(false);
+
+  const BENEFICIARIES_URL =  "https://tuinue-wasichana-api.onrender.com/donors/:donor_id/my_beneficiaries"
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,6 +68,8 @@ const CharityBeneficiariesManagement = () => {
   };
 
   return (
+    <>
+    <NavBar elements={[]}/>
     <div className="charity-beneficiaries-management">
       <h1>Charity Beneficiaries Management</h1>
       <form onSubmit={handleBeneficiarySubmit}>
@@ -173,6 +178,7 @@ const CharityBeneficiariesManagement = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 

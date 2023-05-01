@@ -10,6 +10,7 @@ const SingleCharityPage = (props) => {
   const charityId = useSelector(selectSingleCharityId);
   const navigate  = useNavigate()
   console.log(charityId);
+  const CHARITY_URL = "https://tuinue-wasichana-api.onrender.com/charities/"
   const charity = {
     id: 1,
     name: " Brighter Horizons Foundation ",
