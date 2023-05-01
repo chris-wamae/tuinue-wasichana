@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
-    before_action :authenticate_user!
-    before_action :check_admin
+    # before_action :authenticate_user!
+    # before_action :check_admin
     before_action :find_pending_charity, only: [:approve, :reject]
 
     def pending_charities
