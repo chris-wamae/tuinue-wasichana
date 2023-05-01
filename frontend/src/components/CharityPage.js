@@ -3,23 +3,27 @@ import "../components/css/CharityPage.css";
 import { useEffect } from "react";
 import NavBar from "../components/navbar/NavBar"
 
-const sample_anonymous = [
-  { name: "Anonymous", amount: 200, anonymous: true },
-  { name: "Anonymous", amount: 150, anonymous: true },
-  { name: "Anonymous", amount: 1000, anonymous: true },
-];
-const sample_named = [
-  { name: "John", amount: 500, anonymous: false },
-  { name: "Mary", amount: 100, anonymous: false },
-  { name: "Bob", amount: 250, anonymous: false },
-  { name: "Alice", amount: 750, anonymous: false },
-  { name: "Judy", amount: 750, anonymous: false },
-  { name: "Hannah", amount: 750, anonymous: false },
-  { name: "Phylis", amount: 750, anonymous: false },
-  { name: "Samuel", amount: 750, anonymous: false },
-];
-
 const CharityPage = () => {
+const ANONYMOUS_URL = "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/anonymous_donations"
+const NAMED_URL = "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/non-anonymous__donations"
+const TOTAL_DONATIONS = "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/total_donations"
+
+  const sample_anonymous = [
+    { name: "Anonymous", amount: 200, anonymous: true },
+    { name: "Anonymous", amount: 150, anonymous: true },
+    { name: "Anonymous", amount: 1000, anonymous: true },
+  ];
+  const sample_named = [
+    { name: "John", amount: 500, anonymous: false },
+    { name: "Mary", amount: 100, anonymous: false },
+    { name: "Bob", amount: 250, anonymous: false },
+    { name: "Alice", amount: 750, anonymous: false },
+    { name: "Judy", amount: 750, anonymous: false },
+    { name: "Hannah", amount: 750, anonymous: false },
+    { name: "Phylis", amount: 750, anonymous: false },
+    { name: "Samuel", amount: 750, anonymous: false },
+  ];
+
   const [nonAnonymousDonors, setNonAnonymousDonors] = useState([]);
   const [anonymousDonations, setAnonymousDonations] = useState([]);
   const [totalDonation, setTotalDonation] = useState(0);

@@ -14,7 +14,8 @@ const CharityBeneficiariesManagement = () => {
   const [showCrud, setShowCrud] = useState(false);
   const [showInventory, setShowInventory] = useState(false);
 
-  const BENEFICIARIES_URL =  "https://tuinue-wasichana-api.onrender.com/donors/:donor_id/my_beneficiaries"
+  const BENEFICIARIES_URL =  "https://tuinue-wasichana-api.onrender.com/charitites/:charity_id/beneficiaries"
+  const CREATE_BENEFICIARY_URL = "https://tuinue-wasichana-api.onrender.com/charitites/:charity_id/beneficiaries"
 
   const handleChange = (e) => {
     const { name, value } = e.target;
