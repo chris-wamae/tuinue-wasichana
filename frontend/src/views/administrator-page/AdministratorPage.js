@@ -3,15 +3,36 @@ import { useState } from "react";
 import NavBar from "../../components/navbar/NavBar";
 import DeleteCharity from "../../components/DeleteCharity";
 import ReviewCharity from "../../components/ReviewCharity";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { selectDelete } from "../../features/admin/adminSlice";
+import { selectPending } from "../../features/admin/adminSlice";
+import { approvedCharities } from "../../features/admin/adminSlice";
+import { pendingCharities } from "../../features/admin/adminSlice";
 
 function AdministratorPage() {
+  const [currentFunctionality,setCurrentFunctionality] = useState(false)
+  const forDeletion = useSelector(selectDelete)
+  const forReview = useSelector(selectPending)
+  const dispatch = useDispatch()
+  const [displayCharities,setDisplayCharities] = useState([])
+  const getApprove = () => {dispatch(approvedCharities())
+    setDisplayCharities(forDeletion)}
+
+  const getReview =    () => {dispatch( pendingCharities())
+    setDisplayCharities(forReview)}
+  useEffect(()=>{
+   currentFunctionality ? getApprove() : getReview()
+  },[currentFunctionality]) 
+  console.log(displayCharities)
   const PENDING_CHARITIES = "https://tuinue-wasichana-api.onrender.com/admin/pending_charities"
   const APPROVE_CHARITY = "https://tuinue-wasichana-api.onrender.com/admin/:id/approve"
   const REJECT_CHARITY = "https://tuinue-wasichana-api.onrender.com/admin/:id/reject"
   const DELETE_CHARITY = "https://tuinue-wasichana-api.onrender.com/admin/charities/:id"
   const VIEW_APPROVED = "https://tuinue-wasichana-api.onrender.com/admin/approved_charities"
 
-  const [currentFunctionality,setCurrentFunctionality] = useState(false)
+
    const sample = [{ id: 1, name: ' Brighter Horizons Foundation ', mission: ' Empower disadvantaged youth with education and skills for brighter futures.' ,image:"https://www.build-africa.org/sites/default/files/build-africa-history.jpg", description: "Brighter Horizons Foundation is a non-profit organization committed to breaking the cycle of poverty by providing underprivileged youth. Through education and skills training, we're providing young people with the tools they need to build brighter futures for themselves and their communities. Our vision is a world where every child has access to the resources and support they need to thrive. Join us in empowering the next generation and building a better tomorrow for us all."},
     {
       id: 2,

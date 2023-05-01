@@ -9,6 +9,7 @@ const initialState = {
     deleteCharities: []
 }
 
+
 const PENDING_CHARITIES = "https://tuinue-wasichana-api.onrender.com/admin/pending_charities";
 
 export const approveCharity = createAsyncThunk("admin/approveCharity", async (id) => {
@@ -33,7 +34,7 @@ export const pendingCharities = createAsyncThunk("admin/pendingCharities", async
 })
 
 
-export const approvedCharities = createAsyncThunk("admin/pendingCharities", async() =>{
+export const approvedCharities = createAsyncThunk("admin/approveCharities", async() =>{
     const response = await axios.get("https://tuinue-wasichana-api.onrender.com/admin/approved_charities")
     return [response.data]
 })
