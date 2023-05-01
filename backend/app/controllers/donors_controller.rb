@@ -1,6 +1,6 @@
 class DonorsController < ApplicationController
-    before_action :authenticate_user!
-    before_action :check_donor
+    # before_action :authenticate_user!
+    # before_action :check_donor
     before_action :find_donor, only: [:display_my_beneficiaries]
 
 
