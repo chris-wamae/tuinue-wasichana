@@ -19,6 +19,7 @@ function SignInForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createDonor({
+      username:email.replace(/@.*/, ""),
       email: email,
       password: password,
       password_confirmation: passwordConfirmation,

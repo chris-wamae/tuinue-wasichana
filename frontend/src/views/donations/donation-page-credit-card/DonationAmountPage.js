@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { changeDonateAmount } from "../../../features/donor/donorsSlice";
 
 function DonationAmountPage() {
+  const CREATE_DONATION_URL = "https://tuinue-wasichana-api.onrender.com/donors/:id/donations"
+  const GET_DONATIONS = "https://tuinue-wasichana-api.onrender.com/donors/:id/donations"
   const nagivate = useNavigate();
   const dispatch = useDispatch();
   const [donationAmount, setDonationAmount] = useState(0);

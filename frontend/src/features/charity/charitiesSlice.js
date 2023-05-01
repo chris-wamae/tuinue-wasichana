@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // const POSTS_URL = "https://tuinue-waichana-backend.onrender.com/";
-const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
+const POSTS_URL = "https://tuinue-wasichana-api.onrender.com/users";
 
 const initialState = {
     charitiesList: [],

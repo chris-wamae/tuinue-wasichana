@@ -9,7 +9,7 @@ const initialState = {
     donationAmount:0
 }
 
-const USERS_URL = "https://jsonplaceholder.typicode.com/users";
+const USERS_URL = "https://tuinue-wasichana-api.onrender.com/users";
 
 export const fetchDonors = createAsyncThunk("donors/fetchDonors", async () => {
     const response = await axios.get(USERS_URL)

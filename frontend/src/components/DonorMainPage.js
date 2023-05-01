@@ -8,6 +8,7 @@ import { changeSingleCharityId } from '../features/charity/charitiesSlice';
 function DonorMainPage(){
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const CHARITIES_URL = "https://tuinue-wasichana-api.onrender.com/charities/"
     const [charities, setCharities] = useState([
         { id: 1, name: ' Brighter Horizons Foundation ', description: ' Empower disadvantaged youth with education and skills for brighter futures.' ,image:"https://www.build-africa.org/sites/default/files/build-africa-history.jpg"},
         { id: 2, name: 'Msichana Power', description: "A charity focused on improving girls lives", image:"https://www.build-africa.org/sites/default/files/build-africa-charity-fighting-poverty-through-education.jpg" },
