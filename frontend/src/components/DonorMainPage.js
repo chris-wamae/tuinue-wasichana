@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './DonorMainPage.css';
 import NavBar from './navbar/NavBar';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { changeSingleCharityId } from '../features/charity/charitiesSlice';
+import { fetchCharities } from '../features/charity/charitiesSlice';
 
 function DonorMainPage(){
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    useEffect(() =>{
+        dispatch(fetchCharities())
+    },[])
     const CHARITIES_URL = "https://tuinue-wasichana-api.onrender.com/charities/"
     const [charities, setCharities] = useState([
         { id: 1, name: ' Brighter Horizons Foundation ', description: ' Empower disadvantaged youth with education and skills for brighter futures.' ,image:"https://www.build-africa.org/sites/default/files/build-africa-history.jpg"},

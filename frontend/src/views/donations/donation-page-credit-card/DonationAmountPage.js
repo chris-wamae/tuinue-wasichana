@@ -4,6 +4,7 @@ import "./donation-page-amount.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { changeDonateAmount } from "../../../features/donor/donorsSlice";
+import { createDonation } from "../../../features/donor/donorsSlice";
 
 function DonationAmountPage() {
   const CREATE_DONATION_URL = "https://tuinue-wasichana-api.onrender.com/donors/:id/donations"
@@ -21,6 +22,13 @@ function DonationAmountPage() {
     nagivate("/donate");
     console.log(donationAmount);
     dispatch(changeDonateAmount(donationAmount));
+    dispatch(createDonation({id:10,data:{
+      donor_id:10,
+      charityId:1,
+      amount:Number(donationAmount),
+      anonymous:anonymousChecked,
+      is_monthly:remindChecked
+    }}))
   };
 
   const user = {

@@ -31,6 +31,11 @@ export const deleteDonor = createAsyncThunk("donors/deleteDonor", async (id) => 
     return [deleteRequest.status]
 })
 
+export const createDonation = createAsyncThunk("donors/createDonation", async ({id,data}) => {
+    const createDonation = await axios.post(`https://tuinue-wasichana-api.onrender.com/donors/${id}/donations/`,data)
+    return [createDonation.data]
+})
+
 const donorsSlice = createSlice({
     name: "donors",
     initialState,
@@ -50,6 +55,9 @@ const donorsSlice = createSlice({
             })
             .addCase(deleteDonor.fulfilled,(state,action) =>{
                 console.log(action.payload)
+            })
+            .addCase(createDonation.fulfilled,(state,action) =>{
+                console.log(action.status)
             })
     }
 })
