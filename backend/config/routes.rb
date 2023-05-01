@@ -10,9 +10,10 @@ Rails.application.routes.draw do
     sessions: 'sessions'
   }
 
-  #donor-charity actions
+  #donor actions
   get '/charities', to: 'donors#index'
   get '/charities/:id', to: 'donors#show'
+  get '/donors/:donor_id/my_beneficiaries', to: 'donors#display_my_beneficiaries'
 
   #admin
   get "/admin/pending_charities", to: "admins#pending_charities"
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
   #donations
   post '/donors/:donor_id/donations', to: 'donations#create'
   get 'donors/:donor_id/donations', to: 'donations#donor_donations'
-  get 'charities/:charity_id/donations', to: 'donations#charity_donations'
+  # get '/charities/:charity_id/donations', to: 'donations#charity_donations'
   get '/charities/:charity_id/donations/non_anonymous_donations', to: 'donations#non_anonymous_donations'
   get '/charities/:charity_id/donations/anonymous_donations', to: 'donations#anonymous_donations'
   get '/charities/:charity_id/donations/total_donations', to: 'donations#total_donations'
@@ -43,7 +44,5 @@ Rails.application.routes.draw do
 
   #charity
   #get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
-
-  get '/donors/:donor_id/my_beneficiaries', to: 'donors#display_my_beneficiaries'
 
 end
