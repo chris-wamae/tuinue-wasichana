@@ -18,13 +18,13 @@ function SignInForm() {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createDonor({
-      username:email.replace(/@.*/, ""),
-      email: email,
-      password: password,
-      password_confirmation: passwordConfirmation,
-      role: "donor"
-    }));
+    dispatch(createDonor({user:{username:email.replace(/@.*/, ""),
+    email: email,
+    password: password,
+    password_confirmation: passwordConfirmation,
+    role: "donor"
+  }}
+   ));
   };
 
   return (
