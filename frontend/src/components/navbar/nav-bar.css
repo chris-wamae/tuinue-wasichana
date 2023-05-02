@@ -39,3 +39,12 @@
     align-items: center;
 }
 
+
+#exit{
+    color:var(--blue);
+    background-color:var(--pink);
+    padding:3px;
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:5px;
+}

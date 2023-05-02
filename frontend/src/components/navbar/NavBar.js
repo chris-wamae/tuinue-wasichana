@@ -1,6 +1,7 @@
 import "./nav-bar.css"
 import GenderIcon from "../gender-icon/GenderIcon";
 import {Link} from "react-router-dom"
+import Logout from "../Logout";
 function NavBar({elements}){
     return(
         <div className="nav">
@@ -13,7 +14,9 @@ function NavBar({elements}){
         </div>
         <div className="nav-elements">{elements.map((element)=>{
         return element()
-        })}</div>
+        })}
+        <Logout/>
+        </div>
         </div>
     )
 

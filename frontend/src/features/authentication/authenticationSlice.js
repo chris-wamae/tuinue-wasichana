@@ -4,7 +4,7 @@ import axios from "axios";
 
 const LOGIN_URL = "https://tuinue-wasichana-api.onrender.com/users/sign_in"
 
-const LOGOUT_URL  = "https://jsonplaceholder.typicode.com/users/1"
+const LOGOUT_URL  = "https://tuinue-wasichana-api.onrender.com/users/sign_out"
 
 const initialState = {
     state:"idle",
@@ -34,8 +34,11 @@ const authenticationSlice = createSlice(
             state.loggedUser = action.payload
         })
         .addCase(logoutUser.fulfilled,(state,action) =>{
-            state.loggedUser = action.payload
+            state.loggedUser = undefined
         })
+        .addCase(logoutUser.pending,(state,action) =>{
+          state.loggedUser = undefined
+      })
       }
     })
 
