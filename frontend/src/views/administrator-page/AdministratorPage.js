@@ -66,22 +66,22 @@ function AdministratorPage() {
     <>
     <NavBar elements={[NavElements]}/>
     {!currentFunctionality ?  <h3 className="admin-header">Pending Reviews</h3> : <h3 className="admin-header">All charities</h3> }
-    {sample.map((eachSample)=>{
-    return(
+    {displayCharities.length > 0 ? displayCharities.map((eachCharity,index)=>{
+      return(
         <div className="single-charity">
         <div className="content-div">
           <div>
-            <h3>{eachSample.name}</h3>
-            <h4>{eachSample.mission}</h4>
-            <p>{eachSample.description}</p>
+            <h3>{eachCharity.charity_name}</h3>
+            <h4>{eachCharity.mission}</h4>
+            <p>{eachCharity.about_charity}</p>
           </div>
-          <img src={eachSample.image}></img>
+          <img src={eachCharity.charity_image}></img>
         </div>
         <div></div>
-        <div>{currentFunctionality ? <DeleteCharity charity={"charity"}/>:<ReviewCharity charity={"charity"}/>}</div>
+        <div>{currentFunctionality ? <DeleteCharity id={eachCharity.id}/>:<ReviewCharity id={eachCharity.id}/>}</div>
       </div>
     )
-    })}
+    }) : <h2>Loading...</h2>}
  
    
  </>  );

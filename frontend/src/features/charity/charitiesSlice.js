@@ -9,7 +9,8 @@ const initialState = {
     status: "idle",
     error: null,
     beneficiaries: [],
-    singleCharityId: undefined
+    singleCharityId: undefined,
+    singleCharity: undefined
 };
 
 export const fetchCharities = createAsyncThunk(
@@ -55,7 +56,7 @@ const charitiesSlice = createSlice({
                 state.charitiesList = action.payload
             })
             .addCase(fetchSingleCharity.fulfilled, (state, action) => {
-                state.charitiesList = action.payload
+                state.singleCharity = action.payload
             })
             .addCase(createCharity.fulfilled, (state, action) => {
                 state.charitiesList = action.payload
@@ -70,6 +71,7 @@ const charitiesSlice = createSlice({
 });
 
 export const selectCharities = (state) => state.charities.charitiesList
+export const selectSingleCharity = (state) => state.charities.singleCharity
 export const selectSingleCharityId = (state) => state.charities.singleCharityId
 export const { changeSingleCharityId } = charitiesSlice.actions;
 

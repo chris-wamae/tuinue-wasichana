@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { changeDonateAmount } from "../../../features/donor/donorsSlice";
 import { createDonation } from "../../../features/donor/donorsSlice";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../features/authentication/authenticationSlice";
+import { selectSingleCharityId } from "../../../features/charity/charitiesSlice";
 
 function DonationAmountPage() {
   const CREATE_DONATION_URL = "https://tuinue-wasichana-api.onrender.com/donors/:id/donations"
@@ -12,30 +15,28 @@ function DonationAmountPage() {
   const nagivate = useNavigate();
   const dispatch = useDispatch();
   const [donationAmount, setDonationAmount] = useState(0);
-  const [charityId, setCharityId] = useState(undefined);
   const [donatingUser, setDonatingUser] = useState("");
   const [anonymousChecked, setAnonymousChecked] = useState(false);
   const [automaticChecked, setAutomaticChecked] = useState(false);
   const [remindChecked, setRemindChecked] = useState(false);
+  const user = useSelector(selectUser)
+  const charityId = useSelector(selectSingleCharityId)
+  console.log(user)
   const handleSubmit = (e) => {
     e.preventDefault();
     nagivate("/donate");
+
     console.log(donationAmount);
     dispatch(changeDonateAmount(donationAmount));
     dispatch(createDonation({id:10,data:{
-      donor_id:10,
-      charityId:1,
+      donor_id:user[0].user.id,
+      charity_id:charityId,
       amount:Number(donationAmount),
       anonymous:anonymousChecked,
       is_monthly:remindChecked
     }}))
   };
 
-  const user = {
-    id: 2,
-    name: "Koir",
-  };
-  console.log(donatingUser);
 
   return (
     <>

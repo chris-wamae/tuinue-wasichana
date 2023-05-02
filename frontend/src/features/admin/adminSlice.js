@@ -30,13 +30,13 @@ export const deleteCharity = createAsyncThunk("admin/deleteCharity", async(id) =
 
 export const pendingCharities = createAsyncThunk("admin/pendingCharities", async() =>{
     const response = await axios.get(PENDING_CHARITIES)
-    return [response.data]
+    return [...response.data]
 })
 
 
 export const approvedCharities = createAsyncThunk("admin/approveCharities", async() =>{
     const response = await axios.get("https://tuinue-wasichana-api.onrender.com/admin/approved_charities")
-    return [response.data]
+    return [...response.data]
 })
 
 
@@ -66,7 +66,7 @@ const adminSlice = createSlice({
 
 export const selectDelete = (state) => (state.admin.deleteCharities)
 
-export const selectPending = (state) => (state.donors.reviewCharities)
+export const selectPending = (state) => (state.admin.reviewCharities)
 
 
 export default adminSlice.reducer;
