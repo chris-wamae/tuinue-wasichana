@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from '../features/authentication/authenticationSlice';
+import { useNavigate } from 'react-router-dom';
+import { logoutUser } from '../features/authentication/authenticationSlice';
+import "./navbar/nav-bar.css"
 
 function Logout() {
-  const [loggedIn, setLoggedIn] = useState(true); // set initial state to logged in
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const user = useSelector(selectUser)
+  console.log(user)
 
   const handleLogout = () => {
+    dispatch(logoutUser())
+    navigate("/")
     // TODO: Implement logout logic
-    setLoggedIn(false); // set state to logged out
   };
-
-  if (!loggedIn) {
-    // if not logged in, redirect to login page
-    return <Redirect to="/login" />;
-  }
-
   return (
-    <div>
-      <h1>Welcome to your dashboard!</h1>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    user ? <span id="exit" onClick={handleLogout}>X</span> : <span></span>
   );
 }
 
