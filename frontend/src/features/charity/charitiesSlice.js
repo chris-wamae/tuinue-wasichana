@@ -27,9 +27,10 @@ export const fetchSingleCharity = createAsyncThunk("charities/fetchSingleCharity
 })
 
 export const createCharity = createAsyncThunk("charities/createCharity", async (data) => {
-    const response = await axios.post(CHARITIES_URL, data)
+    const response = await axios.post("https://tuinue-wasichana-api.onrender.com/users/", data)
     return [response.data]
 })
+
 
 export const updateCharity = createAsyncThunk("charities/updateCharity", async ({ id, data }) => {
     const response = await axios.patch(`${CHARITIES_URL}/${id}`, data)

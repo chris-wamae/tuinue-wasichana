@@ -10,20 +10,20 @@ const dispatch = useDispatch()
 const handleSubmit = (e) => {
   e.preventDefault()
   navigate("/status")
-  dispatch(createCharity({
-   username:email.replace(/@.*/,""),
-   email:email,
-   password,password,
-   password_confirmation:passwordConfirm,
-   role:"charity",
-   charity_name:charityName,
-   charity_website:"www.this-charity.com",
-   charity_image:image,
-   about_charity:description,
-   mission:mission,
-   contacts:number,
-   location:location
-  }))
+  dispatch(createCharity({user:{
+    username:email.replace(/@.*/,""),
+    email:email,
+    password,password,
+    password_confirmation:passwordConfirm,
+    role:"charity",
+    charity_name:charityName,
+    charity_website:"www.this-charity.com",
+    charity_image:image,
+    about_charity:description,
+    mission:mission,
+    contacts:number,
+    location:location
+   }}))
 }
 
 const [email,setEmail] = useState("")
@@ -48,8 +48,8 @@ const navigate = useNavigate()
               <h4>Account Creation</h4>
               <div className="contacts">
                 <input type="text" placeholder="Email address"  onChange={(e) =>{setEmail(e.target.value)}}></input>
-                <input type="text" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}></input>
-                <input type="text" placeholder="Password confirmation" onChange={(e) => setPasswordConfirm(e.target.value)}></input>
+                <input type="password" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}></input>
+                <input type="password" placeholder="Password confirmation" onChange={(e) => setPasswordConfirm(e.target.value)}></input>
               </div>
             <p>*You’ll be using these credentials to sign in to the platform as a charity</p>
             </div>
