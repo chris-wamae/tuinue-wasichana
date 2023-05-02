@@ -2,6 +2,7 @@
   width: 80%;
   margin: 0 auto;
   font-family: Arial, sans-serif;
+  text-align:center;
 }
 
 .charity-beneficiaries-management h1 {
@@ -17,42 +18,24 @@
 
 .charity-beneficiaries-management form {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: #f1faee;
-  padding: 1.5rem;
+  flex-direction:row;
+  align-items:space-around;
+  justify-content:space-around;
+  background-color:var(--pink);
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height:30px;
+  width:45%;
+  margin-left:auto;
+  margin-right:auto;
 }
-
-.charity-beneficiaries-management label {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-  font-weight: bold;
-}
-
-.charity-beneficiaries-management input,
-.charity-beneficiaries-management select {
-  font-size: 1rem;
-  padding: 0.5rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-}
-
 .charity-beneficiaries-management button {
-  background-color: #05667B;
-  color: white;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.charity-beneficiaries-management button:hover {
-  background-color: #004d5a;
+margin:0px;
+width:200px;
+height:25px;
+font-size:16px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .charity-beneficiaries-management ul {
@@ -61,10 +44,9 @@
 }
 
 .charity-beneficiaries-management li {
-  background-color: #f1faee;
+  border:5px solid var(--pink);
   padding: 1rem;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -72,11 +54,108 @@
 }
 
 .charity-beneficiaries-management li button {
-  background-color: #FFC0CB;
+  background-color:var(--blue);
+  width:60px;
   font-size: 0.875rem;
   padding: 0.5rem 1rem;
+  margin:0px;
 }
 
 .charity-beneficiaries-management li button:hover {
   background-color: #f5a8b8;
+}
+
+.name{
+margin:0px;
+height:30px;
+color:var(--blue);
+display:flex;
+align-items:center;
+font-weight: bolder;
+}
+
+.add-beneficiary{
+  display:flex;
+  align-items:center;
+}
+
+
+.beneficiary{
+  display:flex;
+  flex-direction:column;
+  width:400px;
+}
+
+.buttons{
+  display:flex;
+}
+
+.beneficiary-container{
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+
+}
+
+#inventory-form{
+  display:flex;
+  background-color:var(--pink);
+  align-items: center;
+  margin-top:40px;
+  justify-content:space-around;
+  height:50px;
+  width:400px;
+}
+
+#inventory-form h5{
+color:var(--blue);
+}
+
+#inventory-form input{
+width:100px;
+text-align:center;
+}
+
+
+.beneficiary-name{
+  color:var(--blue);
+  font-size:32px;
+  font-weight:bold;
+}
+
+.inventory{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items: space-around;
+  width:200px;
+  text-align:center;
+font-weight:bold;
+}
+
+.inventory-titles{
+display:flex;
+justify-content:space-around;
+align-items: space-around;
+width:100%;
+margin-bottom:10px;
+}
+.inventory-titles li{
+margin:0px;
+padding:0px;
+border:none;
+color:var(--pink);
+  }
+
+.inventory-data {
+  display:flex;
+  justify-content:space-around;
+  align-items: space-around;
+  width:100%;
+  color:var(--blue);
+  }
+.inventory-data li{
+  margin:0px;
+  padding:0px;
+  border:none;
 }

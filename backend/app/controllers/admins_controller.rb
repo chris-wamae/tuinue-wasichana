@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
-    before_action :authenticate_user!
-    before_action :check_admin
+    # before_action :authenticate_user!
+    # before_action :check_admin
     before_action :find_pending_charity, only: [:approve, :reject]
 
     def pending_charities
@@ -22,9 +22,13 @@ class AdminsController < ApplicationController
     end
 
     def destroy
-        charity = User.charity.charity_approved.find_by(params[:id])
-        charity.destroy
-        response_template(message: 'success', data: { info: 'Charity successfully deleted!' }, status: 204)
+        charity = User.charity.charity_approved.where(role: 1, status: 1, id: params[:id]).first
+        if charity.present?
+            charity.destroy
+            response_template(message: 'success', data: { info: 'Charity successfully deleted!' }, status: 204)
+        else
+            render json: { error: 'Charity Not Found', status: 404 }, status: :not_found
+        end
     end
 
     private

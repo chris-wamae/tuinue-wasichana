@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const LOGIN_URL = "http://127.0.0.1:3000/users/sign_in"
+const LOGIN_URL = "https://tuinue-wasichana-api.onrender.com/users/sign_in"
 
 const LOGOUT_URL  = "https://jsonplaceholder.typicode.com/users/1"
 

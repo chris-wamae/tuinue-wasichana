@@ -2,12 +2,28 @@ import NavBar from "../../components/navbar/NavBar";
 import "./charity-application.css"
 import {useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { createCharity } from "../../features/charity/charitiesSlice";
 
 function CharityApplication() {
-
+const dispatch = useDispatch()
 const handleSubmit = (e) => {
   e.preventDefault()
   navigate("/status")
+  dispatch(createCharity({
+   username:email.replace(/@.*/,""),
+   email:email,
+   password,password,
+   password_confirmation:passwordConfirm,
+   role:"charity",
+   charity_name:charityName,
+   charity_website:"www.this-charity.com",
+   charity_image:image,
+   about_charity:description,
+   mission:mission,
+   contacts:number,
+   location:location
+  }))
 }
 
 const [email,setEmail] = useState("")

@@ -13,6 +13,13 @@ function LoginForm() {
   const currentUser = useSelector(selectUser)
   const  [role, setRole] = useState(undefined)
   useEffect(()=>{
+    if(currentUser == undefined){
+      console.log("loading...")
+    }else{
+     setRole(currentUser[0].user.role)
+     loginRedirect(role)
+    }
+
   },[currentUser])
   const loginRedirect = (role) => {
    switch(role){
@@ -20,7 +27,13 @@ function LoginForm() {
     navigate("/admin")
    break;
    case "charity":
-    navigate("/status")
+    if(currentUser[0].user.status == "pending"){
+      navigate("/status")
+    }
+    else{
+      navigate("/charity-page")
+    }
+   
     break;
    case "donor":
       navigate("/charities")
@@ -34,12 +47,8 @@ function LoginForm() {
     dispatch(loginUser({user:{
       email:email,
       password:password
-    }})).then(
+    }}))
        // console.log(currentUser)
-       setRole(currentUser[0].user.role)
-    ).then(
-      loginRedirect(role)
-    )
     // TODO: Handle form submission
   };
   const handleForgotPassword = (event) => {

@@ -18,6 +18,7 @@ import DonationPagePayPal from "./views/donations/donation-page-paypal/DonationP
 import AdministratorPage from "./views/administrator-page/AdministratorPage";
 import CharityApplication from "./views/charity-application/CharityApplication";
 import DonationPage from "./views/donations/donation-page/DonationPage";
+import CharityPage from "./components/CharityPage"
 import { useDispatch } from 'react-redux';
 import { fetchCharities } from './features/charity/charitiesSlice.js';
 import { useEffect } from 'react';
@@ -65,6 +66,7 @@ function App() {
         <Route exact path="/admin-login" element={<AdministratorLogin />}></Route>
         <Route exact path="/charities" element={<DonorMainPage />}></Route>
         <Route exact path="/charity" element={<SingleCharityPage />}></Route>
+        <Route exact path="/charity-page" element={<CharityPage />}></Route>
       </Routes>
     </Router>
   );

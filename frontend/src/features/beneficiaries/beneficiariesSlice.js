@@ -11,8 +11,8 @@ const initialState = {
 }
 
 
-export const fetchBeneficiaries = createAsyncThunk("beneficiaries/fetchBeneficiaries", async () => {
-    const response = await axios.get(`${USERS_URL}`)
+export const fetchBeneficiaries = createAsyncThunk("beneficiaries/fetchBeneficiaries", async (id) => {
+    const response = await axios.get(`https://tuinue-wasichana-api.onrender.com/charities/${id}/beneficiaries`)
     return [...response.data]
 })
 

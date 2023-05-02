@@ -7,7 +7,7 @@ class User < ApplicationRecord
   enum status: { pending: 0, approved: 1, rejected: 2 }, _prefix: :charity
 
   validates :role, presence: true
-  validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 32 }
+  validates :username, uniqueness: true, length: { minimum: 4, maximum: 32 }
   validates :email, presence: true, uniqueness: true
 
   before_create :set_default_charity_status
@@ -18,4 +18,7 @@ class User < ApplicationRecord
     self.status = "pending" if charity?
   end
 
+  def self.find_for_database_authentication(warden_conditions)
+    where(email: warden_conditions[:email].downcase).first
+  end
 end

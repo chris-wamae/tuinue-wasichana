@@ -10,9 +10,10 @@ Rails.application.routes.draw do
     sessions: 'sessions'
   }
 
-  #donor-charity actions
+  #donor actions
   get '/charities', to: 'donors#index'
   get '/charities/:id', to: 'donors#show'
+  get '/donors/:donor_id/my_beneficiaries', to: 'donors#display_my_beneficiaries'
 
   #admin
   get "/admin/pending_charities", to: "admins#pending_charities"
@@ -21,24 +22,27 @@ Rails.application.routes.draw do
   delete "admin/charities/:id", to: "admins#destroy"
   get "/admin/approved_charities", to: "admins#approved_charities"
 
-  resources :beneficiaries
-  resources :donations
-  get '/charities/:charity_id/anonymous_donations', to: 'donations#anonymous_donations', as: 'anonymous_donations'
+  #donations
+  post '/donors/:donor_id/donations', to: 'donations#create'
+  get 'donors/:donor_id/donations', to: 'donations#donor_donations'
+  # get '/charities/:charity_id/donations', to: 'donations#charity_donations'
+  get '/charities/:charity_id/donations/non_anonymous_donations', to: 'donations#non_anonymous_donations'
+  get '/charities/:charity_id/donations/anonymous_donations', to: 'donations#anonymous_donations'
+  get '/charities/:charity_id/donations/total_donations', to: 'donations#total_donations'
 
- 
- 
-  # Reminder routes
-  post '/reminders', to: 'reminder#create'
-  put '/reminders/:id', to: 'reminder#update'
-  delete '/reminders/:id', to: 'reminder#destroy'
+  #beneficiaries & inventories
+  resources :charities, only: [] do
+    resources :beneficiaries
+    resources :inventories
+  end
+  get '/beneficiaries', to: 'beneficiaries#all_beneficiaries'
 
-  # Inventory routes
-  post '/inventories', to: 'inventory#create'
-  put '/inventories/:id', to: 'inventory#update'
-  delete '/inventories/:id', to: 'inventory#destroy'
+  # Reminder route
+  post '/reminders', to: 'reminders#create'
+  # put '/reminders/:id', to: 'reminder#update'
+  # delete '/reminders/:id', to: 'reminder#destroy'
 
-  # View inventories route
-  get '/inventories', to: 'inventory#view_inventories'
-  
+  #charity
+  #get 'charities/:id/total_donations', to: 'charities#total_charity_donations'
 
 end

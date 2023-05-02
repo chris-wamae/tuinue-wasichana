@@ -1,5 +1,5 @@
 class Inventory < ApplicationRecord
-    # belongs_to :charity, class_name: 'User'
+    belongs_to :charity, class_name: 'User'
     belongs_to :beneficiary
 
     validates :item_name, presence: true, length: { maximum: 255 }
