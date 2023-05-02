@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CharityBeneficiariesManagement.css";
 import NavBar from "../components/navbar/NavBar"
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/authentication/authenticationSlice';
+import { fetchBeneficiaries } from "../features/beneficiaries/beneficiariesSlice";
+import { selectBeneficiaries } from "../features/beneficiaries/beneficiariesSlice";
 
 const CharityBeneficiariesManagement = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  useEffect(() =>{
+    dispatch(fetchBeneficiaries(user[0].user.id))
+  },[])
+  const getBeneficiaries = useSelector(selectBeneficiaries)
+  const user = useSelector(selectUser)
+  console.log(getBeneficiaries)
+  console.log(user)
+
   const navBeneficiary = () =>{
   return <span onClick={() => navigate("/management")}>Beneficiaries</span>
   }
