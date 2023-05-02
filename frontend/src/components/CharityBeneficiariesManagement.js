@@ -9,6 +9,7 @@ import { fetchBeneficiaries } from "../features/beneficiaries/beneficiariesSlice
 import { selectBeneficiaries } from "../features/beneficiaries/beneficiariesSlice";
 
 const CharityBeneficiariesManagement = () => {
+  const [showAddBeneficiary,setShowAddBeneficiary] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   useEffect(() =>{
@@ -63,6 +64,7 @@ const CharityBeneficiariesManagement = () => {
       setBeneficiaries(updatedBeneficiaries);
       setEditingBeneficiary(false);
       setShowCrud(false);
+      setShowAddBeneficiary(false);
     } else {
       setBeneficiaries((prevData) => [
         ...prevData,
@@ -98,8 +100,8 @@ const CharityBeneficiariesManagement = () => {
     <NavBar elements={[navBeneficiary,navDonors,navStories]}/>
     <div className="charity-beneficiaries-management">
       <h1>Charity Beneficiaries Management</h1>
-      <form onSubmit={handleBeneficiarySubmit}>
-        <div className="name">Name</div>
+      {showAddBeneficiary ? <form onSubmit={handleBeneficiarySubmit}>
+        <div className="name">Add or update beneficiary</div>
         <input
           type="text"
           name="name"
@@ -107,12 +109,35 @@ const CharityBeneficiariesManagement = () => {
           value={formData.name}
           onChange={handleChange}
         />
+            <input
+          type="text"
+          name="name"
+          id="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+            <input
+          type="text"
+          name="name"
+          id="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+            <input
+          type="text"
+          name="name"
+          id="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+
         <div className="add-beneficiary">
           <button type="submit">
             {editingBeneficiary ? "Update" : "Add"} Beneficiary
           </button>
         </div>
-      </form>
+      </form> : <span className="edit" onClick={() => {setShowAddBeneficiary(true)}}>Add/Update beneficiary</span>}
+      
       <h2>Beneficiaries</h2>
       <ul className="beneficiary-container">
         {beneficiaries.map((beneficiary, index) => (
