@@ -27,7 +27,13 @@ function LoginForm() {
     navigate("/admin")
    break;
    case "charity":
-    navigate("/status")
+    if(currentUser.user.status == "pending"){
+      navigate("/status")
+    }
+    else{
+      navigate("/charity-page")
+    }
+   
     break;
    case "donor":
       navigate("/charities")

@@ -131,7 +131,7 @@ charity8 = Charity.create!(
   mission: "Our mission is to create and cultivate local and global partnerships to end period stigma and empower women worldwide.",
   contacts: "0712446368",
   location: "Los Angeles, CA",
-  status: 0,
+  status: 1,
   role: :charity,
   password: "password",
   password_confirmation: "password"
