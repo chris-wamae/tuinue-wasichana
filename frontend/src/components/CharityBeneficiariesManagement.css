@@ -70,7 +70,9 @@ justify-content:center;
 .charity-beneficiaries-management li button:hover {
   background-color: #f5a8b8;
 }
-
+#story{
+  height:60px;
+}
 .name{
 margin:0px;
 height:30px;
@@ -182,4 +184,17 @@ color:var(--pink);
   color:red;
   text-decoration: underline;
   cursor:pointer;
+}
+
+.beneficiary-image{
+width:200px;
+height:200px;
+}
+.beneficiary-story{
+  font-size:16px;
+  color:var(--blue)
+}
+.beneficiary-age{
+  font-size:20px;
+  color:var(--blue);
 }

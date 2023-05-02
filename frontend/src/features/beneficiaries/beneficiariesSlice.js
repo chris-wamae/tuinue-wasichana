@@ -16,6 +16,11 @@ export const fetchBeneficiaries = createAsyncThunk("beneficiaries/fetchBeneficia
     return [...response.data]
 })
 
+export const createBeneficiary = createAsyncThunk("beneficiaries/createBeneficiary", async ({id,data}) => {
+    const response = await axios.post(`https://tuinue-wasichana-api.onrender.com/charities/${id}/beneficiaries`,data)
+    return [...response.data]
+})
+
 export const deleteBeneficiary = createAsyncThunk("beneficiaries/deleteBeneficiary", async (id) =>{
    const deleteRequest = await axios.delete(`${USERS_URL}/${id}`)
    return [deleteRequest.status]
@@ -43,6 +48,9 @@ const beneficiariesSlice = createSlice({
         })
         .addCase(updateBeneficiary.fulfilled,(state,action) =>{
             state.beneficiariesList = action.payload
+        })
+        .addCase(createBeneficiary.fulfilled,(state,action) =>{
+            console.log(action.status)
         })
     }
 
