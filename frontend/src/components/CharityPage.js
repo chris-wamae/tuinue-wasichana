@@ -1,13 +1,43 @@
 import React, { useState } from "react";
 import "../components/css/CharityPage.css";
 import { useEffect } from "react";
-import NavBar from "../components/navbar/NavBar"
+import NavBar from "../components/navbar/NavBar";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAnonymousDonors } from "../features/donor/donorsSlice";
+import { selectNamedDonors } from "../features/donor/donorsSlice";
+import { fetchAnonymousDonors } from "../features/donor/donorsSlice";
+import { fetchNamedDonors } from "../features/donor/donorsSlice";
+import { selectUser } from "../features/authentication/authenticationSlice";
+import { useNavigate } from "react-router-dom";
 
 const CharityPage = () => {
-const ANONYMOUS_URL = "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/anonymous_donations"
-const NAMED_URL = "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/non-anonymous__donations"
-const TOTAL_DONATIONS = "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/total_donations"
-
+  const navigate = useNavigate()
+  const navBeneficiary = () =>{
+  return <span onClick={() => navigate("/management")}>Beneficiaries</span>
+  }
+  const navStories = () =>{
+    return <span onClick={() => navigate("/stories")}>Stories</span>
+    }
+    const navDonors = () =>{
+      return <span onClick={() => navigate("/charity-page")}>Donors</span>
+      }
+  const dispatch = useDispatch();
+  const ANONYMOUS_URL =
+    "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/anonymous_donations";
+  const NAMED_URL =
+    "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/non-anonymous__donations";
+  const TOTAL_DONATIONS =
+    "https://tuinue-wasichana-api.onrender.com/charities/:charity_id/donations/total_donations";
+  const named = useSelector(selectNamedDonors);
+  const anonymous = useSelector(selectAnonymousDonors);
+  const user = useSelector(selectUser);
+  console.log(user);
+  console.log(named);
+  console.log(anonymous);
+  useEffect(() => {
+    dispatch(fetchAnonymousDonors(user[0].user.id));
+    dispatch(fetchNamedDonors(user[0].user.id));
+  }, []);
   const sample_anonymous = [
     { name: "Anonymous", amount: 200, anonymous: true },
     { name: "Anonymous", amount: 150, anonymous: true },
@@ -41,32 +71,39 @@ const TOTAL_DONATIONS = "https://tuinue-wasichana-api.onrender.com/charities/:ch
   //   setAnonymousDonations(anonymous);
   // };
 
-  useEffect(() =>{
-   calculateTotalDonation()
-  },[])
+  useEffect(() => {
+    calculateTotalDonation();
+  }, []);
 
   // // Calculate and set the total donation amount
   const calculateTotalDonation = () => {
-    const anonymous_total = sample_anonymous.reduce((acc, curr) => acc + curr.amount, 0);
-    const named_total = sample_named.reduce((acc, curr) => acc + curr.amount, 0);
-    console.log(anonymous_total)
-    console.log(named_total)
+    const anonymous_total = anonymous.reduce(
+      (acc, curr) => acc + Number(curr),
+      0
+    );
+    const named_total = named.reduce(
+      (acc, curr) => acc + Number(curr.amount),
+      0
+    );
+    console.log(anonymous_total);
+    console.log(named_total);
     setTotalDonation(anonymous_total + named_total);
   };
-  const sample_name = "Uzima orphanage";
-  const key = () => { return Math.floor(Math.random() * 10000) }
+  const key = () => {
+    return Math.floor(Math.random() * 10000);
+  };
   return (
     <>
-      <NavBar elements={[]}/>
-      <h2 id="charity-page-h2">{sample_name}</h2>
+      <NavBar elements={[navBeneficiary,navDonors,navStories]} />
+      <h2 id="charity-page-h2">Donations</h2>
       <div className="content-container">
         <div className="donors">
           <div className="named">
             <h3>Donors</h3>
-            {sample_named.map((d) => {
+            {named.map((d) => {
               return (
                 <span className="single-donor" key={key()}>
-                  <div>Name: {d.name}</div>
+                  <div>Name: {d.donor.username}</div>
                   <div>Amount: {d.amount}</div>
                 </span>
               );
@@ -74,11 +111,11 @@ const TOTAL_DONATIONS = "https://tuinue-wasichana-api.onrender.com/charities/:ch
           </div>
           <div className="anonymous">
             <h3>Anonymous donors</h3>
-            {sample_anonymous.map((d) => {
+            {anonymous.map((d) => {
               return (
                 <span className="single-donor" key={key()}>
-                  <div>Name: {d.name}</div>
-                  <div>Amount: {d.amount}</div>
+                  <div>Name: Anonymous</div>
+                  <div>Amount: {d}</div>
                 </span>
               );
             })}

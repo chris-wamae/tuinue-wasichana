@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import "./CharityBeneficiariesManagement.css";
 import NavBar from "../components/navbar/NavBar"
+import { useNavigate } from "react-router-dom";
 
 const CharityBeneficiariesManagement = () => {
+  const navigate = useNavigate()
+  const navBeneficiary = () =>{
+  return <span onClick={() => navigate("/management")}>Beneficiaries</span>
+  }
+  const navStories = () =>{
+    return <span onClick={() => navigate("/stories")}>Stories</span>
+    }
+    const navDonors = () =>{
+      return <span onClick={() => navigate("/charity-page")}>Donors</span>
+      }
   const [beneficiaries, setBeneficiaries] = useState([]);
   const [formData, setFormData] = useState({ name: "" });
   const [inventoryData, setInventoryData] = useState({
@@ -70,7 +81,7 @@ const CharityBeneficiariesManagement = () => {
 
   return (
     <>
-    <NavBar elements={[]}/>
+    <NavBar elements={[navBeneficiary,navDonors,navStories]}/>
     <div className="charity-beneficiaries-management">
       <h1>Charity Beneficiaries Management</h1>
       <form onSubmit={handleBeneficiarySubmit}>

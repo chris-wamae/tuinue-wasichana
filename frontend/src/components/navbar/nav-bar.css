@@ -27,6 +27,9 @@
 
 .nav-elements{
     color:var(--pink);
+    display:flex;
+    justify-content:space-around;
+    width:50%;
 }
 
 .icon-header{
@@ -35,3 +38,4 @@
     display:flex;
     align-items: center;
 }
+

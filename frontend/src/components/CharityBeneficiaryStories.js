@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import "./CharityBeneficiaryStories.css";
 import NavBar from "./navbar/NavBar";
+import { useNavigate } from "react-router-dom";
 
 const CharityBeneficiaryStories = () => {
+  const navigate = useNavigate()
+  const navBeneficiary = () =>{
+  return <span onClick={() => navigate("/management")}>Beneficiaries</span>
+  }
+  const navStories = () =>{
+    return <span onClick={() => navigate("/stories")}>Stories</span>
+    }
+    const navDonors = () =>{
+      return <span onClick={() => navigate("/charity-page")}>Donors</span>
+      }
   const [stories, setStories] = useState([]);
   const [storyInput, setStoryInput] = useState("");
   const [name, setName] = useState("");
@@ -18,7 +29,7 @@ const CharityBeneficiaryStories = () => {
 
   return (
     <>
-      <NavBar elements={[]} />
+      <NavBar elements={[navDonors,navBeneficiary,navStories]} />
       <div className="charity-beneficiary-stories">
         <div className="add-story">
         <h5 id="title">Create a new story</h5>
