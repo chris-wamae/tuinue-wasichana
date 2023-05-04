@@ -19,8 +19,6 @@ const CharityBeneficiariesManagement = () => {
   const getBeneficiaries = useSelector(selectBeneficiaries);
   const user = useSelector(selectUser);
   console.log(getBeneficiaries);
-  console.log(user);
-
   const navBeneficiary = () => {
     return <span onClick={() => navigate("/management")}>Beneficiaries</span>;
   };
@@ -31,12 +29,19 @@ const CharityBeneficiariesManagement = () => {
     return <span onClick={() => navigate("/charity-page")}>Donors</span>;
   };
   const [beneficiaries, setBeneficiaries] = useState([]);
-  const [formData, setFormData] = useState({ name: "", age: "", image: "", story: "", charity_id: user[0].user.id, donor_id: 0 });
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    image: "",
+    story: "",
+    charity_id: user[0].user.id,
+    donor_id: 0,
+  });
   const [inventoryData, setInventoryData] = useState({
     item: "",
     quantity: "",
   });
-  console.log(formData)
+  console.log(formData);
   const [editingBeneficiary, setEditingBeneficiary] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
   const [showCrud, setShowCrud] = useState(false);
@@ -74,11 +79,17 @@ const CharityBeneficiariesManagement = () => {
         ...prevData,
         { ...formData, inventory: [] },
       ]);
-      setShowAddBeneficiary(false)
+      setShowAddBeneficiary(false);
     }
-    setFormData({ name: "", age: "", image: "", story: "", charity_id: user[0].user.id, donor_id: 0 });
-    dispatch(createBeneficiary({id:user[0].user.id,
-    data:formData}))
+    setFormData({
+      name: "",
+      age: "",
+      image: "",
+      story: "",
+      charity_id: user[0].user.id,
+      donor_id: 10,
+    });
+    dispatch(createBeneficiary({ id: user[0].user.id, data: formData }));
   };
 
   const handleInventorySubmit = (e, index) => {
@@ -163,14 +174,26 @@ const CharityBeneficiariesManagement = () => {
 
         <h2>Beneficiaries</h2>
         <ul className="beneficiary-container">
-          {beneficiaries.map((beneficiary, index) => (
-            <li key={index} className="beneficiary">
+          {getBeneficiaries.map((beneficiary) =>{
+            {console.log(beneficiary.id)}
+            return  <li key={beneficiary.id} className="beneficiary">
               <span className="beneficiary-name">{beneficiary.name}</span>
               <span className="beneficiary-age">{beneficiary.age}</span>
-              <img className="beneficiary-image" src={beneficiary.name}></img>
+              <img className="beneficiary-image" src={beneficiary.image}></img>
               <span className="beneficiary-story">{beneficiary.story}</span>
+              <span className="inventory-link" onClick={() => {setShowInventory(!showInventory)}}>view inventory</span>
+            </li>;
+          })}
+        </ul>
+      </div>
+    </>
+  );
+};
 
-              {!showCrud ? (
+export default CharityBeneficiariesManagement;
+
+{
+  /* {!showCrud ? (
                 <button
                   onClick={() => {
                     setShowCrud(true);
@@ -247,17 +270,11 @@ const CharityBeneficiariesManagement = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                )
+                  </div> */
+  /* )
               ) : (
                 <span></span>
               )}
             </li>
-          ))}
-        </ul>
-      </div>
-    </>
-  );
-};
-
-export default CharityBeneficiariesManagement;
+          ))}*/
+}

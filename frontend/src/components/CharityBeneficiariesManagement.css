@@ -198,3 +198,11 @@ height:200px;
   font-size:20px;
   color:var(--blue);
 }
+
+.inventory-link{
+  color:blue;
+}
+
+.inventory-link:hover{
+  color:red;
+}
